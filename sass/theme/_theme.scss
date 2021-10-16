@@ -1,0 +1,38 @@
+*{
+    outline: none!important;
+}
+a{
+    transition: all .3s ease;
+}
+html{
+    font-size: 15px;
+}
+body{
+    min-width: 320px;
+    position: relative;
+}
+.wpcf7 .ajax-loader{
+    display: none;
+}
+.icon svg,
+svg.icon{
+    width: 1em;
+    height: 1em;
+}
+.invalid{
+    .form-control:invalid{
+	border-color: $primary;
+    }
+}
+/*Section*/
+.content-section{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    .container-fluid{
+	padding: 0;
+	overflow: hidden;
+    }
+}

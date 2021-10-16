@@ -1,0 +1,94 @@
+/*Site-header*/
+.site-header{
+}
+.navbar-toggler{
+    border:0 none;
+    padding-right: 0;
+    position: relative;
+    z-index: 200;
+    .btn-text{
+	font-size: 1rem;
+	line-height: 20px;
+	color: $navbar-dark-color;
+	font-weight: 700;
+	text-transform: uppercase;
+    }
+    .toggle-icon{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 4px;
+	margin-right: 5px;
+	i{
+	    display: block;
+	    position: absolute;
+	    height: 3px;
+	    width: 100%;
+	    background-color: $navbar-dark-color;
+	    left: 0;
+	    transform: rotate(0deg);
+	    transition: .25s ease-in-out;
+	    &:nth-child(1){
+		top: 0;
+	    }
+	    &:nth-child(2),
+		&:nth-child(3){
+		top: 8px;
+	    }
+	    &:nth-child(4){
+		top: 16px;
+	    }
+	}
+
+    }
+    &:not(.collapsed){
+	.toggle-icon{
+	    i{
+		&:nth-child(1){
+		    top: 9px;
+		    width: 0;
+		    left: 50%;
+		}
+		&:nth-child(2){
+		    transform: rotate(45deg);
+		}
+		&:nth-child(3){
+		    transform: rotate(-45deg);
+		}
+		&:nth-child(4){
+		    top: 9px;
+		    width: 0;
+		    left: 50%;
+		}
+	    }
+	}
+    }
+}
+.site-footer{
+}
+@include media-breakpoint-up(lg) {
+}
+#toTop{
+    position: fixed;
+    z-index: 200;
+    bottom: 5%;
+    right: 3%;
+    cursor: pointer;
+    display: none;
+    width: rem(43px);
+    min-width: rem(43px);
+    height: rem(43px);
+    padding: .5rem;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20451.847%20451.846%22%20fill%3D%22%23fff%22%3E%3Cpath%20d%3D%22M248.292%20106.406l194.281%20194.29c12.365%2012.359%2012.365%2032.391%200%2044.744-12.354%2012.354-32.391%2012.354-44.744%200L225.923%20173.529%2054.018%20345.44c-12.36%2012.354-32.395%2012.354-44.748%200-12.359-12.354-12.359-32.391%200-44.75L203.554%20106.4c6.18-6.174%2014.271-9.259%2022.369-9.259%208.095%200%2016.192%203.091%2022.369%209.265z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+    background-color: rgba($primary, .7);
+    background-size: rem(30px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 0;
+    border-radius: 5px;
+    opacity: .7;
+    &:hover{
+	opacity: 1;
+    }
+}
