@@ -15,7 +15,7 @@
 // Layout & components
 @import "../../src/sass/bootstrap5/root";
 
-$theme-colors: map-remove($theme-colors, "dark", "info", "warning", "danger", "light");
+$theme-colors: map-remove($theme-colors, "dark", "secondary", "warning", "danger", "light");
 
 @import "../../src/sass/bootstrap5/reboot";
 @import "../../src/sass/bootstrap5/type";

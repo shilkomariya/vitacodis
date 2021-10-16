@@ -22,7 +22,7 @@ defined('ABSPATH') || exit;
     <body <?php body_class(); ?> <?php vitacodis_body_attributes(); ?>>
 	<?php do_action('wp_body_open'); ?>
 	<header class="site-header">
-	    <nav class="navbar navbar-expand-lg navbar-dark">
+	    <nav class="navbar navbar-expand-lg navbar-light">
 		<div class="container">
 		    <a href="<?php echo site_url(); ?>" class="logo-link" rel="home"><img src="<?php echo get_template_directory_uri() ?>/img/main-logo.png" srcset="<?php echo get_template_directory_uri() ?>/img/main-logo-x2.png 2x" alt="<?php bloginfo('name'); ?>"></a>
 		    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">

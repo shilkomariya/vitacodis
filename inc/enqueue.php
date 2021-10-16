@@ -15,7 +15,7 @@ if (!function_exists('vitacodis_scripts')) {
      */
     function vitacodis_scripts() {
 	// Get the theme data.
-	wp_enqueue_style('fonts-styles', 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;900&display=swap', [], null);
+	wp_enqueue_style('fonts-styles', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap', [], null);
 	$the_theme = wp_get_theme();
 	$theme_version = $the_theme->get('Version');
 	$css_version = $theme_version . '.' . filemtime(get_template_directory() . '/css/theme.min.css');

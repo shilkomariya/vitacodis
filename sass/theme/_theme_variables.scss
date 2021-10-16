@@ -25,17 +25,20 @@ $black:    #000;//
 // fusv-enable
 
 // scss-docs-start color-variables
-$cyan:  #00bbd1;
+$orange:  #FF6600;
+$blue: #0093E1;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
 $colors: (
-"cyan":     $cyan
+"orange": $orange,
+"blue": $blue
 );
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary:       $cyan;
+$primary:       $orange;
+$info:       $blue;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
