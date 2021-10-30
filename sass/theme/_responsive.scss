@@ -25,3 +25,9 @@
 	max-width: 1470px;
     }
 }
+
+@include media-breakpoint-down(md) {
+    .round-image{
+	margin-bottom: 2rem;
+    }
+}

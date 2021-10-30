@@ -33,8 +33,10 @@ svg.icon{
 	border-color: $primary;
     }
 }
-.w480{
-    max-width: rem(480px);
+.caps{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: rem(13px);
 }
 /*Section*/
 .content-section{
@@ -50,4 +52,16 @@ svg.icon{
 }
 .bg-gray{
     background-color: $bg;
+}
+.round-image{
+    max-width: rem(480px);
+}
+.video-link{
+    display: flex;
+    align-items: center;
+    color: $acc2;
+    .icon{
+	font-size: rem(32px);
+	margin-right: 1rem;
+    }
 }

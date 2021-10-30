@@ -25,6 +25,7 @@ if (!function_exists('vitacodis_scripts')) {
 	$js_version = $theme_version . '.' . filemtime(get_template_directory() . '/js/theme.js');
 	wp_enqueue_script('jquery');
 
+	wp_enqueue_script('fancybox-scripts', get_template_directory_uri() . '/js/fancybox.umd.js', array(), '4.0', true);
 	wp_enqueue_script('vitacodis-scripts', get_template_directory_uri() . '/js/theme.js', array(), $js_version, true);
     }
 
