@@ -18,16 +18,6 @@ if (!function_exists('vitacodis_widgets_init')) {
     function vitacodis_widgets_init() {
 	register_sidebar(
 		array(
-		    'name' => __('Footer', 'vitacodis'),
-		    'id' => 'footer',
-		    'before_widget' => '<div class="widget">',
-		    'after_widget' => '</div>',
-		    'before_title' => '<h4 class="widget-title">',
-		    'after_title' => '</h4>',
-		)
-	);
-	register_sidebar(
-		array(
 		    'name' => __('Single Post', 'loyaltybrokers'),
 		    'id' => 'single-post',
 		    'before_widget' => '<div class="widget">',

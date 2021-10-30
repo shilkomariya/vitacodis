@@ -43,6 +43,7 @@ if (!function_exists('vitacodis_setup')) {
 	register_nav_menus(
 		array(
 		    'primary' => __('Primary Menu', 'vitacodis'),
+		    'footer' => __('Footer Menu', 'vitacodis'),
 		    'terms' => __('Terms Menu', 'vitacodis')
 		)
 	);
