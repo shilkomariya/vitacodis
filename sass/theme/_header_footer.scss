@@ -6,6 +6,17 @@
     .logo-link{
 	width: rem(204px);
     }
+    .nav-link{
+	text-transform: uppercase;
+	border-bottom: 2px solid transparent;
+    }
+    .menu-item+.menu-item{
+	margin-left: rem(50px);
+    }
+    .active .nav-link,
+    .nav-link:hover{
+	border-color: $acc2;
+    }
 }
 .navbar-toggler{
     border:0 none;

@@ -1,3 +1,12 @@
+$title: $gray-900;
+$main-text: $gray-700;
+$acc1: $green;
+$acc2: $blue;
+$acc3: $orange;
+$icons: $gray-500;
+$line: $gray-300;
+$bg: $gray-100;
+
 *{
     outline: none!important;
 }
@@ -24,6 +33,9 @@ svg.icon{
 	border-color: $primary;
     }
 }
+.w480{
+    max-width: rem(480px);
+}
 /*Section*/
 .content-section{
     background-size: cover;
@@ -35,4 +47,7 @@ svg.icon{
 	padding: 0;
 	overflow: hidden;
     }
+}
+.bg-gray{
+    background-color: $bg;
 }

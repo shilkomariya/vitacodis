@@ -67,6 +67,7 @@ $options = array(
 	'label' => __('Background Color', 'beachsweat'),
 	'choices' => array(
 	    '' => 'None',
+	    'bg-gray' => 'Gray',
 	    'bg-primary' => 'Orange',
 	)
     ),
