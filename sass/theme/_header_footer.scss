@@ -1,5 +1,11 @@
 /*Site-header*/
 .site-header{
+    .navbar-collapse{
+	justify-content: flex-end;
+    }
+    .logo-link{
+	width: rem(204px);
+    }
 }
 .navbar-toggler{
     border:0 none;

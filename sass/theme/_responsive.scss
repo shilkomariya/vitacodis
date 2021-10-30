@@ -4,3 +4,24 @@
 }
 @include media-breakpoint-up(md) {
 }
+@media(min-width: 1400px){
+    html{
+	font-size: vw(15px);
+    }
+    .container{
+	max-width: rem(1170px);
+    }
+}
+@media(min-width: 1600px){
+    html{
+	font-size: vw(14.212px);
+    }
+}
+@media(min-width: 2000px){
+    html{
+	font-size: 17px;
+    }
+    .container{
+	max-width: 1470px;
+    }
+}

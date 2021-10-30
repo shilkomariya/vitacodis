@@ -71,7 +71,7 @@ $rem-px-only: false !default;
     }
 }
 @function vw($target) {
-    $vw-context: (1920*.01) * 1px;
+    $vw-context: (1440*.01) * 1px;
     @return ($target/$vw-context) * 1vw;
 }
 @function vh($target) {
