@@ -12,10 +12,10 @@ defined('ABSPATH') || exit;
 <footer class="site-footer">
     <div class="container">
 	<div class="row">
-	    <div class="col-sm-6 col-lg-auto footer-1">
+	    <div class="col-md-auto logo">
 		<a href="<?php echo site_url(); ?>" class="logo-link" rel="home"><img src="<?php echo get_template_directory_uri() ?>/img/footer-logo.png" srcset="<?php echo get_template_directory_uri() ?>/img/footer-logo-x2.png 2x" alt="<?php bloginfo('name'); ?>"></a>
 	    </div>
-	    <div class="col-lg-auto">
+	    <div class="col-auto">
 		<?php
 		wp_nav_menu(
 			array(
@@ -28,7 +28,7 @@ defined('ABSPATH') || exit;
 		);
 		?>
 	    </div>
-	    <div class="col-lg-auto">
+	    <div class="col-auto">
 		<?php if (fw_get_db_settings_option('address') != "") { ?>
     		<div class="address"><a href="<?php the_permalink(21) ?>"><?php echo fw_get_db_settings_option('address') ?></a></div>
 		<?php } ?>
@@ -36,7 +36,7 @@ defined('ABSPATH') || exit;
     		<div class="phone"><a href="tel:<?php echo preg_replace("/[^0-9]/", '', fw_get_db_settings_option('phone')) ?>">Tel: <?php echo fw_get_db_settings_option('phone') ?></a></div>
 		<?php } ?>
 	    </div>
-	    <div class="col-lg-auto">
+	    <div class="col-12 col-lg-auto">
 		<ul class="nav social">
 		    <?php if (fw_get_db_settings_option('insta')) { ?><li><a href="<?php echo fw_get_db_settings_option('insta') ?>" target="_blank"><svg class="icon"><use xlink:href="#instagram"></use></svg></a></li><?php } ?>
 		    <?php if (fw_get_db_settings_option('fb')) { ?><li><a href="<?php echo fw_get_db_settings_option('fb') ?>" target="_blank"><svg class="icon"><use xlink:href="#facebook"></use></svg></a></li><?php } ?>
@@ -51,8 +51,8 @@ defined('ABSPATH') || exit;
 <footer class="copyright">
     <div class="container">
 	<div class="row">
-	    <div class="col-lg-auto">© <?php echo date('Y'); ?> Vitacodis. All rights reserved</div>
-	    <div class="col-lg-auto">
+	    <div class="col-md-auto">© <?php echo date('Y'); ?> Vitacodis. All rights reserved</div>
+	    <div class="col-md-auto">
 		<?php
 		wp_nav_menu(
 			array(

@@ -10,9 +10,6 @@
 	text-transform: uppercase;
 	border-bottom: 2px solid transparent;
     }
-    .menu-item+.menu-item{
-	margin-left: rem(50px);
-    }
     .active .nav-link,
     .nav-link:hover{
 	border-color: $acc2;
@@ -26,7 +23,7 @@
     .btn-text{
 	font-size: 1rem;
 	line-height: 20px;
-	color: $navbar-dark-color;
+	color: $navbar-light-color;
 	font-weight: 700;
 	text-transform: uppercase;
     }
@@ -42,7 +39,7 @@
 	    position: absolute;
 	    height: 3px;
 	    width: 100%;
-	    background-color: $navbar-dark-color;
+	    background-color: $navbar-light-color;
 	    left: 0;
 	    transform: rotate(0deg);
 	    transition: .25s ease-in-out;
@@ -87,7 +84,7 @@
     color: #fff;
     padding: 3rem 0;
     .row{
-	justify-content: space-between;
+	justify-content: center;
     }
     .logo-link{
 	display: inline-block;
@@ -159,7 +156,53 @@
 	}
     }
 }
+@include media-breakpoint-up(md) {
+    .site-header{
+	.menu-item+.menu-item{
+	    margin-left: 1rem;
+	}
+    }
+    .site-footer{
+	.row{
+	    justify-content: space-between;
+	}
+    }
+}
 @include media-breakpoint-up(lg) {
+    .site-header{
+	.menu-item+.menu-item{
+	    margin-left: vw(50px);
+	}
+    }
+}
+@include media-breakpoint-down(lg) {
+    .site-footer{
+	.social{
+	    justify-content: center;
+	}
+    }
+}
+@include media-breakpoint-down(md) {
+    .site-footer{
+	.logo{
+	    text-align: center;
+	    margin-bottom: 2rem;
+	}
+    }
+    .copyright{
+	text-align: center;
+	.nav{
+	    justify-content: center;
+	    margin-top: 1rem;
+	}
+    }
+}
+@include media-breakpoint-down(md) {
+    .site-footer{
+	.col-auto{
+	    margin-bottom: 1rem;
+	}
+    }
 }
 #toTop{
     position: fixed;
