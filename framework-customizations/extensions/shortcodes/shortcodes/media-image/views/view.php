@@ -12,7 +12,4 @@ if (empty($atts['image'])) {
 }
 echo '<div class="img-box ' . $atts['img_class'] . '">';
 echo wp_get_attachment_image($atts['image']["attachment_id"], $atts['image_size'], false, array("class" => 'img-fluid'));
-if ($atts["text"] != "") {
-    echo '<div class="img-text">' . $atts['text'] . '</div>';
-}
 echo '</div>';

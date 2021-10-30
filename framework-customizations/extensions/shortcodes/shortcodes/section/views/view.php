@@ -3,25 +3,14 @@ if (!defined('FW')) {
     die('Forbidden');
 }
 
-$bg_color = '';
-if (!empty($atts['background_color'])) {
-    $bg_color = 'background-color:' . $atts['background_color'] . ';';
-}
-
-$bg_image = '';
+$section_style = '';
 if (!empty($atts['background_image']) && !empty($atts['background_image']['data']['icon'])) {
-    $bg_image = 'background-image:url(' . $atts['background_image']['data']['icon'] . ');';
+    $section_style = 'background-image:url(' . $atts['background_image']['data']['icon'] . ');';
 }
-
-
-
-$section_style = ( $bg_color || $bg_image ) ? '' . esc_attr($bg_color . $bg_image) . '' : '';
 
 $container_class = ( isset($atts['is_fullwidth']) && $atts['is_fullwidth'] ) ? 'container-fluid' : 'container';
-$container_class .= ( isset($atts['width']) && $atts['width'] ) ? ' ' . $atts['width'] . '' : '';
 $custome_class = ( isset($atts['custome_class']) && $atts['custome_class'] ) ? ' ' . $atts['custome_class'] . '' : '';
 $custome_class .= ( isset($atts['bgc']) && $atts['bgc'] ) ? ' ' . $atts['bgc'] . '' : '';
-$custome_class .= ( isset($atts['section_type']) && $atts['section_type'] ) ? ' ' . $atts['section_type'] . '' : '';
 $row_class = ( isset($atts['justify_content']) && $atts['justify_content'] ) ? ' ' . $atts['justify_content'] . '' : '';
 $row_class .= ( isset($atts['reverse']) && $atts['reverse'] ) ? ' ' . $atts['reverse'] . '' : '';
 $row_class .= ( isset($atts['gutters']) && $atts['gutters'] ) ? ' gx-' . $atts['gutters'] . '' : ' g-0';

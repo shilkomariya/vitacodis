@@ -356,11 +356,8 @@ function shortcode_permalinks($atts) {
 
 add_shortcode('permalink', 'shortcode_permalinks');
 
-function state_shortcode() {
-    if (fw_get_db_settings_option('current_state') !== "") {
-	$html = '<span class="state">' . fw_get_db_settings_option('current_state') . '</span>';
-	return $html;
-    }
-}
+add_filter('wpcf7_form_elements', function($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
 
-add_shortcode('state', 'state_shortcode');
+    return $content;
+});

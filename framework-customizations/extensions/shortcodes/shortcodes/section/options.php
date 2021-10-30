@@ -13,15 +13,6 @@ $options = array(
 	'label' => __('Full Width', 'beachsweat'),
 	'type' => 'switch',
     ),
-    'section_type' => array(
-	'type' => 'select',
-	'label' => __('Section Type', 'beachsweat'),
-	'choices' => array(
-	    '' => 'Default',
-	    'img-section' => 'Image left',
-	    'img-section invert' => 'Image right',
-	)
-    ),
     'type' => array(
 	'label' => __('Wrapper Type', 'beachsweat'),
 	'type' => 'switch',
@@ -33,14 +24,6 @@ $options = array(
 	    'value' => 'div',
 	    'label' => __('Div', '{domain}'),
 	),
-    ),
-    'width' => array(
-	'type' => 'select',
-	'label' => __('Max Width', 'beachsweat'),
-	'choices' => array(
-	    '' => '---',
-	    'w-990' => '990px',
-	)
     ),
     'justify_content' => array(
 	'type' => 'select',

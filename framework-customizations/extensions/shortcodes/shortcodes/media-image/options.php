@@ -23,10 +23,5 @@ $options = array(
 	    'large' => 'Large',
 	)
     ),
-    'text' => array(
-	'type' => 'wp-editor',
-	'size' => 'large',
-	'label' => __('Description', 'fw'),
-    ),
 );
 

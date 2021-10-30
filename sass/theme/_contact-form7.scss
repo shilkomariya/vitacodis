@@ -15,19 +15,6 @@
 // keep a max width in case it is just the form and nothing else
 // we do not want a form spanning whole page
 // all inputs except radios and checkboxes inherit from form-control
-.wpcf7-text,
-.wpcf7-textarea{
-    @extend .form-control;
-}
-.wpcf7-select{
-    @extend .form-select;
-}
-
-// submit button, inherit .btn and .btn-outline-primary classes.
-.wpcf7-submit {
-    @extend .btn;
-    @extend .btn-primary;
-}
 .wpcf7-checkbox .wpcf7-list-item{
     @extend .form-check;
     margin-left: 0;

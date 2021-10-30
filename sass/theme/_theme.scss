@@ -33,6 +33,9 @@ svg.icon{
 	border-color: $primary;
     }
 }
+.btn{
+    text-transform: uppercase;
+}
 .caps{
     font-weight: 700;
     text-transform: uppercase;
@@ -63,5 +66,16 @@ svg.icon{
     .icon{
 	font-size: rem(32px);
 	margin-right: 1rem;
+    }
+}
+#contact{
+    margin-top: rem(-70px);
+    .contact-wrp{
+	box-sizing: border-box;
+	background-color: #fff;
+	max-width: rem(944px);
+	padding: rem(23px 100px 53px);
+	border: rem(32px) solid transparent;
+	border-image: 16 repeating-linear-gradient(-45deg, #E64E48 0, #E64E48 2.5em, transparent 0, transparent 5em, #2C5AA1 0, #2C5AA1 7.5em, transparent 0, transparent 10em);
     }
 }

@@ -7,37 +7,39 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 ?>
-<div class="container py-3">
-    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<div id="content" tabindex="-1">
+    <div class="container py-3">
+	<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	    <header class="entry-header">
 
-	    <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+		<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 
-	</header><!-- .entry-header -->
+	    </header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
+	    <?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
 
-	<div class="entry-content">
+	    <div class="entry-content">
 
-	    <?php the_content(); ?>
+		<?php the_content(); ?>
 
-	    <?php
-	    wp_link_pages(
-		    array(
-			'before' => '<div class="page-links">' . __('Pages:', 'vitacodis'),
-			'after' => '</div>',
-		    )
-	    );
-	    ?>
+		<?php
+		wp_link_pages(
+			array(
+			    'before' => '<div class="page-links">' . __('Pages:', 'vitacodis'),
+			    'after' => '</div>',
+			)
+		);
+		?>
 
-	</div><!-- .entry-content -->
+	    </div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	    <footer class="entry-footer">
 
-	    <?php edit_post_link(__('Edit', 'vitacodis'), '<span class="edit-link">', '</span>'); ?>
+		<?php edit_post_link(__('Edit', 'vitacodis'), '<span class="edit-link">', '</span>'); ?>
 
-	</footer><!-- .entry-footer -->
+	    </footer><!-- .entry-footer -->
 
-    </article><!-- #post-## -->
-</div>
+	</article><!-- #post-## -->
+    </div>
+</div><!-- #content -->
