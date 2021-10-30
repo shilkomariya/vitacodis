@@ -6,28 +6,41 @@ if (!defined('FW')) {
 
 $options = array(
     'general' => array(
-	'title' => __('General', 'unyson'),
+	'title' => __('Contacts', 'vitacodis'),
 	'type' => 'tab',
 	'options' => array(
 	    'insta' => array(
-		'label' => __('Instagram link', 'aesthetix'),
+		'label' => __('Instagram link', 'vitacodis'),
 		'type' => 'text',
 		'value' => '#'
 	    ),
 	    'fb' => array(
-		'label' => __('Facebook link', 'aesthetix'),
+		'label' => __('Facebook link', 'vitacodis'),
+		'type' => 'text',
+		'value' => '#'
+	    ),
+	    'in' => array(
+		'label' => __('Linkedin link', 'vitacodis'),
 		'type' => 'text',
 		'value' => '#'
 	    ),
 	    'tw' => array(
-		'label' => __('Twitter link', 'aesthetix'),
+		'label' => __('Twitter link', 'vitacodis'),
 		'type' => 'text',
 		'value' => '#'
 	    ),
-	    'email' => array(
-		'label' => __('Email', 'aesthetix'),
+	    'yt' => array(
+		'label' => __('Youtube link', 'vitacodis'),
 		'type' => 'text',
-		'value' => 'info@email.com'
+		'value' => '#'
+	    ),
+	    'address' => array(
+		'label' => __('Address', 'vitacodis'),
+		'type' => 'text'
+	    ),
+	    'phone' => array(
+		'label' => __('Phone', 'vitacodis'),
+		'type' => 'text'
 	    ),
 	)
     )

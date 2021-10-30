@@ -28,13 +28,22 @@ defined('ABSPATH') || exit;
 		);
 		?>
 	    </div>
-	    <div class="col-sm-6 col-lg-auto footer-3">
+	    <div class="col-lg-auto">
+		<?php if (fw_get_db_settings_option('address') != "") { ?>
+    		<div class="address"><a href="<?php the_permalink(21) ?>"><?php echo fw_get_db_settings_option('address') ?></a></div>
+		<?php } ?>
+		<?php if (fw_get_db_settings_option('phone') != "") { ?>
+    		<div class="phone"><a href="tel:<?php echo preg_replace("/[^0-9]/", '', fw_get_db_settings_option('phone')) ?>">Tel: <?php echo fw_get_db_settings_option('phone') ?></a></div>
+		<?php } ?>
+	    </div>
+	    <div class="col-lg-auto">
 		<ul class="nav social">
 		    <?php if (fw_get_db_settings_option('insta')) { ?><li><a href="<?php echo fw_get_db_settings_option('insta') ?>" target="_blank"><svg class="icon"><use xlink:href="#instagram"></use></svg></a></li><?php } ?>
 		    <?php if (fw_get_db_settings_option('fb')) { ?><li><a href="<?php echo fw_get_db_settings_option('fb') ?>" target="_blank"><svg class="icon"><use xlink:href="#facebook"></use></svg></a></li><?php } ?>
+		    <?php if (fw_get_db_settings_option('in')) { ?><li><a href="<?php echo fw_get_db_settings_option('in') ?>" target="_blank"><svg class="icon"><use xlink:href="#linkedin"></use></svg></a></li><?php } ?>
 		    <?php if (fw_get_db_settings_option('tw')) { ?><li><a href="<?php echo fw_get_db_settings_option('tw') ?>" target="_blank"><svg class="icon"><use xlink:href="#twitter"></use></svg></a></li><?php } ?>
+		    <?php if (fw_get_db_settings_option('yt')) { ?><li><a href="<?php echo fw_get_db_settings_option('yt') ?>" target="_blank"><svg class="icon"><use xlink:href="#youtube"></use></svg></a></li><?php } ?>
 		</ul>
-		<div class="email"><a href="mailto:<?php echo antispambot(fw_get_db_settings_option('email')) ?>"><svg class="icon"><use xlink:href="#email"></use></svg> <?php echo antispambot(fw_get_db_settings_option('email')) ?></a></div>
 	    </div>
 	</div>
     </div>
