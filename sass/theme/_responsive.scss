@@ -1,3 +1,12 @@
+@media(min-width:375px){
+    .styled{
+	font-size: rem(17px);
+	.icon{
+	    font-size: rem(24px);
+	    margin-right: 1rem;
+	}
+    }
+}
 @include media-breakpoint-up(md) {
     .pagination{
 	.page-link{
@@ -32,6 +41,9 @@
 	    height: rem(40px)!important;
 	    padding: rem(5px);
 	}
+    }
+    #main-banner{
+	min-height: rem(750px);
     }
 }
 @include media-breakpoint-up(lg) {
@@ -113,5 +125,8 @@
     }
     .post-meta{
 	font-size: 1rem;
+    }
+    #main-banner{
+	background-position: 60% 50%;
     }
 }

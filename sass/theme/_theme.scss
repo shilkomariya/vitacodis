@@ -82,21 +82,19 @@ svg.icon{
 .styled{
     padding-left: 0;
     list-style: none;
-    font-size: rem(17px);
     color: $title;
     font-weight: 700;
     li+li{
 	margin-top: .8rem;
     }
     .icon{
-	font-size: rem(24px);
-	margin-right: 1rem;
+	font-size: rem(18px);
+	margin-right: .5rem;
     }
 }
 #main-banner{
     display: flex;
     align-items: center;
-    min-height: rem(750px);
     .fw-special-subtitle{
 	display: inline-block;
 	border-bottom: rem(4px) solid $acc3;
