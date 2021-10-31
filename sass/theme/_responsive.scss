@@ -4,6 +4,14 @@
 }
 @include media-breakpoint-up(md) {
 }
+@include media-breakpoint-up(lg) {
+    #contact{
+	.contact-wrp{
+	    padding: rem(23px 100px 53px);
+	    border: rem(32px) solid transparent;
+	}
+    }
+}
 @media(min-width: 1400px){
     html{
 	font-size: vw(15px);

@@ -1,6 +1,6 @@
 {
     "browserSyncOptions": {
-	"proxy": "http://newvitacodis.gip.by/",
+	"proxy": "http://new.vitacodis.com/",
 	"notify": false,
 	"files": [
 	    "./css/*.min.css",

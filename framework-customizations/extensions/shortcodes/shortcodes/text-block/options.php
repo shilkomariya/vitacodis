@@ -25,6 +25,16 @@ $options = array(
 	'type' => 'switch',
 	'label' => __('Centered', 'fw'),
     ),
+    'margin_bottom' => array(
+	'label' => __('Margin Bottom', 'fw'),
+	'type' => 'slider',
+	'value' => 0,
+	'properties' => array(
+	    'min' => 0,
+	    'max' => 5,
+	    'step' => 1, // Set slider step. Always > 0. Could be fractional.
+	),
+    ),
     'class' => array(
 	'type' => 'text',
 	'label' => __('Block class', 'fw'),
