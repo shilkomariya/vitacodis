@@ -111,3 +111,28 @@ svg.icon{
 	border-radius: $border-radius;
     }
 }
+.cats-widget{
+    list-style: none;
+    padding-left: 0;
+    li{
+	+li{
+	    margin-top: .8rem;
+	}
+	a{
+	    color: $title;
+	    font-weight: 700;
+	}
+    }
+    .current-cat {
+	a{
+	    color: $acc3;
+	}
+    }
+}
+.pagination{
+    .page-link{
+	font-weight: 700;
+	min-width: rem(36px);
+	text-align: center;
+    }
+}

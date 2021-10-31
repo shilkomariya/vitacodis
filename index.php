@@ -16,7 +16,13 @@ defined('ABSPATH') || exit;
 get_header();
 ?>
 <div class="container py-3 blog" id="content" tabindex="-1">
-    <h3 class="mb-2"><span class="fw-normal">Wellbeing</span> Journal</h3>
+    <h3 class="mb-2 fw-normal blog-header"><?php
+	if (is_category()) {
+	    echo get_queried_object()->name;
+	} else {
+	    echo 'Wellbeing Journal';
+	}
+	?></h3>
     <div class="row">
 	<div class="col-md-9 main">
 	    <?php
@@ -42,16 +48,17 @@ get_header();
 		get_template_part('loop-templates/content', 'none');
 	    }
 	    ?>
+	    <div class="mb-2">
+		<?php vitacodis_pagination(); ?>
+	    </div>
 	</div>
 	<div class="col-md-3 aside">
-	    <ul class="cat-widget">
-		<li><a href="<?php echo get_post_type_archive_link('post'); ?>">All Articles</a></li>
+	    <ul class="cats-widget">
+		<li<?php if (is_home()) echo ' class="current-cat"'; ?>><a href="<?php echo get_post_type_archive_link('post'); ?>">All Articles</a></li>
 		<?php wp_list_categories('orderby=name&hide_empty=1&title_li='); ?>
 	    </ul>
 	</div>
     </div>
-    <!-- The pagination component -->
-    <?php vitacodis_pagination(); ?>
 </div>
 <?php
 get_footer();

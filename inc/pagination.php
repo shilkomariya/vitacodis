@@ -39,7 +39,7 @@ if (!function_exists('vitacodis_pagination')) {
      * }
      * @param string       $class           (Optional) Classes to be added to the <ul> element. Default 'pagination'.
      */
-    function vitacodis_pagination($args = array(), $class = 'pagination nav justify-content-center') {
+    function vitacodis_pagination($args = array(), $class = 'pagination nav') {
 
 	if (!isset($args['total']) && $GLOBALS['wp_query']->max_num_pages <= 1) {
 	    return;
@@ -49,8 +49,8 @@ if (!function_exists('vitacodis_pagination')) {
 		$args, array(
 	    'mid_size' => 2,
 	    'prev_next' => true,
-	    'prev_text' => __('Previous page', 'vitacodis'),
-	    'next_text' => __('Next Page', 'vitacodis'),
+	    'prev_text' => __('<', 'vitacodis'),
+	    'next_text' => __('>', 'vitacodis'),
 	    'type' => 'array',
 	    'current' => max(1, get_query_var('paged')),
 	    'screen_reader_text' => __('Posts navigation', 'vitacodis'),

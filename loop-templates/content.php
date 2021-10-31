@@ -8,7 +8,7 @@
 defined('ABSPATH') || exit;
 ?>
 
-<div class="col-md-6">
+<div class="col-sm-6">
     <article  <?php post_class('mb-2 mb-lg-3'); ?>>
 	<a href="<?php the_permalink() ?>"><?php echo get_the_post_thumbnail($post->ID, 'medium-crop', array("class" => "mb-1")); ?></a>
 	<div class="text mb-1">
