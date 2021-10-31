@@ -136,3 +136,34 @@ svg.icon{
 	text-align: center;
     }
 }
+.single-post{
+    .post-meta{
+	.date{
+	    margin-left: 1rem;
+	    padding-left: 1rem;
+	    position: relative;
+	    display: inline-block;
+	    &:before{
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: rem(4px);
+		height: rem(4px);
+		background-color: $acc2;
+		border-radius: 50%;
+	    }
+	}
+    }
+    .entry-content{
+	max-width: rem(750px);
+	margin-left: auto;
+	margin-right: auto;
+	h1, h2, h3{
+	    @include font-size(rem(24px));
+	    margin-top: 2rem;
+	}
+    }
+}
