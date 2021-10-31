@@ -18,16 +18,14 @@ defined('ABSPATH') || exit;
 	?>
     </div>
     <div class="entry-content mt-2">
+	<div class="social-top mb-2"><?php echo do_shortcode('[Sassy_Social_Share]'); ?></div>
 	<?php
 	echo wpautop($post->post_content);
 	?>
-	<?php
-	wp_link_pages(
-		array(
-		    'before' => '<div class="page-links">' . __('Pages:', 'vitacodis'),
-		    'after' => '</div>',
-		)
-	);
-	?>
-    </div><!-- .entry-content -->
-</article><!-- #post-## -->
+	<div class="my-3 social-bottom"><?php echo do_shortcode('[Sassy_Social_Share]'); ?></div>
+	<div class="mb-2">
+	    <h4>Do not miss another post</h4>
+	    <?php echo do_shortcode('[mailpoet_form id="1"]') ?>
+	</div>
+    </div>
+</article>

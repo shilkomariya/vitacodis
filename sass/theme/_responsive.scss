@@ -5,6 +5,34 @@
 	    min-width: rem(48px);
 	}
     }
+    .single-post{
+	.mailpoet_form{
+	    display: flex;
+	    justify-content: space-between;
+	    flex-wrap: wrap;
+	    .mailpoet_message,
+	    .mailpoet_hp_email_label{
+		flex: 0 0 100%;
+		max-width: 100%;
+	    }
+	    .mailpoet_paragraph{
+		flex: 0 0 auto;
+	    }
+	    .mailpoet_text{
+		min-width: rem(500px);
+	    }
+	}
+    }
+    ul.heateor_sss_sharing_ul{
+	li+li{
+	    margin-left: 1rem!important;
+	}
+	.heateorSssSharing{
+	    width: rem(40px)!important;
+	    height: rem(40px)!important;
+	    padding: rem(5px);
+	}
+    }
 }
 @include media-breakpoint-up(lg) {
     #contact{
@@ -25,6 +53,31 @@
 	    margin-top: 2rem;
 	    margin-bottom: 4rem;
 	}
+    }
+    .single-post{
+	.entry-content{
+	    position: relative;
+	}
+	.social-top{
+	    position: absolute;
+	    left: -13%;
+	    top: 0;
+	    .heateor_sss_sharing_ul{
+		display: flex;
+		flex-direction: column;
+		li{
+		    margin: 0 0 1rem 0!important;
+		}
+	    }
+	}
+    }
+}
+@include media-breakpoint-up(xl) {
+    .h1, h1 {
+	font-size: rem(64px);
+    }
+    .h2, h2 {
+	font-size: rem(48px);
     }
 }
 @media(min-width: 1400px){
