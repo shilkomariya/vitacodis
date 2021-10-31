@@ -5,22 +5,22 @@
 	    min-width: rem(48px);
 	}
     }
-    .single-post{
-	.mailpoet_form{
-	    display: flex;
-	    justify-content: space-between;
-	    flex-wrap: wrap;
-	    .mailpoet_message,
-	    .mailpoet_hp_email_label{
-		flex: 0 0 100%;
-		max-width: 100%;
-	    }
-	    .mailpoet_paragraph{
-		flex: 0 0 auto;
-	    }
-	    .mailpoet_text{
-		min-width: rem(500px);
-	    }
+    .mailpoet_form{
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	.mailpoet_message,
+	.mailpoet_hp_email_label{
+	    flex: 0 0 100%;
+	    max-width: 100%;
+	}
+	.mailpoet_paragraph{
+	    flex: 0 0 auto;
+	}
+	.mailpoet_text{
+	    min-width: rem(500px);
 	}
     }
     ul.heateor_sss_sharing_ul{
@@ -38,7 +38,7 @@
     #contact{
 	.contact-wrp{
 	    padding: rem(23px 100px 53px);
-	    border: rem(32px) solid transparent;
+	    border-widt: rem(32px);
 	}
     }
     .blog{
@@ -105,5 +105,13 @@
 @include media-breakpoint-down(md) {
     .round-image{
 	margin-bottom: 2rem;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .round-image{
+	margin-bottom: 2rem;
+    }
+    .post-meta{
+	font-size: 1rem;
     }
 }

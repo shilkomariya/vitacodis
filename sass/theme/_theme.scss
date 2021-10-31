@@ -207,9 +207,12 @@ svg.icon{
 	max-width: rem(750px);
 	margin-left: auto;
 	margin-right: auto;
-	h1, h2, h3{
-	    @include font-size(rem(24px));
-	    margin-top: 2rem;
-	}
+    }
+}
+
+.entry-content{
+    h1, h2, h3{
+	@include font-size(rem(24px));
+	margin-top: 2rem;
     }
 }

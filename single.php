@@ -25,6 +25,8 @@ get_header();
 	    $args = array(
 		'posts_per_page' => 3,
 		'post_type' => 'post',
+		'orderby' => 'rand',
+		'post__not_in' => array(get_the_ID())
 	    );
 
 	    $query = new WP_Query($args);

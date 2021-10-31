@@ -10,18 +10,13 @@ defined('ABSPATH') || exit;
 <div id="content" tabindex="-1">
     <div class="container py-3">
 	<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
 	    <header class="entry-header">
-
-		<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
-
+		<?php the_title('<h1 class="h2 entry-title">', '</h1>'); ?>
 	    </header><!-- .entry-header -->
-
-	    <?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
-
 	    <div class="entry-content">
-
-		<?php the_content(); ?>
+		<?php
+		echo do_shortcode(wpautop($post->post_content));
+		?>
 
 		<?php
 		wp_link_pages(
@@ -33,13 +28,9 @@ defined('ABSPATH') || exit;
 		?>
 
 	    </div><!-- .entry-content -->
-
 	    <footer class="entry-footer">
-
 		<?php edit_post_link(__('Edit', 'vitacodis'), '<span class="edit-link">', '</span>'); ?>
-
 	    </footer><!-- .entry-footer -->
-
 	</article><!-- #post-## -->
     </div>
 </div><!-- #content -->
