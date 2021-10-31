@@ -217,3 +217,15 @@ svg.icon{
 	margin-top: 2rem;
     }
 }
+.retreat{
+    .data{
+	.icon{
+	    font-size: rem(20px);
+	    margin-right: .5rem;
+	}
+	.item{
+	    margin-bottom: 1rem;
+	    color: $title;
+	}
+    }
+}

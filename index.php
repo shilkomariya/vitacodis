@@ -16,7 +16,7 @@ defined('ABSPATH') || exit;
 get_header();
 ?>
 <div class="container py-3 blog" id="content" tabindex="-1">
-    <h3 class="mb-2 fw-normal blog-header"><?php
+    <h3 class="mb-2 fw-normal page-header"><?php
 	if (is_category()) {
 	    echo get_queried_object()->name;
 	} else {

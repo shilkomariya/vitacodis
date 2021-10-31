@@ -11,6 +11,7 @@ defined('ABSPATH') || exit;
 $vitacodis_includes = array(
     '/theme-settings.php', // Initialize theme default settings.
     '/setup.php', // Theme setup and custom theme supports.
+    '/cpt.php',
     '/enqueue.php', // Enqueue scripts and styles.
     '/template-tags.php', // Custom template tags for this theme.
     '/pagination.php', // Custom pagination for this theme.

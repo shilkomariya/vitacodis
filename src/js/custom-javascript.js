@@ -18,7 +18,7 @@
 	});
     });
 
-    $('.blog-header').each(function (index, element) {
+    $('.page-header').each(function (index, element) {
 	var heading = $(element);
 	var word_array, last_word, first_part;
 
