@@ -106,3 +106,8 @@ svg.icon{
 	max-width: rem(420px);
     }
 }
+.blog{
+    .wp-post-image{
+	border-radius: $border-radius;
+    }
+}

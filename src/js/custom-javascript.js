@@ -12,4 +12,10 @@
 	return false;
     });
 
+    $(window).on("load resize", function () {
+	$('.post .text').samesizr({
+	    mobile: 768
+	});
+    });
+
 }(jQuery);

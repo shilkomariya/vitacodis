@@ -84,18 +84,15 @@ if (!function_exists('vitacodis_setup')) {
 
 }
 
+function vitacodis_custom_excerpt_length($length) {
+    return 23;
+}
 
-add_filter('excerpt_more', 'vitacodis_custom_excerpt_more');
+add_filter('excerpt_length', 'vitacodis_custom_excerpt_length', 999);
+
 
 if (!function_exists('vitacodis_custom_excerpt_more')) {
 
-    /**
-     * Removes the ... from the excerpt read more link
-     *
-     * @param string $more The excerpt.
-     *
-     * @return string
-     */
     function vitacodis_custom_excerpt_more($more) {
 	if (!is_admin()) {
 	    $more = '...';
@@ -104,26 +101,7 @@ if (!function_exists('vitacodis_custom_excerpt_more')) {
     }
 
 }
-
-//add_filter('wp_trim_excerpt', 'vitacodis_all_excerpts_get_more_link');
-
-if (!function_exists('vitacodis_all_excerpts_get_more_link')) {
-
-    /**
-     * Adds a custom read more link to all excerpts, manually or automatically generated
-     *
-     * @param string $post_excerpt Posts's excerpt.
-     *
-     * @return string
-     */
-    function vitacodis_all_excerpts_get_more_link($post_excerpt) {
-	if (!is_admin()) {
-	    $post_excerpt = $post_excerpt . '<p><a class="btn btn-sm btn-primary" href="' . esc_url(get_permalink(get_the_ID())) . '">' . __('Read More...', 'vitacodis') . '</a></p>';
-	}
-	return $post_excerpt;
-    }
-
-}
+add_filter('excerpt_more', 'vitacodis_custom_excerpt_more');
 
 // Disables the block editor from managing widgets in the Gutenberg plugin.
 add_filter('gutenberg_use_widgets_block_editor', '__return_false');
@@ -131,4 +109,5 @@ add_filter('gutenberg_use_widgets_block_editor', '__return_false');
 add_filter('use_widgets_block_editor', '__return_false');
 
 
-//add_image_size('page-header', 1920, 675, array('center', 'center'));
+add_image_size('medium-crop', 547, 344, array('center', 'center'));
+add_image_size('large-crop', 720, 470, array('center', 'center'));

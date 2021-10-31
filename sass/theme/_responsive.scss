@@ -11,6 +11,14 @@
 	    border: rem(32px) solid transparent;
 	}
     }
+    .blog{
+	.main{
+	    width: 77%;
+	}
+	.aside{
+	    width: 23%;
+	}
+    }
 }
 @media(min-width: 1400px){
     html{

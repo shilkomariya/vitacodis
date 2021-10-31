@@ -101,9 +101,6 @@ $spacers: (
 //
 // Define the edge positioning anchors of the position utilities.
 
-// scss-docs-start position-map
-// scss-docs-end position-map
-
 // Body
 //
 // Settings for the `<body>` element.
@@ -112,22 +109,9 @@ $body-bg: $white;
 $body-color: $gray-700;
 
 // Utilities maps
-//
-// Extends the default `$theme-colors` maps to help create our utilities.
-
-// scss-docs-start utilities-colors
-// scss-docs-end utilities-colors
-
-// scss-docs-start utilities-text-colors
-// scss-docs-end utilities-text-colors
-
-// scss-docs-start utilities-bg-colors
-// scss-docs-end utilities-bg-colors
 
 // Links
-//
-// Style anchor elements.
-
+$link-color: $blue;
 $link-decoration: none;
 
 // Paragraphs
@@ -156,14 +140,12 @@ xl: 1280px
 //
 // Define the maximum width of `.container` for different screen sizes.
 
-// scss-docs-start container-max-widths
 $container-max-widths: (
 sm: 540px,
 md: 760px,
 lg: 960px,
 xl: 1170px
 );
-// scss-docs-end container-max-widths
 
 // Grid columns
 //

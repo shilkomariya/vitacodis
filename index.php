@@ -15,43 +15,41 @@ defined('ABSPATH') || exit;
 
 get_header();
 ?>
-<div class="page-header" style="background-image: url(<?php echo wp_get_attachment_image_url(37, 'full'); ?>);">
-    <div class="container">
-	<h2 class="fw-special-title text-uppercase"><?php
-	    if (is_404()) {
-		echo '404';
-	    } elseif (is_search()) {
-		echo 'Search';
-	    } else {
-		echo 'BLOG';
-	    }
-	    ?></h2>
-    </div>
-</div>
-<div class="container py-3" id="content" tabindex="-1">
-    <?php
-    if (have_posts()) {
-	// Start the Loop.
-	?>
-        <div class="row">
+<div class="container py-3 blog" id="content" tabindex="-1">
+    <h3 class="mb-2"><span class="fw-normal">Wellbeing</span> Journal</h3>
+    <div class="row">
+	<div class="col-md-9 main">
 	    <?php
-	    while (have_posts()) {
-		the_post();
+	    if (have_posts()) {
+		// Start the Loop.
+		?>
+    	    <div class="row">
+		    <?php
+		    while (have_posts()) {
+			the_post();
 
-		/*
-		 * Include the Post-Format-specific template for the content.
-		 * If you want to override this in a child theme, then include a file
-		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-		 */
-		get_template_part('loop-templates/content', get_post_format());
+			/*
+			 * Include the Post-Format-specific template for the content.
+			 * If you want to override this in a child theme, then include a file
+			 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+			 */
+			get_template_part('loop-templates/content', get_post_format());
+		    }
+		    ?>
+    	    </div><!-- .row -->
+		<?php
+	    } else {
+		get_template_part('loop-templates/content', 'none');
 	    }
 	    ?>
-        </div><!-- .row -->
-	<?php
-    } else {
-	get_template_part('loop-templates/content', 'none');
-    }
-    ?>
+	</div>
+	<div class="col-md-3 aside">
+	    <ul class="cat-widget">
+		<li><a href="<?php echo get_post_type_archive_link('post'); ?>">All Articles</a></li>
+		<?php wp_list_categories('orderby=name&hide_empty=1&title_li='); ?>
+	    </ul>
+	</div>
+    </div>
     <!-- The pagination component -->
     <?php vitacodis_pagination(); ?>
 </div>
