@@ -36,6 +36,9 @@ svg.icon{
 .btn{
     text-transform: uppercase;
 }
+.btn-outline-primary:not(:hover){
+    color: $title;
+}
 .caps{
     font-weight: 700;
     text-transform: uppercase;

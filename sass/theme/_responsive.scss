@@ -8,6 +8,9 @@
     }
 }
 @include media-breakpoint-up(md) {
+    .btn-outline-primary{
+	min-width: rem(295px);
+    }
     .pagination{
 	.page-link{
 	    padding: 0.8rem 0.8rem;
