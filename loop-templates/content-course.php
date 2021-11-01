@@ -17,6 +17,8 @@ if ($product->get_sale_price() != '') {
 } else {
     $price = "<h4>" . $currency . $product->get_price() . "</h4>";
 }
+
+$units_sold = get_post_meta($woo_product, 'total_sales', true);
 ?>
 <div class="card">
     <?php echo get_the_post_thumbnail(get_the_ID(), 'thumbnail', array('class' => 'card-img-top')); ?>
@@ -36,7 +38,7 @@ if ($product->get_sale_price() != '') {
 	    <?php if ($duration != "") { ?>
     	    <div class="col-auto"><svg class="icon"><use xlink:href="#duration"></use></svg><strong><?php echo $duration; ?></strong></div>
 	    <?php } ?>
-	    <div class="col-auto"><svg class="icon"><use xlink:href="#learners"></use></svg><strong>400 learners</strong></div>
+	    <div class="col-auto"><svg class="icon"><use xlink:href="#learners"></use></svg><strong><?php echo $units_sold ?> learners</strong></div>
 	</div>
 	<a href="<?php the_permalink() ?>" class="btn btn-sm btn-primary">LEARN MORE</a>
     </div>
