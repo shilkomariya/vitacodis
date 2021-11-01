@@ -9,10 +9,10 @@ defined('ABSPATH') || exit;
 ?>
 <article  <?php post_class('mb-2 mb-lg-3'); ?>>
     <div class="row">
-	<div class="col-md-6">
+	<div class="col-lg-6">
 	    <a href="<?php the_permalink() ?>"><?php echo get_the_post_thumbnail($post->ID, 'large-crop', array("class" => "mb-1")); ?></a>
 	</div>
-	<div class="col-md-6">
+	<div class="col-lg-6">
 	    <div class="text mb-1">
 		<h3 class="h3"><?php the_title() ?></h3>
 		<div class="data row mb-1">
