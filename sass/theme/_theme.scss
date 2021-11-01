@@ -240,5 +240,28 @@ svg.icon{
     }
     .card-title{
 	@include font-size(rem(16px));
+	margin-bottom: .5rem;
+    }
+    .card-text{
+	font-size: rem(13px);
+    }
+    .instructor{
+	margin-bottom: .7rem;
+	color: $title;
+	font-size: rem(13px);
+    }
+    .instructor-avatar{
+	border-radius: 50%;
+	margin-right: .5rem;
+    }
+    .info{
+	justify-content: space-between;
+	color: $title;
+	font-size: rem(13px);
+	margin-bottom: 1rem;
+	.icon{
+	    margin-right: .55em;
+	    font-size: rem(17px);
+	}
     }
 }

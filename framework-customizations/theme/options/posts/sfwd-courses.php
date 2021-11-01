@@ -7,7 +7,7 @@ $options = array(
     'info' => array(
 	'type' => 'box',
 	'options' => array(
-	    'descroption' => array(
+	    'description' => array(
 		'type' => 'text',
 		'label' => __('Short Description', 'vitacodis'),
 	    ),
