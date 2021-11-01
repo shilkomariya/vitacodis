@@ -117,6 +117,12 @@
     }
 }
 
+@include media-breakpoint-down(lg) {
+    .card-rows > .col{
+	flex: 0 0 auto;
+	width: 50%;
+    }
+}
 @include media-breakpoint-down(md) {
     .round-image{
 	margin-bottom: 2rem;
@@ -131,5 +137,8 @@
     }
     #main-banner{
 	background-position: 60% 50%;
+    }
+    .card-rows > .col{
+	width: 100%;
     }
 }

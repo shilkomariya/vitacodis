@@ -24,7 +24,7 @@ get_header();
 	    <?php
 	    while (have_posts()) {
 		the_post();
-		echo '<div class="col-md-3">';
+		echo '<div class="col">';
 		get_template_part('loop-templates/content', 'course');
 		echo '</div>';
 	    }

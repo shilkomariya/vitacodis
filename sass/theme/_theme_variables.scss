@@ -216,6 +216,9 @@ $headings-color:  $gray-900;
 $input-btn-padding-x: rem(15px);
 $input-btn-padding-y: rem(12px);
 
+$input-btn-padding-y-sm:  rem(9.5px);
+$input-btn-padding-x-sm:  rem(15px);
+
 $input-font-weight: 300;
 // scss-docs-end input-btn-variables
 
@@ -229,6 +232,8 @@ $btn-font-weight: 700;
 $btn-font-size: rem(13px);
 $btn-padding-x: rem(32px);
 $btn-line-height: 1.7;
+
+$btn-font-size-sm: rem(11px);
 
 // Allows for customizing button radius independently from global border radius
 // scss-docs-end btn-variables
@@ -318,53 +323,29 @@ $pagination-padding-x: rem(6px);
 
 // scss-docs-start card-variables
 $card-border-width: 0;
-$card-border-radius: 0;
+//$card-border-radius: ;
 $card-cap-padding-y: rem(9px);
 $card-cap-padding-x: 1rem;
 $card-spacer-y: 1rem;
 $card-spacer-x: 1rem;
-$card-bg: $gray-700;
+$card-bg: $white;
 // scss-docs-end card-variables
 
 // Accordion
 
-// scss-docs-start accordion-variables
-// scss-docs-end accordion-variables
-
 // Tooltips
-
-// scss-docs-start tooltip-variables
-// scss-docs-end tooltip-variables
-
-// Form tooltips must come after regular tooltips
-// scss-docs-start tooltip-feedback-variables
-// scss-docs-end tooltip-feedback-variables
 
 
 // Popovers
 
-// scss-docs-start popover-variables
-// scss-docs-end popover-variables
-
-
 // Toasts
-
-// scss-docs-start toast-variables
-// scss-docs-end toast-variables
-
 
 // Badges
 
-// scss-docs-start badge-variables
-// scss-docs-end badge-variables
-
-
 // Modals
 
-// scss-docs-start modal-variables
 $modal-header-padding: 1rem;
 $modal-inner-padding: 1rem;
-// scss-docs-end modal-variables
 
 
 // Alerts

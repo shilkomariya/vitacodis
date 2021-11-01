@@ -12,7 +12,7 @@ defined('ABSPATH') || exit;
     <div class="card-body">
 	<h5 class="card-title"><?php the_title(); ?></h5>
 	<div class="card-text">
-	    <a href="<?php the_permalink() ?>" class="btn btn-primary">LEARN MORE</a>
+	    <a href="<?php the_permalink() ?>" class="btn btn-sm btn-primary">LEARN MORE</a>
 	</div>
     </div>
 </div>
