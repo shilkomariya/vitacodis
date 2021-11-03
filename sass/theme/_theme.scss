@@ -261,18 +261,24 @@ svg.icon{
     .card-title{
 	margin-bottom: .5rem;
     }
-    .instructor{
+    .course-instructor{
 	margin-bottom: .7rem;
 	color: $title;
     }
-    .info{
+    .course-info{
 	justify-content: space-between;
-	color: $title;
 	margin-bottom: 1rem;
-	.icon{
-	    margin-right: .55em;
-	    font-size: rem(22px);
-	}
+    }
+}
+.course-info{
+    color: $title;
+    .icon{
+	margin-right: .55em;
+	font-size: rem(22px);
+    }
+    .col-auto{
+	display: flex;
+	align-items: center;
     }
 }
 .course-price{
@@ -286,7 +292,7 @@ svg.icon{
 	text-decoration: line-through;
     }
 }
-.instructor-avatar{
+.course-instructor-avatar{
     border-radius: 50%;
     margin-right: .5rem;
 }
@@ -300,14 +306,10 @@ svg.icon{
 	max-width: rem(560px);
 	margin-bottom: 2rem;
     }
-    .info{
+    .course-info{
 	margin-bottom: 1.5rem;
-	.icon{
-	    margin-right: .55em;
-	    font-size: rem(22px);
-	}
     }
-    .instructor{
+    .course-instructor{
 	margin-bottom: 1.5rem;
     }
 }

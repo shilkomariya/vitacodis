@@ -12,9 +12,7 @@ $bg = '';
 if (has_post_thumbnail()) {
     $bg = ' style="background-image: url(' . get_the_post_thumbnail_url(get_the_ID(), 'full') . ');"';
 }
-$description = fw_get_db_post_option(get_the_ID(), 'description');
 $instructor = fw_get_db_post_option(get_the_ID(), 'instructor')[0];
-$duration = fw_get_db_post_option(get_the_ID(), 'duration');
 $woo_product = fw_get_db_post_option(get_the_ID(), 'woo_product')[0];
 $product = wc_get_product($woo_product);
 $currency = get_woocommerce_currency_symbol();
@@ -32,22 +30,20 @@ while (have_posts()) {
     <div class="course-header py-5"<?php echo $bg ?>>
         <div class="container">
     	<h1 class="h2"><?php the_title() ?></h1>
-    	<div class="info row">
-		<?php if ($duration != "") { ?>
-		    <div class="col-auto"><svg class="icon"><use xlink:href="#duration"></use></svg><strong><?php echo $duration; ?></strong></div>
+    	<div class="course-info row h5">
+		<?php if (fw_get_db_post_option(get_the_ID(), 'duration') != "") { ?>
+		    <div class="col-auto"><svg class="icon"><use xlink:href="#duration"></use></svg><strong><?php echo fw_get_db_post_option(get_the_ID(), 'duration'); ?></strong></div>
 		<?php } ?>
-    	    <div class="col-auto"><svg class="icon"><use xlink:href="#learners"></use></svg><strong><?php echo $units_sold ?> learners</strong></div>
+    	    <div class="col-auto"><svg class="icon"><use xlink:href="#lessons-count"></use></svg><strong><?php course_lessons_count() ?></strong></div>
+    	    <div class="col-auto"><svg class="icon"><use xlink:href="#learners"></use></svg><strong><?php course_learners_count() ?></strong></div>
     	</div>
-	    <?php if ($instructor) { ?>
-		<div class="instructor">
-		    <?php echo get_the_post_thumbnail($instructor, array(24, 24), array('class' => 'instructor-avatar')); ?>
-		    <strong><?php echo get_the_title($instructor) ?></strong>
-		</div>
+	    <?php course_instructor() ?>
+	    <?php course_price() ?>
+	    <?php if (sfwd_lms_has_access(get_the_ID())) { ?>
+		<a class="btn btn-primary" href="" >Get Started</a>
+	    <?php } else { ?>
+		<a class="btn btn-primary" href="/checkout/?add-to-cart=<?php echo $woo_product; ?>" >Buy Now</a>
 	    <?php } ?>
-    	<div class="course-price row"><?php echo $price; ?></div>
-	    <?php
-	    echo do_shortcode('[ifso id="4749"] 29');
-	    ?>
         </div>
     </div>
     <div class="container single-post py-3" id="content" tabindex="-1">

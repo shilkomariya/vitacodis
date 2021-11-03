@@ -361,3 +361,60 @@ add_filter('wpcf7_form_elements', function($content) {
 
     return $content;
 });
+
+
+if (!function_exists('course_lessons_count')) {
+
+    function course_lessons_count() {
+	$args = array(
+	    'post_type' => 'sfwd-topic',
+	    'meta_query' => [[
+	    'key' => 'course_id',
+	    'value' => get_the_ID(),
+		]],
+	);
+	$the_query = new WP_Query($args);
+	echo $the_query->found_posts . ' lessons';
+    }
+
+}
+if (!function_exists('course_price')) {
+
+    function course_price() {
+	$woo_product = fw_get_db_post_option(get_the_ID(), 'woo_product')[0];
+	$product = wc_get_product($woo_product);
+	$currency = get_woocommerce_currency_symbol();
+	if ($product->get_sale_price() != '') {
+	    $price = '<h4 class="col-auto">' . $currency . $product->get_sale_price() . '</h4><small class="col-auto">' . $currency . $product->get_regular_price() . "</small>";
+	} else {
+	    $price = "<h4>" . $currency . $product->get_price() . "</h4>";
+	}
+	echo '<div class="course-price row">' . $price . '</div>';
+    }
+
+}
+if (!function_exists('course_instructor')) {
+
+    function course_instructor() {
+	$instructor = fw_get_db_post_option(get_the_ID(), 'instructor')[0];
+	if ($instructor) {
+	    echo '<div class="course-instructor">';
+	    echo get_the_post_thumbnail($instructor, array(24, 24), array('class' => 'course-instructor-avatar'));
+	    echo '<strong>' . get_the_title($instructor) . '</strong>';
+	    echo '</div>';
+	}
+    }
+
+}
+if (!function_exists('course_learners_count')) {
+
+    function course_learners_count() {
+	$members_arr = learndash_get_users_for_course(get_the_ID(), [], false);
+	if (( $members_arr instanceof \WP_User_Query ) && ( property_exists($members_arr, 'total_users') ) && (!empty($members_arr->total_users) )) {
+	    echo $members_arr->total_users . ' learners';
+	} else {
+	    echo '0 learners';
+	}
+    }
+
+}
