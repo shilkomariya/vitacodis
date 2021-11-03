@@ -40,7 +40,7 @@ while (have_posts()) {
 	    <?php course_instructor() ?>
 	    <?php course_price() ?>
 	    <?php if (sfwd_lms_has_access(get_the_ID())) { ?>
-		<a class="btn btn-primary" href="" >Get Started</a>
+		<a class="btn btn-primary" href="<?php echo course_get_started_link(get_the_ID()); ?>" >Get Started</a>
 	    <?php } else { ?>
 		<a class="btn btn-primary" href="/checkout/?add-to-cart=<?php echo $woo_product; ?>" >Buy Now</a>
 	    <?php } ?>

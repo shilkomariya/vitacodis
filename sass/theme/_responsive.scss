@@ -105,6 +105,9 @@
 	    }
 	}
     }
+    .course-header{
+	padding: rem(100px 0 50px)!important;
+    }
 }
 @include media-breakpoint-up(xl) {
     .h1, h1 {

@@ -399,7 +399,7 @@ if (!function_exists('course_instructor')) {
 	$instructor = fw_get_db_post_option(get_the_ID(), 'instructor')[0];
 	if ($instructor) {
 	    echo '<div class="course-instructor">';
-	    echo get_the_post_thumbnail($instructor, array(24, 24), array('class' => 'course-instructor-avatar'));
+	    echo get_the_post_thumbnail($instructor, array(30, 30), array('class' => 'course-instructor-avatar'));
 	    echo '<strong>' . get_the_title($instructor) . '</strong>';
 	    echo '</div>';
 	}
@@ -415,6 +415,69 @@ if (!function_exists('course_learners_count')) {
 	} else {
 	    echo '0 learners';
 	}
+    }
+
+}
+if (!function_exists('course_get_started_link')) {
+
+    function course_get_started_link($course_id = null) {
+	global $post;
+	$user = _wp_get_current_user();
+
+	if (is_null($course_id)) {
+	    $course_id = learndash_get_course_id($post);
+	}
+
+	if (!$course_id || !isset($user->ID)) {
+	    // User Not Logged In OR No Course Identified
+	    return false;
+	}
+
+	$lessons = learndash_get_lesson_list($course_id);
+
+	if (!$lessons) {
+	    // No Lesson
+	    return false;
+	}
+
+	$first_lesson = reset($lessons);
+
+	$user_course_progress = get_user_meta($user->ID, '_sfwd-course_progress', true);
+
+	if (isset($user_course_progress[$course_id])) {
+	    $course_progress = $user_course_progress[$course_id];
+
+	    // get first lesson link
+	    if (!$course_progress['lessons'] && isset($first_lesson->ID)) {
+		$lesson_id = $first_lesson->ID;
+	    } else {
+		end($course_progress['lessons']);
+		$lesson_id = key($course_progress['lessons']);
+
+		foreach ($lessons as $key => $lesson) {
+		    if ($lesson->ID == $lesson_id) {
+			$lesson_id = $lessons[$key + 1]->ID;
+			break;
+		    }
+		}
+	    }
+	} elseif (isset($first_lesson->ID)) {
+	    // get first lesson link
+	    $lesson_id = $first_lesson->ID;
+	}
+
+	if (!$lesson_id) {
+	    // No Lesson ID
+	    return false;
+	}
+
+	if ('sfwd-lessons' != get_post_type($lesson_id)) {
+	    // ID not for a Learndash Lesson
+	    return false;
+	}
+
+	$link = get_post_permalink($lesson_id);
+	return $link;
     }
 
 }
