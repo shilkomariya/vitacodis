@@ -22,12 +22,14 @@ $units_sold = get_post_meta($woo_product, 'total_sales', true);
 ?>
 <div class="card">
     <?php echo get_the_post_thumbnail(get_the_ID(), 'thumbnail', array('class' => 'card-img-top')); ?>
-    <div class="card-header">
+    <div class="card-header pb-0">
 	<h5 class="card-title"><?php the_title(); ?></h5>
+    </div>
+    <div class="card-header pt-0">
 	<?php if ($description != '') { ?><p class="card-text"><?php echo $description ?></p><?php } ?>
     </div>
     <div class="card-body">
-	<div class="price row"><?php echo $price; ?></div>
+	<div class="course-price row"><?php echo $price; ?></div>
 	<?php if ($instructor) { ?>
     	<div class="instructor">
 		<?php echo get_the_post_thumbnail($instructor, array(24, 24), array('class' => 'instructor-avatar')); ?>

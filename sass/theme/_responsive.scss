@@ -7,6 +7,25 @@
 	}
     }
 }
+@include media-breakpoint-up(sm) {
+    .card{
+	.card-title{
+	    @include font-size(rem(16px));
+	}
+	.card-text{
+	    font-size: rem(13px);
+	}
+	.instructor{
+	    font-size: rem(13px);
+	}
+	.info{
+	    font-size: rem(13px);
+	    .icon{
+		font-size: rem(17px);
+	    }
+	}
+    }
+}
 @include media-breakpoint-up(md) {
     .btn-outline-primary{
 	min-width: rem(295px);
