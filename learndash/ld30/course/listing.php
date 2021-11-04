@@ -81,20 +81,25 @@ if (!empty($lessons) || !empty($quizzes)) :
 	    $sections = learndash_30_get_course_sections($course_id);
 	    $i = 0;
 
+	    $show_arr = array("Introduction", "Module");
+
 	    foreach ($lessons as $lesson) :
-		learndash_get_template_part(
-			'lesson/partials/row.php', array(
-		    'count' => $i,
-		    'sections' => $sections,
-		    'lesson' => $lesson,
-		    'course_id' => $course_id,
-		    'user_id' => $user_id,
-		    'lesson_topics' => !empty($lesson_topics) ? $lesson_topics : [],
-		    'has_access' => $has_access,
-		    'course_pager_results' => $course_pager_results,
-			), true
-		);
-		$i++;
+
+		if (preg_match("/(" . implode('|', $show_arr) . ")/is", $lesson["post"]->post_title)) {
+		    learndash_get_template_part(
+			    'lesson/partials/row.php', array(
+			'count' => $i,
+			'sections' => $sections,
+			'lesson' => $lesson,
+			'course_id' => $course_id,
+			'user_id' => $user_id,
+			'lesson_topics' => !empty($lesson_topics) ? $lesson_topics : [],
+			'has_access' => $has_access,
+			'course_pager_results' => $course_pager_results,
+			    ), true
+		    );
+		    $i++;
+		}
 	    endforeach;
 
 	endif;

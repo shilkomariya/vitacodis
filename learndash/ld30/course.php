@@ -188,10 +188,12 @@ $has_lesson_quizzes = learndash_30_has_lesson_quizzes($course_id, $lessons);
 		?>
 
     	</div> <!--/.ld-section-heading-->
-    	<div class="ld-course-info row">
-    	    <div class="col-auto">6 modules</div>
-    	    <div class="col-auto"><?php course_lessons_count() ?></div>
-    	    <div class="col-auto"><?php echo fw_get_db_post_option(get_the_ID(), 'duration'); ?></div>
+    	<div class="ld-course-info">
+    	    <div class="row">
+    		<div class="col-auto">6 modules</div>
+    		<div class="col-auto"><?php course_lessons_count() ?></div>
+    		<div class="col-auto"><?php echo fw_get_db_post_option(get_the_ID(), 'duration'); ?></div>
+    	    </div>
     	</div>
 	    <?php
 	    /**

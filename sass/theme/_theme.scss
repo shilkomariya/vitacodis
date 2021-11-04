@@ -341,8 +341,27 @@ svg.icon{
 .about-course{
     margin-bottom: 4rem;
     h2, h3, h4{
-	@include font-size(rem(18px));
+	@include font-size(rem(16px));
 	margin-top: 1rem;
+    }
+}
+.ld-course-info{
+    border-bottom: 1px solid #D9DBE9;
+    padding-bottom: 1rem;
+    .col-auto{
+	position: relative;
+    }
+    .col-auto+.col-auto:before{
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: rem(4px);
+	height: rem(4px);
+	background-color: $acc2;
+	border-radius: 50%;
     }
 }
 .learndash-wrapper {
@@ -352,6 +371,11 @@ svg.icon{
 	    border-color: #D9DBE9;
 	    border-radius: 0;
 	    margin: 0;
+	    &.is_sample{
+		.ld-item-list-item-preview{
+		    padding: .8rem 0;
+		}
+	    }
 	    .ld-item-list-item-preview{
 		padding: 1.3rem 0;
 		.ld-item-name{

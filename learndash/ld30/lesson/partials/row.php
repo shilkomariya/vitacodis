@@ -207,15 +207,20 @@ endif;
 			    </span>
 			    <?php
 			endif;
-
 			if (!empty($attributes)) :
 			    foreach ($attributes as $attribute) :
-				?>
-	    		    <span class="<?php echo esc_attr('ld-status ' . $attribute['class']); ?>">
-	    			<span class="<?php echo esc_attr('ld-icon ' . $attribute['icon']); ?>"></span>
-				    <?php echo esc_html($attribute['label']); ?>
-	    		    </span>
-				<?php
+				if ($attribute["label"] == 'Sample module') {
+				    ?>
+				    <span class="btn btn-sm btn-info">Preview</span>
+				    <?php
+				} else {
+				    ?>
+				    <span class="<?php echo esc_attr('ld-status ' . $attribute['class']); ?>">
+					<span class="<?php echo esc_attr('ld-icon ' . $attribute['icon']); ?>"></span>
+					<?php echo esc_html($attribute['label']); ?>
+				    </span>
+				    <?php
+				}
 			    endforeach;
 			endif;
 
