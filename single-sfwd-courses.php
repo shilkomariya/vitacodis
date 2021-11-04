@@ -14,15 +14,6 @@ if (has_post_thumbnail()) {
 }
 $instructor = fw_get_db_post_option(get_the_ID(), 'instructor')[0];
 $woo_product = fw_get_db_post_option(get_the_ID(), 'woo_product')[0];
-$product = wc_get_product($woo_product);
-$currency = get_woocommerce_currency_symbol();
-if ($product->get_sale_price() != '') {
-    $price = '<h4 class="col-auto">' . $currency . $product->get_sale_price() . '</h4><small class="col-auto">' . $currency . $product->get_regular_price() . "</small>";
-} else {
-    $price = "<h4>" . $currency . $product->get_price() . "</h4>";
-}
-
-$units_sold = get_post_meta($woo_product, 'total_sales', true);
 
 while (have_posts()) {
     the_post();
@@ -49,6 +40,14 @@ while (have_posts()) {
     <div class="container single-course py-3">
         <div class="col-lg-8">
 	    <?php the_content() ?>
+    	<div class="ld-section-heading mt-3 mb-2">
+    	    <h2>Course Instructor</h2>
+    	</div>
+	    <?php
+	    get_template_part('template-parts/instructor', null, array(
+		'instructor_id' => $instructor)
+	    );
+	    ?>
         </div>
         <div class="col-lg-4"></div>
     </div>
