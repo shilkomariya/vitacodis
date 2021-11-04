@@ -46,7 +46,12 @@ while (have_posts()) {
 	    <?php } ?>
         </div>
     </div>
-    <div class="container single-post py-3" id="content" tabindex="-1">
+    <div class="container single-course py-3">
+        <div class="col-lg-8">
+	    <?php the_content() ?>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
     </div>
     <?php
 }

@@ -236,6 +236,8 @@ svg.icon{
 	.item{
 	    margin-bottom: 1rem;
 	    color: $title;
+	    display: flex;
+	    align-items: center;
 	}
     }
 }
@@ -262,19 +264,19 @@ svg.icon{
 	margin-bottom: .5rem;
     }
     .course-instructor{
-	margin-bottom: .7rem;
+	margin-bottom: 1rem;
 	color: $title;
     }
     .course-info{
 	justify-content: space-between;
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
     }
 }
 .course-info{
     color: $title;
     .icon{
 	margin-right: .55em;
-	font-size: rem(22px);
+	font-size: rem(20px);
     }
     .col-auto{
 	display: flex;
@@ -299,7 +301,7 @@ svg.icon{
 .course-instructor-avatar{
     border-radius: 50%;
     margin-right: .5rem;
-    width: rem(24px);
+    width: rem(20px);
 }
 .course-header{
     background-position: top center;
@@ -320,10 +322,71 @@ svg.icon{
     .course-instructor{
 	margin-bottom: 2rem;
     }
+    .course-instructor-avatar{
+	width: rem(24px);
+    }
     .course-price{
 	margin-bottom: 3rem;
 	h4{
 	    font-size: rem(32px);
 	}
     }
+}
+/*Course*/
+.ld-section-heading{
+    h2{
+	@include font-size(rem(20px));
+    }
+}
+.about-course{
+    margin-bottom: 4rem;
+    h2, h3, h4{
+	@include font-size(rem(18px));
+	margin-top: 1rem;
+    }
+}
+.learndash-wrapper {
+    .ld-item-list{
+	.ld-item-list-item {
+	    border-width: 0 0 1px 0;
+	    border-color: #D9DBE9;
+	    border-radius: 0;
+	    margin: 0;
+	    .ld-item-list-item-preview{
+		padding: 1.3rem 0;
+		.ld-item-name{
+		    display: block;
+		}
+		.ld-item-title{
+		    color: $title;
+		    font-size: 1rem;
+		    font-weight: 700;
+		    display: flex;
+		    align-items: center;
+		    justify-content: space-between;
+		}
+		.ld-item-components{
+		    margin: 0;
+		    color: $title;
+		    font-weight: 400;
+		    font-size: 1rem;
+
+		}
+		.ld-expand-button{
+		    margin: rem(0 22px 0 0)!important;
+		    .ld-icon{
+			color: $title;
+			background: none;
+		    }
+		}
+	    }
+	}
+    }
+    .learndash-wrapper .ld-table-list .ld-table-list-header {
+	background-color: #00a2e8;
+	color: #fff;
+	font-weight: 800;
+	padding: 20px  22px;
+    }
+
 }
