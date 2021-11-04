@@ -33,7 +33,7 @@ if ($args['instructor_id']) {
 		    <?php } ?>
     	    </ul>
 
-    	    <div class="content">
+    	    <div class="content read-more-content">
 		    <?php echo do_shortcode(wpautop($instructor->post_content)); ?>
     	    </div>
     	</div>

@@ -137,8 +137,10 @@ $has_lesson_quizzes = learndash_30_has_lesson_quizzes($course_id, $lessons);
     <div class="ld-section-heading">
 	<h2>About this Course</h2>
     </div>
-    <div class="about-course">
-	<?php echo get_the_content() ?>
+    <div class="about-course read-more-content">
+	<?php
+	echo do_shortcode(wpautop(get_the_content()));
+	?>
     </div>
 
     <?php

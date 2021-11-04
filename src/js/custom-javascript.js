@@ -29,4 +29,19 @@
 	heading.html([first_part, ' <strong>', last_word, '</strong>'].join(''));
     });
 
+    function collapsedContent() {
+	if ($('.read-more-content').length == 0)
+	    return;
+
+	$(".read-more-content").each(function (index) {
+	    $(this).find('p:first-child').append(' <a class="collapse-link collapsed" data-bs-toggle="collapse" href="#collapse' + index + '" role="button" aria-expanded="false" aria-controls="collapse' + index + '">Read More</a>');
+	    $(this).wrapInner('<div class="collapse" id="collapse' + index + '"></div>');
+	    $(this).find('.collapse p:first-child').prependTo(this);
+	});
+    }
+
+    jQuery(document).ready(function ($) {
+	collapsedContent();
+    });
+
 }(jQuery);

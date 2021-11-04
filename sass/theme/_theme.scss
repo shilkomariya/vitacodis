@@ -489,3 +489,9 @@ svg.icon{
 	}
     }
 }
+.collapse-link{
+    font-weight: 700;
+    &:not(.collapsed){
+	display: none;
+    }
+}
