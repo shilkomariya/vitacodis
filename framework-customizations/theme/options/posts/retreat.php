@@ -35,7 +35,14 @@ $options = array(
 		'population' => 'posts',
 		'source' => 'instructor',
 		'limit' => 99
-	    )
+	    ),
+	    'location_full' => array(
+		'label' => __('Location Tab', 'vitacodis'),
+		'type' => 'multi-select',
+		'population' => 'posts',
+		'source' => 'location',
+		'limit' => 1
+	    ),
 	),
 	'title' => __('Main data', 'vitacodis'),
 	'attr' => array('class' => 'custom-class', 'data-foo' => 'bar'),

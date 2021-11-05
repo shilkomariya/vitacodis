@@ -55,4 +55,29 @@ function register_vitacodis_post_type() {
 	'hierarchical' => false,
 	'query_var' => true
     ));
+    register_post_type('location', array(
+	'labels' => array(
+	    'name' => 'Locations',
+	    'singular_name' => 'Location',
+	    'menu_name' => 'Locations',
+	    'all_items' => 'All Locations',
+	    'add_new' => 'Add Location',
+	    'add_new_item' => 'Add New Location',
+	    'edit' => 'Edit',
+	    'edit_item' => 'Edit Location',
+	    'new_item' => 'New Location',
+	),
+	'description' => '',
+	'public' => false,
+	'publicly_queryable' => true,
+	'show_ui' => true,
+	'show_in_rest' => false,
+	'rest_base' => '',
+	'show_in_menu' => true,
+	'exclude_from_search' => true,
+	'capability_type' => 'post',
+	'supports' => array('title', 'editor', 'thumbnail'),
+	'hierarchical' => false,
+	'query_var' => true
+    ));
 }

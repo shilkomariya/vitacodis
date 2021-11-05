@@ -44,4 +44,32 @@
 	collapsedContent();
     });
 
+
+    var owl = $('.location-images');
+    owl.owlCarousel({
+	lazyLoad: true,
+	margin: 0,
+	nav: false,
+	dots: false,
+	loop: true,
+	autoplay: true,
+	smartSpeed: 1500,
+	autoplayTimeout: 1500,
+	slideTransition: 'linear',
+	responsive: {
+	    0: {
+		items: 3
+	    },
+	    576: {
+		items: 4
+	    },
+	    768: {
+		items: 5
+	    },
+	    992: {
+		items: 7
+	    }
+	}
+    });
+
 }(jQuery);

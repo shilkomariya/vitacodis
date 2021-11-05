@@ -14,6 +14,7 @@ if (has_post_thumbnail()) {
 }
 $instructors = fw_get_db_post_option(get_the_ID(), 'instructors');
 $program = fw_get_db_post_option(get_the_ID(), 'program_content');
+$location_tab = fw_get_db_post_option(get_the_ID(), 'location_full')[0];
 
 while (have_posts()) {
     the_post();
@@ -56,6 +57,11 @@ while (have_posts()) {
 			<a href="#" class="nav-link" id="program-tab" data-bs-toggle="tab" data-bs-target="#program" type="button" role="tab" aria-controls="program" aria-selected="false">Program</a>
 		    </li>
 		<?php } ?>
+		<?php if ($location_tab) { ?>
+		    <li class="nav-item" role="presentation">
+			<a href="#" class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location" type="button" role="tab" aria-controls="program" aria-selected="false">Location</a>
+		    </li>
+		<?php } ?>
     	</ul>
         </div>
     </div>
@@ -84,6 +90,18 @@ while (have_posts()) {
 			    <h2 class="h4 mb-2">Program</h2>
 			    <div class="program-content">
 				<?php echo $program; ?>
+			    </div>
+			</div>
+		    <?php } ?>
+		    <?php if ($location_tab) { ?>
+			<div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+			    <h2 class="h4 mb-2">Location</h2>
+			    <div class="location-content">
+				<?php
+				get_template_part('template-parts/location-tab', null, array(
+				    'location_id' => $location_tab)
+				);
+				?>
 			    </div>
 			</div>
 		    <?php } ?>
