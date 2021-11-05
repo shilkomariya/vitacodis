@@ -38,19 +38,36 @@ while (have_posts()) {
         </div>
     </div>
     <div class="container single-course py-3">
-        <div class="col-lg-8">
-	    <?php the_content() ?>
-    	<div class="ld-section-heading mt-3 mb-2">
-    	    <h2>Course Instructor</h2>
+        <div class="row">
+    	<div class="col-lg-8">
+		<?php the_content() ?>
+    	    <div class="ld-section-heading mt-3 mb-2"><h2>Course Instructor</h2></div>
+		<?php
+		get_template_part('template-parts/instructor', null, array(
+		    'instructor_id' => $instructor)
+		);
+		?>
+    	    <div class="ld-section-heading mt-3 mb-2"><h2>Featured Reviews from Trustpilot</h2></div>
     	</div>
-	    <?php
-	    get_template_part('template-parts/instructor', null, array(
-		'instructor_id' => $instructor)
-	    );
-	    ?>
+    	<div class="col-lg-4">
+    	    <div class="card card-course sticky-top">
+    		<a class="card-img-top" href="<?php echo fw_get_db_post_option(get_the_ID(), 'popup_video'); ?>"><?php echo get_the_post_thumbnail(get_the_ID(), 'medium-crop', array('class' => '')); ?></a>
+    		<div class="card-body">
+    		    <h4><?php the_title() ?></h4>
+    		    <ul class="features">
+			    <?php foreach (fw_get_db_post_option(get_the_ID(), 'features') as $value) { ?>
+				<li><svg class="icon"><use xlink:href="#check"></use></svg> <?php echo $value ?></li>
+			    <?php } ?>
+    		    </ul>
+			<?php if (sfwd_lms_has_access(get_the_ID())) { ?>
+			    <a class="btn btn-primary" href="<?php echo course_get_started_link(get_the_ID()); ?>" >Get Started</a>
+			<?php } else { ?>
+			    <a class="btn btn-primary" href="/checkout/?add-to-cart=<?php echo $woo_product; ?>" >Buy Now</a>
+			<?php } ?>
+    		</div>
+    	    </div>
+    	</div>
         </div>
-        <div class="col-lg-4"></div>
-    </div>
     </div>
     <?php
 }

@@ -96,6 +96,11 @@
 	    position: absolute;
 	    left: -13%;
 	    top: 0;
+	    height: 100%;
+	    .heateor_sss_sharing_container{
+		position: sticky;
+		top: 1rem;
+	    }
 	    .heateor_sss_sharing_ul{
 		display: flex;
 		flex-direction: column;
@@ -107,6 +112,11 @@
     }
     .course-header{
 	padding: rem(100px 0 50px)!important;
+    }
+    .card-course{
+	.card-body{
+	    padding: rem(32px);
+	}
     }
 }
 @include media-breakpoint-up(xl) {
