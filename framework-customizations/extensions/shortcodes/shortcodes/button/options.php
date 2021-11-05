@@ -37,7 +37,7 @@ $options = array(
 	'choices' => array(
 	    'btn btn-primary' => __('Primary', 'fw'),
 	    'btn btn-outline-primary' => __('Primary Outline', 'fw'),
-	    'btn-arrow' => __('Link', 'fw'),
+	    'btn-link' => __('Link', 'fw'),
 	)
     ),
     'size' => array(

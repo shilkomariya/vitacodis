@@ -43,5 +43,5 @@ $options = array(
 	),
 	'title' => __('Additional info', 'vitacodis'),
 	'attr' => array('class' => 'custom-class', 'data-foo' => 'bar'),
-    ),
+    )
 );
