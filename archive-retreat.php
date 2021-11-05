@@ -35,4 +35,5 @@ get_header();
     ?>
 </div>
 <?php
+get_template_part('template-parts/featured-courses');
 get_footer();

@@ -31,3 +31,4 @@ if (!defined('FW')) {
     wp_reset_postdata();
     ?>
 </div>
+<div class="mt-2 text-center"><a href="<?php echo get_post_type_archive_link('sfwd-courses'); ?>" class="btn btn-outline-primary">more courses</a></div>
