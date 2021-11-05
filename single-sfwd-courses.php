@@ -71,4 +71,7 @@ while (have_posts()) {
     </div>
     <?php
 }
+get_template_part('template-parts/more-courses', null, array(
+    'current_id' => get_the_ID())
+);
 get_footer();

@@ -76,6 +76,10 @@
     }
 }
 @include media-breakpoint-up(lg) {
+    .card-rows > .col{
+	flex: 0 0 auto;
+	width: 25%;
+    }
     #contact{
 	.contact-wrp{
 	    padding: rem(23px 100px 53px);
