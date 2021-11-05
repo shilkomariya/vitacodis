@@ -51,7 +51,7 @@ while (have_posts()) {
     	</div>
     	<div class="col-lg-4">
     	    <div class="card card-course sticky-top">
-    		<a class="card-img-top" href="<?php echo fw_get_db_post_option(get_the_ID(), 'popup_video'); ?>"><?php echo get_the_post_thumbnail(get_the_ID(), 'medium-crop', array('class' => '')); ?></a>
+    		<a class="card-img-top" data-fancybox href="<?php echo fw_get_db_post_option(get_the_ID(), 'popup_video'); ?>"><?php echo get_the_post_thumbnail(get_the_ID(), 'medium-crop', array('class' => '')); ?></a>
     		<div class="card-body">
     		    <h4><?php the_title() ?></h4>
     		    <ul class="features">

@@ -7,6 +7,13 @@
 	}
     }
 }
+@media(min-width:414px){
+    .instructor-info{
+	.spec{
+	    columns: 2;
+	}
+    }
+}
 @include media-breakpoint-up(sm) {
     .card{
 	.card-title{
@@ -113,11 +120,6 @@
     .course-header{
 	padding: rem(100px 0 50px)!important;
     }
-    .card-course{
-	.card-body{
-	    padding: rem(32px);
-	}
-    }
 }
 @include media-breakpoint-up(xl) {
     .h1, h1 {
@@ -125,6 +127,11 @@
     }
     .h2, h2 {
 	font-size: rem(48px);
+    }
+    .card-course{
+	.card-body{
+	    padding: rem(32px);
+	}
     }
 }
 @media(min-width: 1400px){
@@ -172,5 +179,17 @@
     }
     .card-rows > .col{
 	width: 100%;
+    }
+    .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-list-item-preview {
+	flex-direction: row!important;
+	align-items: center;
+	width: 100%;
+	.ld-item-details{
+	    margin-left: 0;
+	}
+	.ld-item-components{
+	    flex: 0 0 75px;
+	    padding-left: 10px;
+	}
     }
 }

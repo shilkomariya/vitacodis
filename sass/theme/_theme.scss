@@ -481,7 +481,6 @@ svg.icon{
     .spec{
 	list-style: none;
 	padding-left: 0;
-	columns: 2;
 	margin-bottom: 2rem;
 	li{
 	    margin-bottom: .5rem;
@@ -503,6 +502,7 @@ svg.icon{
     top: 1rem;
 }
 .card-course{
+    max-width:547px;
     .card-img-top{
 	display: block;
 	position: relative;
