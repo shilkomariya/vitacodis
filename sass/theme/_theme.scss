@@ -639,3 +639,17 @@ svg.icon{
 	}
     }
 }
+.location-info{
+    font-size: rem(13px);
+    color: $title;
+    .col-auto{
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+    }
+    .icon{
+	font-size: 1rem;
+	color: $acc1;
+	margin-right: .5rem;
+    }
+}

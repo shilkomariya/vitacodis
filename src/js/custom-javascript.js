@@ -48,13 +48,13 @@
     var owl = $('.location-images');
     owl.owlCarousel({
 	lazyLoad: true,
-	margin: 0,
+	margin: 15,
 	nav: false,
 	dots: false,
-	loop: true,
+	loop: false,
 	autoplay: true,
-	smartSpeed: 1500,
-	autoplayTimeout: 1500,
+	smartSpeed: 2000,
+	autoplayTimeout: 2000,
 	slideTransition: 'linear',
 	responsive: {
 	    0: {
@@ -67,7 +67,7 @@
 		items: 5
 	    },
 	    992: {
-		items: 7
+		items: 6
 	    }
 	}
     });
