@@ -15,7 +15,7 @@ defined('ABSPATH') || exit;
 	<div class="col-lg-6">
 	    <div class="text mb-1">
 		<h3 class="h3"><?php the_title() ?></h3>
-		<div class="data row mb-1">
+		<div class="retreat-data row mb-1">
 		    <div class="item col-auto">
 			<svg class="icon"><use xlink:href="#retreat-location"></use></svg>
 			<strong><?php echo fw_get_db_post_option(get_the_ID(), 'location') ?></strong>

@@ -35,6 +35,10 @@ $options = array(
 		'type' => 'text',
 		'label' => __('YouTube Link', 'vitacodis'),
 	    ),
+	    'site' => array(
+		'type' => 'text',
+		'label' => __('Site Link', 'vitacodis'),
+	    ),
 	    'specification' => array(
 		'type' => 'addable-option',
 		'label' => __('Specification', 'vitacodis'),

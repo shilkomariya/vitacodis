@@ -26,6 +26,7 @@ if ($args['instructor_id']) {
 		    <?php if (fw_get_db_post_option($id, 'linkedin') != "") { ?><li><a target="_blank" href="<?php echo fw_get_db_post_option($id, 'linkedin') ?>"><svg class="icon"><use xlink:href="#i-linkedin"></use></svg></a></li><?php } ?>
 		    <?php if (fw_get_db_post_option($id, 'twitter') != "") { ?><li><a target="_blank" href="<?php echo fw_get_db_post_option($id, 'twitter') ?>"><svg class="icon"><use xlink:href="#i-twitter"></use></svg></a></li><?php } ?>
 		    <?php if (fw_get_db_post_option($id, 'youtube') != "") { ?><li><a target="_blank" href="<?php echo fw_get_db_post_option($id, 'youtube') ?>"><svg class="icon"><use xlink:href="#i-youtube"></use></svg></a></li><?php } ?>
+		    <?php if (fw_get_db_post_option($id, 'site') != "") { ?><li><a target="_blank" href="<?php echo fw_get_db_post_option($id, 'site') ?>"><svg class="icon"><use xlink:href="#site"></use></svg></a></li><?php } ?>
     	    </ul>
     	    <ul class="spec">
 		    <?php foreach (fw_get_db_post_option($id, 'specification') as $value) { ?>
