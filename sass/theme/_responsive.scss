@@ -124,6 +124,11 @@
     .course-header{
 	padding: rem(100px 0 50px)!important;
     }
+    .retreat-tabs{
+	li{
+	    margin-right: rem(48px);
+	}
+    }
 }
 @include media-breakpoint-up(xl) {
     .h1, h1 {

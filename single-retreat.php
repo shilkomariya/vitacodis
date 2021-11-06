@@ -15,6 +15,7 @@ if (has_post_thumbnail()) {
 $instructors = fw_get_db_post_option(get_the_ID(), 'instructors');
 $program = fw_get_db_post_option(get_the_ID(), 'program_content');
 $location_tab = fw_get_db_post_option(get_the_ID(), 'location_full')[0];
+$additional = fw_get_db_post_option(get_the_ID(), 'additional_content');
 
 while (have_posts()) {
     the_post();
@@ -62,6 +63,11 @@ while (have_posts()) {
 			<a href="#" class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location" type="button" role="tab" aria-controls="program" aria-selected="false">Location</a>
 		    </li>
 		<?php } ?>
+		<?php if ($additional) { ?>
+		    <li class="nav-item" role="presentation">
+			<a href="#" class="nav-link" id="additional-tab" data-bs-toggle="tab" data-bs-target="#additional" type="button" role="tab" aria-controls="program" aria-selected="false"><?php echo fw_get_db_post_option(get_the_ID(), 'additional_heading') ?></a>
+		    </li>
+		<?php } ?>
     	</ul>
         </div>
     </div>
@@ -102,6 +108,14 @@ while (have_posts()) {
 				    'location_id' => $location_tab)
 				);
 				?>
+			    </div>
+			</div>
+		    <?php } ?>
+		    <?php if ($additional) { ?>
+			<div class="tab-pane fade" id="additional" role="tabpanel" aria-labelledby="additional-tab">
+			    <h2 class="h4 mb-2"><?php echo fw_get_db_post_option(get_the_ID(), 'additional_heading') ?></h2>
+			    <div class="additional-content">
+				<?php echo $additional; ?>
 			    </div>
 			</div>
 		    <?php } ?>

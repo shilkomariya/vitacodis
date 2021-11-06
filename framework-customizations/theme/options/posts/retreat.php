@@ -45,7 +45,6 @@ $options = array(
 	    ),
 	),
 	'title' => __('Main data', 'vitacodis'),
-	'attr' => array('class' => 'custom-class', 'data-foo' => 'bar'),
     ),
     'program' => array(
 	'type' => 'box',
@@ -56,6 +55,20 @@ $options = array(
 	    ),
 	),
 	'title' => __('Program', 'vitacodis'),
-	'attr' => array('class' => 'custom-class', 'data-foo' => 'bar'),
+    ),
+    'additional' => array(
+	'type' => 'box',
+	'options' => array(
+	    'additional_heading' => array(
+		'type' => 'text',
+		'value' => 'Additional',
+		'label' => __('Heading', 'vitacodis'),
+	    ),
+	    'additional_content' => array(
+		'type' => 'wp-editor',
+		'label' => __('Content', 'vitacodis'),
+	    ),
+	),
+	'title' => __('Additional', 'vitacodis'),
     ),
 );
