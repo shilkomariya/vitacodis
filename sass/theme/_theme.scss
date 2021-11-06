@@ -495,6 +495,26 @@ svg.icon{
 	}
     }
 }
+/*Trustpilot*/
+.tustpilot-logo{
+    max-width: rem(147px);
+}
+.course-review{
+    .author{
+	@include font-size(rem(17px));
+	margin-bottom: 0;
+    }
+    .stars{
+	margin-bottom: 1rem;
+	font-size: rem(24px);
+	color: #00B67A;
+	&.four{
+	    .icon:last-child{
+		color: $icons;
+	    }
+	}
+    }
+}
 .collapse-link{
     font-weight: 700;
     &:not(.collapsed){

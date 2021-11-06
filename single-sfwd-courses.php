@@ -48,6 +48,9 @@ while (have_posts()) {
 		);
 		?>
     	    <div class="ld-section-heading mt-3 mb-2"><h2>Featured Reviews from Trustpilot</h2></div>
+		<?php
+		get_template_part('template-parts/course-reviews');
+		?>
     	</div>
     	<div class="col-lg-4">
     	    <div class="card card-course sticky-top">

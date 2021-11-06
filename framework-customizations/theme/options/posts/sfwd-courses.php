@@ -40,6 +40,34 @@ $options = array(
 		'type' => 'text',
 		'label' => __('Popup Video Link', 'vitacodis'),
 	    ),
+	    'reviews' => array(
+		'type' => 'addable-popup',
+		'label' => __('Reviews', 'vitacodis'),
+		'template' => '{{- author }}',
+		'popup-title' => null,
+		'size' => 'medium',
+		'limit' => 0,
+		'add-button-text' => __('Add', 'vitacodis'),
+		'sortable' => true,
+		'popup-options' => array(
+		    'author' => array(
+			'type' => 'text',
+			'label' => __('Author', 'fw'),
+		    ),
+		    'quote' => array(
+			'type' => 'wp-editor',
+			'label' => __('Quote', 'fw'),
+		    ),
+		    'stars' => array(
+			'type' => 'select',
+			'label' => __('Stars', 'fw'),
+			'choices' => array(
+			    '' => '5 stars',
+			    'four' => '4 stars'
+			)
+		    ),
+		),
+	    ),
 	),
 	'title' => __('Additional info', 'vitacodis'),
 	'attr' => array('class' => 'custom-class', 'data-foo' => 'bar'),
