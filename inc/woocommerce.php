@@ -28,6 +28,8 @@ if (!function_exists('understrap_woocommerce_support')) {
 
 }
 
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+
 // First unhook the WooCommerce content wrappers.
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
@@ -44,9 +46,9 @@ if (!function_exists('understrap_woocommerce_wrapper_start')) {
     function understrap_woocommerce_wrapper_start() {
 	$container = get_theme_mod('understrap_container_type');
 	echo '<div class="wrapper" id="woocommerce-wrapper">';
-	echo '<div class="container" id="content" tabindex="-1">';
+	echo '<div class="container pb-3" id="content" tabindex="-1">';
 	echo '<div class="row">';
-	echo '<main class="site-main col-lg-9" id="main">';
+	echo '<main class="col-md-9 main" id="main">';
     }
 
 }
@@ -183,29 +185,13 @@ if (!function_exists('understrap_quantity_input_classes')) {
     }
 
 }
+/* Category page */
 
-add_filter('request', function( $vars ) {
-    global $wpdb;
-    if (!empty($vars['pagename']) || !empty($vars['category_name']) || !empty($vars['name']) || !empty($vars['attachment'])) {
-	$slug = !empty($vars['pagename']) ? $vars['pagename'] : (!empty($vars['name']) ? $vars['name'] : (!empty($vars['category_name']) ? $vars['category_name'] : $vars['attachment'] ) );
-	$exists = $wpdb->get_var($wpdb->prepare("SELECT t.term_id FROM $wpdb->terms t LEFT JOIN $wpdb->term_taxonomy tt ON tt.term_id = t.term_id WHERE tt.taxonomy = 'product_cat' AND t.slug = %s", array($slug)));
-	if ($exists) {
-	    $old_vars = $vars;
-	    $vars = array('product_cat' => $slug);
-	    if (!empty($old_vars['paged']) || !empty($old_vars['page']))
-		$vars['paged'] = !empty($old_vars['paged']) ? $old_vars['paged'] : $old_vars['page'];
-	    if (!empty($old_vars['orderby']))
-		$vars['orderby'] = $old_vars['orderby'];
-	    if (!empty($old_vars['order']))
-		$vars['order'] = $old_vars['order'];
-	}
-    }
-    return $vars;
-});
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 2);
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20, 2);
+remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30, 2);
 
-add_filter('term_link', 'term_link_filter', 10, 3);
 
-function term_link_filter($url, $term, $taxonomy) {
-    $url = str_replace("/./", "/", $url);
-    return $url;
-}
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5, 2);
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10, 2);
+remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10, 2);

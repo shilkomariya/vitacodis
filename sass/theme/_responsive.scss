@@ -86,18 +86,16 @@
 	    border-widt: rem(32px);
 	}
     }
-    .blog{
-	.main{
-	    width: 77%;
-	}
-	.aside{
-	    width: 23%;
-	    padding-left: 2rem;
-	}
-	.pagination{
-	    margin-top: 2rem;
-	    margin-bottom: 4rem;
-	}
+    .main{
+	width: 77%;
+    }
+    .aside{
+	width: 23%;
+	padding-left: 2rem;
+    }
+    .pagination{
+	margin-top: 2rem;
+	margin-bottom: 4rem;
     }
     .single-post{
 	.entry-content{

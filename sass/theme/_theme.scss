@@ -651,3 +651,22 @@ svg.icon{
 	margin-right: .5rem;
     }
 }
+/*products*/
+.woocommerce-products-header{
+    .woocommerce-products-header__title{
+
+    }
+}
+.products{
+    .product{
+	margin-bottom: 1.5rem;
+	.card{
+	    background: #FFFFFF;
+	    box-shadow: 0px rem(15px 30px) rgba(0, 0, 0, 0.1);
+	    border-radius: 4px;
+	}
+	.woocommerce-loop-product__title{
+	    font-size: 1rem;
+	}
+    }
+}
