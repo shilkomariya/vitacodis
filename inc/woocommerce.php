@@ -148,6 +148,11 @@ if (!function_exists('understrap_wc_form_field_args')) {
 
 }
 
+add_filter('woocommerce_dropdown_variation_attribute_options_args', static function( $args ) {
+    $args['class'] = 'form-select mb-1';
+    return $args;
+}, 2);
+
 if (!is_admin() && !function_exists('wc_review_ratings_enabled')) {
 
     /**
@@ -198,3 +203,10 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5, 2);
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10, 2);
 remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10, 2);
+
+
+add_filter('woocommerce_product_single_add_to_cart_text', 'vitacodis_add_to_cart_text');
+
+function vitacodis_add_to_cart_text() {
+    return __('Book now', 'vitacodis');
+}
