@@ -82,4 +82,3 @@ if (fw_get_db_post_option(get_the_ID(), 'instructor')) {
 	</div>
     </div>
 </div>
-

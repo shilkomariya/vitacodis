@@ -698,3 +698,42 @@ svg.icon{
 	display: none;
     }
 }
+.select2-container--default{
+    .select2-selection--single{
+	font-family: $input-font-family;
+	@include font-size($input-font-size);
+	border: $input-border-width solid $input-border-color;
+	height: auto;
+	.select2-selection__rendered{
+	    padding: $input-padding-y $input-padding-x;
+	}
+	.select2-selection__arrow{
+	    height: rem(48px);
+	}
+    }
+    .select2-dropdown{
+	border-color: $input-border-color;
+    }
+    .select2-search--dropdown .select2-search__field {
+	border-color: $input-border-color;
+    }
+}
+.woocommerce{
+    label{
+	@extend .form-label;
+    }
+    h3{
+	@include font-size(rem(24px));
+    }
+}
+.shop_table{
+    @extend .table;
+}
+.woocommerce-checkout-review-order-table{
+    thead{
+	display: none!important;
+    }
+    .product-quantity{
+	display: none;
+    }
+}
