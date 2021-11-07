@@ -44,11 +44,12 @@ if (!function_exists('understrap_woocommerce_wrapper_start')) {
      * Display the theme specific start of the page wrapper.
      */
     function understrap_woocommerce_wrapper_start() {
-	$container = get_theme_mod('understrap_container_type');
 	echo '<div class="wrapper" id="woocommerce-wrapper">';
 	echo '<div class="container pb-3" id="content" tabindex="-1">';
-	echo '<div class="row">';
-	echo '<main class="col-md-9 main" id="main">';
+	if (is_product_category() == 82) {
+	    echo '<div class="row">';
+	    echo '<main class="col-md-9 main" id="main">';
+	}
     }
 
 }
@@ -59,9 +60,11 @@ if (!function_exists('understrap_woocommerce_wrapper_end')) {
      * Display the theme specific end of the page wrapper.
      */
     function understrap_woocommerce_wrapper_end() {
-	echo '</main><!-- #main -->';
-	get_template_part('template-parts/shop-sidebar');
-	echo '</div><!-- .row -->';
+	if (is_product_category() == 82) {
+	    echo '</main><!-- #main -->';
+	    get_template_part('template-parts/shop-sidebar');
+	    echo '</div><!-- .row -->';
+	}
 	echo '</div><!-- Container end -->';
 	echo '</div><!-- Wrapper end -->';
     }

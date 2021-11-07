@@ -46,6 +46,10 @@ $options = array(
 		'add-button-text' => __('Add', 'vitacodis'),
 		'sortable' => true
 	    ),
+	    'rate' => array(
+		'type' => 'text',
+		'label' => __('Rate', 'vitacodis'),
+	    ),
 	),
 	'title' => __('Additional info', 'vitacodis'),
 	'attr' => array('class' => 'custom-class', 'data-foo' => 'bar'),

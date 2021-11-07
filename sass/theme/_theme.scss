@@ -660,13 +660,22 @@ svg.icon{
 .products{
     .product{
 	margin-bottom: 1.5rem;
+	a{
+	    color: $main-text;
+	}
 	.card{
 	    background: #FFFFFF;
 	    box-shadow: 0px rem(15px 30px) rgba(0, 0, 0, 0.1);
 	    border-radius: 4px;
+	    overflow: hidden;
+	    height: 100%;
 	}
 	.woocommerce-loop-product__title{
 	    font-size: 1rem;
+	    margin-bottom: .5rem;
+	}
+	.card-body{
+	    font-size: rem(13px);
 	}
     }
 }

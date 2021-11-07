@@ -22,8 +22,12 @@ global $product;
 if (empty($product) || !$product->is_visible()) {
     return;
 }
+$instructor_id = false;
+if (fw_get_db_post_option(get_the_ID(), 'instructor')) {
+    $instructor_id = fw_get_db_post_option(get_the_ID(), 'instructor')[0];
+}
 ?>
-<div <?php wc_product_class('col-6 col-md-4 col-lg-3', $product); ?>>
+<div <?php wc_product_class('col-6 col-md-4 col-xl-3', $product); ?>>
     <div class="card">
 	<?php
 	/**
@@ -43,20 +47,28 @@ if (empty($product) || !$product->is_visible()) {
 	?>
 	<div class="card-body">
 	    <?php
-	    /**
-	     * Hook: woocommerce_shop_loop_item_title.
-	     *
-	     * @hooked woocommerce_template_loop_product_title - 10
-	     */
-	    do_action('woocommerce_shop_loop_item_title');
+	    if ($instructor_id) {
+		?>
+    	    <h2 class="woocommerce-loop-product__title"><?php echo get_the_title($instructor_id) ?></h2>
+    	    <div><?php echo fw_get_db_post_option($instructor_id, 'description') ?></div>
+    	    <div><?php echo fw_get_db_post_option($instructor_id, 'location') ?></div>
+		<?php
+	    } else {
+		/**
+		 * Hook: woocommerce_shop_loop_item_title.
+		 *
+		 * @hooked woocommerce_template_loop_product_title - 10
+		 */
+		do_action('woocommerce_shop_loop_item_title');
 
-	    /**
-	     * Hook: woocommerce_after_shop_loop_item_title.
-	     *
-	     * @hooked woocommerce_template_loop_rating - 5
-	     * @hooked woocommerce_template_loop_price - 10
-	     */
-	    do_action('woocommerce_after_shop_loop_item_title');
+		/**
+		 * Hook: woocommerce_after_shop_loop_item_title.
+		 *
+		 * @hooked woocommerce_template_loop_rating - 5
+		 * @hooked woocommerce_template_loop_price - 10
+		 */
+		do_action('woocommerce_after_shop_loop_item_title');
+	    }
 	    ?>
 	</div>
 	<?php
