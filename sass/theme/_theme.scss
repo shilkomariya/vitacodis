@@ -679,3 +679,13 @@ svg.icon{
 	}
     }
 }
+.single-consulting{
+}
+.card-consulting{
+    h2{
+	@include font-size(rem(24px));
+    }
+    strong{
+	color: $acc2;
+    }
+}

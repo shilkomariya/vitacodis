@@ -127,6 +127,11 @@
 	    margin-right: rem(48px);
 	}
     }
+    .card-consulting{
+	.card-body{
+	    padding: rem(29px);
+	}
+    }
 }
 @include media-breakpoint-up(xl) {
     .h1, h1 {
