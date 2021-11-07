@@ -728,6 +728,14 @@ svg.icon{
 }
 .shop_table{
     @extend .table;
+    font-weight: 700;
+    color: $title;
+    td:first-child{
+	padding-left: 0;
+    }
+    td:last-child{
+	padding-right: 0;
+    }
 }
 .woocommerce-checkout-review-order-table{
     thead{
@@ -735,5 +743,29 @@ svg.icon{
     }
     .product-quantity{
 	display: none;
+    }
+    .cart-subtotal{
+	display: none;
+    }
+    .order-total{
+	th{
+	    text-align: right;
+	}
+    }
+    .product-total{
+	text-align: right;
+    }
+}
+.wc_payment_methods{
+    list-style: none;
+    padding-left: 0;
+    .wc_payment_method{
+	border: 1px solid #D9DBE9;
+	border-radius: 4px;
+	margin-bottom: 1rem;
+	padding: rem(5px 15px);
+    }
+    .input-radio{
+	margin-right: .5rem;
     }
 }

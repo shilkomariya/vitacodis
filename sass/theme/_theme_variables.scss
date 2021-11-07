@@ -198,15 +198,9 @@ $headings-color:  $gray-900;
 
 
 // Tables
-//
-// Customizes the `.table` component with basic values, each used across all table variations.
-
-// scss-docs-start table-variables
-// scss-docs-end table-variables
-
-// scss-docs-start table-loop
-// scss-docs-end table-loop
-
+$table-border-col: #D9DBE9;
+$table-group-separator-color: #D9DBE9;
+$table-cell-padding-y: rem(12.5px);
 
 // Buttons + Forms
 //
