@@ -210,3 +210,9 @@ add_filter('woocommerce_product_single_add_to_cart_text', 'vitacodis_add_to_cart
 function vitacodis_add_to_cart_text() {
     return __('Book now', 'vitacodis');
 }
+
+add_filter('woocommerce_add_to_cart_redirect', 'bbloomer_redirect_checkout_add_cart');
+
+function bbloomer_redirect_checkout_add_cart() {
+    return wc_get_checkout_url();
+}

@@ -737,6 +737,9 @@ svg.icon{
 	padding-right: 0;
     }
 }
+.woocommerce-error{
+    list-style: none;
+}
 .woocommerce-checkout-review-order-table{
     thead{
 	display: none!important;
@@ -768,4 +771,64 @@ svg.icon{
     .input-radio{
 	margin-right: .5rem;
     }
+}
+/*Login*/
+.input{
+    @extend .form-control;
+}
+.button{
+    @extend .btn;
+    @extend .btn-primary;
+}
+.nsl-container-buttons{
+    .nsl-button{
+	border-radius: 50%!important;
+    }
+}
+#loginform{
+    display: flex;
+    flex-wrap: wrap;
+    > *{
+	flex: 0 0 auto;
+	width: 100%;
+    }
+    .login-username,
+    .login-password{
+	label{
+	    margin-bottom: $form-label-margin-bottom;
+	    @include font-size($form-label-font-size);
+	    font-style: $form-label-font-style;
+	    font-weight: $form-label-font-weight;
+	    color: $form-label-color;
+	}
+    }
+    .login-remember,
+    .lost-password{
+	width: 50%;
+    }
+    .login-submit{
+	width: 40%;
+    }
+    #nsl-custom-login-form-1{
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: rem(48px);
+	&:before{
+	    content: "or login with";
+	    color: $icons;
+	    font-size: rem(13px);
+	}
+	.nsl-container{
+	    padding-top: 0;
+	}
+    }
+    .login-remember{
+	text-align: right;
+    }
+}
+.sing-up-text{
+    font-weight: 700;
+    color: $title;
 }

@@ -1,16 +1,98 @@
-<div class="row">
-    <div class="col-sm-6">
-	<div class="mb-1"><label class="form-label">First Name</label>[text* first-namee class:form-control]</div>
-	<div class="mb-1"><label class="form-label">Surname</label>[text* surname class:form-control]</div>
-	<div class="mb-1"><label class="form-label">Email Address</label>[email* email class:form-control]</div>
-	<div class="mb-1"><label class="form-label">Country</label>[text* country class:form-control]</div>
+<p><b>Banking with Hamilton Reserve Bank (HRB) is simple:</b>&nbsp;The Bank does not accept cash or checks. Transactions are conducted via fast wire transfers. Online banking is available 24/7. Incoming and outgoing wires are processed within hours on the same day. The Bank serves customers in more than 150 countries around the world in multiple currencies:&nbsp;<b>USD, EUR, GBP, CHF, AUD, CAD, AED, JPY, SGD, HKD</b>.<br>The Bank’s wire transfer details are as follows:</p>
+<h5 class="text-red font-weight-bold">U.S. DOLLAR TRANSFERS:</h5>
+<h6 class="fw-special-title font-weight-bold">INTERMEDIARY BANK / CORRESPONDENT BANK* <span class="font-weight-normal">(SWIFT Field 56)</span></h6>
+<div class="info-list mb-1">
+    <div class="row">
+	<div class="col-12 name">Bank Name:</div>
+	<div class="col-12 info">Federal Reserve Bank of New York</div>
     </div>
-    <div class="col-sm-6">
-	<div class="mb-1"><label class="form-label">Phone Number</label>[phonetext* phonetext-794 class:form-control]</div>
-	<div class="mb-1"><label class="form-label">Number of Days</label>[select* NumberofDays class:form-select "5 days" "7 days"]</div>
-	<div class="mb-1"><label class="form-label">Number of Participants</label>[select* NumberofParticipants class:form-select "1" "2" "3" "4" ]</div>
-	<div class="mb-1"><label class="form-label">Number of Rooms</label>[select* NumberofRooms class:form-select "1" "2" "3" "4"]</div>
+    <div class="row">
+	<div class="col-12 name">SWIFT Code:</div>
+	<div class="col-12 info">FRNYUS33</div>
+    </div>
+    <div class="row">
+	<div class="col-12 name">Bank Address:</div>
+	<div class="col-12 info">33 Liberty Street, Floor 7, New York, NY, USA</div>
     </div>
 </div>
-<div class="mb-2"><label class="form-label">Your Comments and Requirements</label>[textarea* message x4 class:form-control]</div>
-<div class="text-center">[submit class:btn class:btn-primary "Enquire Now"]</div>
+<div class="text-block ">
+
+    <em>*If your wire sender bank cannot directly transact with the U.S. Federal Reserve, it can enter its USD correspondent bank’s SWIFT code into SWIFT Field 56A as the intermediary bank.</em>
+
+</div>
+<h6 class="fw-special-title font-weight-bold">BENEFICIARY BANK <span class="font-weight-normal">(SWIFT Field 57)</span></h6>
+<div class="info-list mb-1">
+    <div class="row">
+	<div class="col-12 name">Bank Name:</div>
+	<div class="col-12 info">The Reserve Trust Company</div>
+    </div>
+    <div class="row">
+	<div class="col-12 name">Routing #/ABA #:</div>
+	<div class="col-12 info">102007558</div>
+    </div>
+    <div class="row">
+	<div class="col-12 name">Address:</div>
+	<div class="col-12 info">5600 South Quebec Street,
+	    Greenwood Village, CO 81111, USA</div>
+    </div>
+</div>
+<h6 class="fw-special-title font-weight-bold">BENEFICIARY’S NAME, ADDRESS, REQUIRED MESSAGE LINE <span class="font-weight-normal">(SWIFT Field 59)</span></h6>
+<div class="info-list mb-1">
+    <div class="row">
+	<div class="col-12 name">Beneficiary Name:</div>
+	<div class="col-12 info">Hamilton Reserve Bank</div>
+    </div>
+    <div class="row">
+	<div class="col-12 name">Account Number:</div>
+	<div class="col-12 info">4500 4500207885 06</div>
+    </div>
+    <div class="row">
+	<div class="col-12 name">Address:</div>
+	<div class="col-12 info">Hamilton Reserve Bank Plaza, Jessups Estate, Nevis, Saint Kitts &amp; Nevis</div>
+    </div>
+</div>
+<div class="text-block ">
+
+    Fill in the Message Line (Required, SWIFT Field 70):
+
+</div>
+<div class="info-list mb-1">
+    <div class="row">
+	<div class="col-12 name">For final credit to:</div>
+	<div class="col-12 info">(HRB Customer Name)
+	    (HRB Customer Account #)</div>
+    </div>
+</div>
+<h5 class="fw-special-title text-red font-weight-bold">ALL OTHER CURRENCIES:</h5>
+<div class="info-list mb-1">
+    <div class="row">
+	<div class="col-12 name">Bank Name:</div>
+	<div class="col-12 info">Hamilton Reserve Bank</div>
+    </div>
+    <div class="row">
+	<div class="col-12 name">SWIFT Code:</div>
+	<div class="col-12 info">NIBTKNNE</div>
+    </div>
+    <div class="row">
+	<div class="col-12 name">Bank Address:</div>
+	<div class="col-12 info">Hamilton Reserve Bank Plaza, Jessups Estate, Nevis, Saint Kitts &amp; Nevis</div>
+    </div>
+    <div class="row">
+	<div class="col-12 name">Customer Name:</div>
+	<div class="col-12 info">(Your HRB Account Name)</div>
+    </div>
+    <div class="row">
+	<div class="col-12 name">Customer Account:</div>
+	<div class="col-12 info">(Your HRB Account #)</div>
+    </div>
+</div>
+<h6 class="fw-special-title font-weight-bold">Making A Deposit:</h6>
+<div class="text-block mb-1">
+    <em>The Bank accepts incoming wires from around the world in more than 150 countries. In general, incoming wires take less than 2 business days to arrive at the Bank.</em>
+</div>
+<h6 class="fw-special-title font-weight-bold">Making A Withdrawal:</h6>
+<div class="text-block mb-2">
+
+    <em>Outgoing wires, including third-party wire payments, can be self-directed online by customers through the Bank’s secure <a href="https://app.hrbank.com/apps/OnlineBanking/">online portal</a>. Bank officers may contact a customer for identity verification purposes. Outgoing wires can be processed within an hour of customer request.</em>
+
+</div>
