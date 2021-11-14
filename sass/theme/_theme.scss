@@ -62,6 +62,9 @@ svg.icon{
 .bg-gray{
     background-color: $bg;
 }
+.bg-green{
+    background-color: $acc1;
+}
 .round-image{
     max-width: rem(480px);
 }
@@ -272,6 +275,14 @@ svg.icon{
     .course-info{
 	justify-content: space-between;
 	margin-bottom: 1.5rem;
+    }
+    a.card-img-top{
+	position: relative;
+	.badge{
+	    position: absolute;
+	    top: rem(20px);
+	    left: rem(20px);
+	}
     }
 }
 .course-info{
@@ -850,5 +861,15 @@ svg.icon{
     }
     p{
 	color: $icons;
+    }
+}
+.bp-user:not(.info){
+    #youzer{
+	.yz-right-sidebar-layout{
+	    grid-template-columns: 100% 100%;
+	}
+	.yz-sidebar-column{
+	    display: none!important;
+	}
     }
 }

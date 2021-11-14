@@ -146,8 +146,9 @@ body.woocommerce-add-payment-method .youzer .woocommerce-MyAccount-content{
 body.woocommerce-add-payment-method div#content div.woocommerce{
     background: #eaeaea !important;
 }
-body.achievements div.certificate-list {
-    padding-left: 20px;
+body.achievements div.certificate-list a {
+    margin-bottom: 1rem;
+    display: inline-block;
 }
 body.discussions #bbpress-forums a.new-discussion, form#new-post .button.submit{
     border-radius: calc( var(--ldx-grid-item-border-radius) / 2 );
