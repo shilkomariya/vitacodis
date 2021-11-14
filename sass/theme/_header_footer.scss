@@ -16,6 +16,22 @@
     .nav-link:hover{
 	border-color: $acc2;
     }
+    .dropdown:hover{
+	.dropdown-menu{
+	    display: block;
+	}
+    }
+    .logged-in-hide{
+	.logged-in &{
+	    display: none;
+	}
+    }
+    .logged-in-show{
+	display: none;
+	.logged-in &{
+	    display: list-item;
+	}
+    }
 }
 .navbar-toggler{
     border:0 none;
@@ -160,7 +176,7 @@
 }
 @include media-breakpoint-up(md) {
     .site-header{
-	.menu-item+.menu-item{
+	#main-menu > .menu-item+.menu-item{
 	    margin-left: 1rem;
 	}
 	.navbar {
@@ -176,7 +192,7 @@
 }
 @include media-breakpoint-up(lg) {
     .site-header{
-	.menu-item+.menu-item{
+	#main-menu > .menu-item+.menu-item{
 	    margin-left: vw(50px);
 	}
     }
