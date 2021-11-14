@@ -739,6 +739,8 @@ svg.icon{
 }
 .woocommerce-error{
     list-style: none;
+    padding-left: 0;
+    color: $acc3;
 }
 .woocommerce-checkout-review-order-table{
     thead{
@@ -804,5 +806,11 @@ svg.icon{
     }
     .woocommerce-privacy-policy-text{
 	font-size: rem(13px);
+    }
+    .back-to-link{
+	font-size: rem(13px);
+	font-weight: 700;
+	color: $acc3;
+	text-transform: uppercase;
     }
 }

@@ -520,9 +520,3 @@ function ld_topic_video_duration($id) {
 	echo '</span>';
     }
 }
-
-add_action('login_form_middle', 'add_lost_password_link', 10, 2);
-
-function add_lost_password_link() {
-    return '<p class="lost-password"><a href="/wp-login.php?action=lostpassword">Forgot password?</a></p>';
-}

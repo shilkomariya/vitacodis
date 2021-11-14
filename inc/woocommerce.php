@@ -266,3 +266,17 @@ function bbloomer_save_name_fields($customer_id) {
 	update_user_meta($customer_id, 'last_name', sanitize_text_field($_POST['billing_last_name']));
     }
 }
+
+add_filter('woocommerce_login_redirect', 'login_redirect');
+
+function login_redirect($redirect_to) {
+    return home_url() . '/members/me'
+	    . '/';
+}
+
+add_action('wp_logout', 'logout_redirect');
+
+function logout_redirect() {
+    wp_redirect(home_url());
+    exit;
+}
