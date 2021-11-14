@@ -72,4 +72,9 @@
 	}
     });
 
+    $('#ShowSignUp').click(function () {
+	$('.login-wrp').hide('slow');
+	$('.register-wrp').show('slow');
+    });
+
 }(jQuery);
