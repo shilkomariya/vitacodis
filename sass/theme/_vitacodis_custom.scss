@@ -169,6 +169,8 @@ body div.yz-tools-full-btns i:before{
     }
     .yz-page-head h1{
 	@include font-size(rem(24px));
+	line-height: 1.3;
+	margin-bottom: 1.5rem;
     }
     .yz-page-main-content{
 	max-width: 100%;
@@ -180,16 +182,12 @@ body div.yz-tools-full-btns i:before{
     background: none;
 }
 .yz-profile-sidebar.yz-right-sidebar .yz-custom_widgets .yz-widget-title{
-    padding: 0px;
-    margin: 0px;
-    text-align: center;
-    line-height: 24px;
-    //font-size: 28px;
-    font-size: 25px;
-    background: none !important;
-    color: #0D9FEC;
-    margin-bottom: 20px;
-    font-weight: 900;
+    @include font-size(rem(24px));
+    line-height: 1.3;
+    padding: 0;
+    color: $title;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
 }
 .yz-profile-sidebar.yz-right-sidebar .yz-custom_widgets .yz-widget-title i{
     display: none;
@@ -404,27 +402,24 @@ body .youzer .editfield .field-visibility-settings-notoggle{
     display: none;
 }
 .bp-user.info .yz-infos-content {
-    padding: 15px 20px;
-}
-
-.yz-infos-content .yz-info-label {
-    color: #555;
-    font-size: 17px !important;
-    line-height: 28px;
-    min-width: 250px;
-    text-transform: capitalize;
-}
-.yz-infos-content .yz-info-data{
-    color: #555;
-    font-weight: 600;
-    font-size: 17px !important;
-    width: calc(100% - 280px);
-}
-.yz-infos-content .yz-info-data a,
-.yz-infos-content .yz-info-data p{
-    font-size: 17px !important;
-    line-height: 28px;
-    color: #555;
+    padding: 0;
+    .yz-info-item{
+	padding-bottom: 1.5rem;
+    }
+    .yz-info-data,
+    .yz-info-label{
+	color: $title;
+	font-size: 1rem;
+	font-weight: 700;
+    }
+    .yz-info-data{
+	*{
+	    font-size: 1rem;
+	}
+	a{
+	    color: $title;
+	}
+    }
 }
 #yz-profile-header .yz-tools-full-btns{
     opacity: 1 !important;
@@ -560,6 +555,12 @@ body .yz-save-options{
     max-width: 380px !important;
     padding-left: 30px;
 }
+.yz-custom-widget-box a.btn{
+    font-weight: $btn-font-weight;
+    color: #fff;
+}
+
+
 .bbpress .yz-profile-header.yz-header-overlay .yz-header-cover:before,
 .bbpress .yz-hdr-v3 .yz-inner-content:before,
 .woocommerce .yz-profile-header.yz-header-overlay .yz-header-cover:before,
@@ -864,6 +865,7 @@ ul.yz-profile-navmenu li.mobileonly{
 .yz-infos-content .field_wellbeing-interests .yz-info-data a{
     display: inline-block;
     width: 50%;
+    margin-bottom: 1rem;
 }
 .yz-infos-content .field_wellbeing-interests .yz-info-data p{
     font-size: 0px !important;
@@ -884,6 +886,22 @@ body.bp-user:not(.my-account) ul.yz-profile-navmenu li:last-child{
 @media screen and (min-width: 769px) {
     .yz-hdr-v1 .yz-cover-content .yz-head-content {
 	top: 35%;
+    }
+    .bp-user.info .yz-infos-content {
+	.yz-info-item{
+	    display: flex;
+	    flex-wrap: wrap;
+	    width: 100%;
+	}
+	.yz-info-label{
+	    flex: 0 0 auto;
+	    width: 35%;
+	}
+	.yz-info-data{
+	    flex: 0 0 auto;
+	    width: 65%;
+	    margin-left: 0;
+	}
     }
 }
 @media screen and (min-width: 1024px) and (max-width: 1200px){
