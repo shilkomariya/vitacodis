@@ -1,0 +1,261 @@
+@media screen and (max-width: 767px) {
+    body.buddypress.help-support div.yz-custom-tab .elementor-section-wrap >section.elementor-element {
+	padding-left: 6px !important;
+	padding-right: 6px !important;
+	padding-top: 20px;
+    }
+    body.single-topic div.wp-editor-container,
+    body.single-topic fieldset.bbp-form {
+	background: #F6F6F6 !important;
+    }
+    body.discussions div.yz-custom-tab a.new-discussion {
+	max-width: 292px !important;
+	right: 5px !important;
+	width: 100%;
+    }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 1) {
+    body.profile-edit div#yz_field_9 label {
+	margin-right: 5px;
+    }
+    body.profile-edit .youzer .editfield .input-options.datebox-selects :nth-child(6) {
+	width: 132px !important;
+    }
+    body.profile-edit .youzer .editfield .input-options.datebox-selects :nth-child(3),
+    body.profile-edit .youzer .editfield .input-options.datebox-selects :nth-child(9){
+	width: 88px !important;
+    }
+    body.profile-edit div#yz_field_9 .input-options.datebox-selects .nice-select, .youzer .editfield .input-options.datebox-selects select {
+	margin-right: 5px;
+    }
+    body.bp-user div.yz-header-cover div.yz-inner-content{
+	padding-left: 18px;
+    }
+    #youzer .editfield input:not([type=radio]):not([type=checkbox]):not(.ed_button){
+	max-width: 450px !important;
+    }
+}
+body.woocommerce-add-payment-method form#add_payment_method {
+    background-image: url(/wp-content/uploads/Secure-icon.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: auto 45px;
+}
+form#yz-notifications-settings div.yz-checkbox-field label.option-title,
+form#yz-account-privacy div.yz-checkbox-field label.option-title{
+    font-weight: 400 !important;
+    color: #000 !important;
+    font-family: sans-serif !important;
+}
+body.account-privacy div.yz-accont-delete-form{
+    display: none;
+    background: #eaeaea;
+    max-width: 470px;
+    margin-left: 45px;
+    margin-top: 30px;
+    padding: 10px 10px;
+    padding-bottom: 20px;
+}
+body.account-privacy form#yz-account-privacy{
+    position: relative;
+}
+body.account-privacy div.yz-account-delete {
+    position: absolute;
+    top: 0;
+    right: 35%;
+    margin-top: 20px;
+}
+body.account-privacy div.yz-account-delete a.account-delete{
+    font-size: 16px;
+    color: gray;
+    text-decoration: underline;
+    font-weight: 600;
+}
+body.account-privacy div.yz-accont-delete-form h2{
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.3 !important;
+}
+body.account-privacy div.yz-accont-delete-form p.yz-first{
+    color: gray;
+    font-size: 14px;
+}
+body.account-privacy div.yz-accont-delete-form p.yz-secound{
+    font-size: 17px;
+    margin-top: 20px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+    color: #000;
+    font-weight: 600;
+}
+body.account-privacy div.yz-accont-delete-form p.yz-third{
+    font-size: 12px;
+    list-style-position: inside;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: list-item;
+    font-weight: 600;
+    margin-left: 10px;
+}
+body.account-privacy div.yz-accont-delete-form a span.yz-keep-button{
+    background: #0d9fec;
+}
+body.account-privacy div.yz-accont-delete-form a span.yz-delete-button{
+    background: gray;
+}
+body.account-privacy div.yz-accont-delete-form a span.yz-keep-button,
+body.account-privacy div.yz-accont-delete-form a span.yz-delete-button{
+    padding: 2px 4px 4px 2px;
+    color: #fff;
+    font-size: 13px;
+    margin-top: 20px;
+    border-radius: calc( var(--ldx-grid-item-border-radius)/2 );
+}
+body.woocommerce-payment-methods div.woocommerce-MyAccount-content table.woocommerce-MyAccount-paymentMethods tr th{
+    display: none;
+}
+body.woocommerce-payment-methods tr.payment-method td a.delete{
+    background: #8d021f !important;
+    text-indent: -9999px;
+    padding: 0px 8px !important;
+    line-height: 0.8;
+    padding-bottom: 8px !important;
+}
+body.woocommerce-payment-methods tr.payment-method td.payment-method-actions a.delete:after {
+    content: "\f2ed" !important;
+    display: block;
+    text-indent: initial;
+    font-weight: 700;
+    font-family: "Font Awesome 5 Free"!important;
+}
+body.woocommerce-payment-methods tr.payment-method:nth-child(even){
+    background: #f6f6f6;
+}
+body.woocommerce-payment-methods tr.payment-method:nth-child(odd){
+    background: #eaeaea;
+}
+body.woocommerce-payment-methods div.payment-method-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #8d8c8c;
+    margin-bottom: 20px;
+}
+body.woocommerce-payment-methods table.woocommerce-MyAccount-paymentMethods
+td.payment-method-actions a.button.default{
+    background: none !important;
+    color: #0d9fec !important;
+    float: left;
+    padding: 8px 32px!important;
+    text-transform: capitalize;
+}
+body.woocommerce-payment-methods div.woocommerce-MyAccount-content a[href="http://new.vitacodis.com/my-account/add-payment-method/"]{
+    display: none;
+}
+body.woocommerce-payment-methods div.woocommerce-MyAccount-content a.add-new-payment{
+    background-color: #0d9fec;
+    color: #fff;
+    border-radius: calc( var(--ldx-grid-item-border-radius)/2 );
+    padding: 5px 22px 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+body.woocommerce-checkout form.woocommerce-form-coupon,
+body.woocommerce-checkout tr.cart-discount a.woocommerce-remove-coupon{
+    display: none;
+}
+body.woocommerce-checkout div#order_review tfoot tr.cart-discount td{
+    padding: 0px !important;
+    text-align: unset !important;
+    vertical-align: bottom !important;
+}
+body.woocommerce-checkout table.woocommerce-checkout-review-order-table{
+    margin-bottom: 0px !important;
+}
+body.woocommerce-checkout form.woocommerce-checkout div#order_review tfoot tr.cart-discount th, body.woocommerce-checkout form.woocommerce-checkout div#order_review tr.order-total
+td.cus-order-total, body.woocommerce-checkout form.woocommerce-checkout div#order_review tr.order-total
+td.cus-order-total strong {
+    padding: 0px !important;
+}
+body.woocommerce-checkout form.woocommerce-checkout div#order_review table.woocommerce-checkout-review-order-table tfoot{
+    position: relative;
+}
+body.woocommerce-checkout form.woocommerce-checkout div#order_review table.woocommerce-checkout-review-order-table tfoot tr.order-total{
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+body.woocommerce-checkout form.woocommerce-checkout div#order_review div.woocommerce-terms-and-conditions-wrapper p.validate-required {
+    //margin-top: 20px !important;
+}
+body.woocommerce-checkout form.woocommerce-checkout div#order_review tfoot tr.cart-discount th, body.woocommerce-checkout .price, .amount {
+    color: #283981 !important;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    min-width: 275px;
+    padding-top: 10px !important;
+    text-align: right;
+}
+body.woocommerce-checkout form.woocommerce-checkout div#order_review tfoot tr.cart-discount
+td{
+    color: #283981 !important;
+}
+body.woocommerce-checkout form.woocommerce-checkout div#order_review tfoot tr.cart-discount th span{
+    text-transform: none;
+    margin-right: -2px;
+}
+body.woocommerce-checkout form.checkout_coupon {
+    display: none !important;
+}
+body.woocommerce-checkout div.woocommerce form.woocommerce-checkout div#order_review tfoot th{
+    text-align: left  !important;
+    padding-left: 30px !important;
+}
+body.woocommerce-checkout.not-logged-in div#customer_details div.col-1{
+    margin-bottom: 0px !important;
+}
+@media only screen and (min-width: 992px){
+    body.woocommerce-checkout div.woocommerce > div#checkout-login-form{
+	width: calc(45% - 5em)!important;
+    }
+    body.woocommerce-checkout div.woocommerce > div#checkout-login-form form.login,
+    body.woocommerce-checkout div.woocommerce > div#checkout-login-form p.form-row{
+	display: block!important;
+    }
+}
+@media screen and (max-width: 768px) {
+    body.my-account nav#yz-profile-navmenu,
+    body.single-topic  nav#yz-profile-navmenu{
+	max-width: 100% !important;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+    }
+    body.woocommerce-checkout div#order_review div#payment{
+	background-position: right 71% !important;
+    }
+    body.woocommerce-checkout div#coupon-anchor form.checkout_coupon{
+	padding-left: 0px!important;
+    }
+    body.woocommerce-checkout form.woocommerce-checkout div#order_review table.woocommerce-checkout-review-order-table tfoot tr.order-total {
+	top: 15px !important;
+    }
+    body.woocommerce-checkout form.woocommerce-checkout div#order_review table.woocommerce-checkout-review-order-table tfoot tr.order-total td.cus-order-total{
+	min-width: 185px;
+	padding: 10px !important;
+    }
+    body.woocommerce-checkout form.woocommerce-checkout div#order_review table.woocommerce-checkout-review-order-table td.product-total {
+	border-bottom: none !important;
+    }
+}
+body.woocommerce-checkout div#order_review tr.cart-discount span.yz-coupon-caps {
+    text-transform: uppercase !important;
+}
+@media screen and (max-width: 375px) {
+    body.my-account .yz-horizontal-layout .yz-page-main-content,
+    body.single-topic .yz-horizontal-layout .yz-page-main-content {
+	padding: 0px !important;
+    }
+}
+.yz-header-cover>img {
+    height: 100% !important;
+}
