@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
     <div class="container py-3">
 	<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	    <header class="entry-header">
-		<?php the_title('<h1 class="h2 entry-title">', '</h1>'); ?>
+		<?php the_title('<h1 class="h3 entry-title">', '</h1>'); ?>
 	    </header><!-- .entry-header -->
 	    <div class="entry-content">
 		<?php

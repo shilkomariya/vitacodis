@@ -814,3 +814,41 @@ svg.icon{
 	text-transform: uppercase;
     }
 }
+.mp-form-label{
+    label{
+	@extend .form-label;
+    }
+}
+.mepr-form-input{
+    @extend .form-control;
+}
+.mepr-submit{
+    @extend .btn;
+    @extend .btn-primary;
+}
+.mp_wrapper{
+    .mp-form-label{
+	label{
+	    display: inline-block!important;
+	}
+    }
+    .mepr-submit{
+	width: 100%;
+    }
+    #nsl-custom-login-form-1{
+	display: none;
+    }
+}
+.page-id-10473{
+    .entry-title{
+	text-align: center;
+    }
+    .entry-content{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: rem(400px);
+    }
+    p{
+	color: $icons;
+    }
+}
