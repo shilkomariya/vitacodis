@@ -5,9 +5,6 @@
 	padding: 0;
     }
 }
-body.help-support div.elementor-field-type-textarea textarea.elementor-field-textual{
-    min-height: 278px !important;
-}
 body.topic div#bbpress-forums div.bbp-reply-form{
     padding-left: 0px !important;
 }
@@ -18,62 +15,6 @@ body.topic div#bbpress-forums ul.forums.bbp-replies div.bbp-reply-right div.bbp-
     font-weight: bold !important;
 }
 
-body.woocommerce-checkout form.checkout_coupon{
-    padding-left: 45px !important;
-}
-body.woocommerce-checkout div#payment li label{
-    font-size: 14px!important;
-}
-body.woocommerce-checkout div.woocommerce-checkout-review-order
-tfoot tr th{
-    background: none;
-    color: #0D9FEC !important;
-}
-body.woocommerce-checkout.not-logged-in table.woocommerce-checkout-review-order-table
-tr.cart_item td.product-remove {
-}
-body.woocommerce-checkout.not-logged-in table.woocommerce-checkout-review-order-table
-tr.cart_item td.product-name {
-    max-width: none !important;
-    text-align: left !important;
-}
-body.woocommerce-checkout table.woocommerce-checkout-review-order-table tr.cart_item td{
-    vertical-align: top !important;
-}
-body.woocommerce-checkout form.checkout div#order_review
-div#payment{
-    background-image: url(/wp-content/uploads/Secure-icon.png);
-    background-repeat: no-repeat;
-    background-position: right 65%;
-    background-size: 100px;
-    padding-bottom: 10px !important;
-}
-body.woocommerce-checkout div#coupon-anchor div.ui-dialog.ui-corner-all{
-    top: -7px !important;
-}
-body.woocommerce-checkout div#coupon-anchor p.form-row button{
-    line-height: 14px !important;
-}
-body.woocommerce-checkout div#payment div.woocommerce-terms-and-conditions-wrapper p.form-row{
-    margin-top: 4px !important;
-}
-body.woocommerce-checkout div#payment ul.wc_payment_methods li.wc_payment_method.payment_method_stripe,
-body.woocommerce-checkout div#payment ul.wc_payment_methods ul.woocommerce-SavedPaymentMethods.wc-saved-payment-methods
-li.woocommerce-SavedPaymentMethods-token,
-body.woocommerce-checkout div#payment ul.wc_payment_methods ul.woocommerce-SavedPaymentMethods.wc-saved-payment-methods
-li.woocommerce-SavedPaymentMethods-new{
-    background: none !important;
-}
-body.woocommerce-checkout div#payment label[for="payment_method_stripe"]{
-    background-color: #fafafa !important;
-}
-body.woocommerce-checkout div#coupon-anchor p.form-row input{
-    height: 25px !important;
-    min-height: 0px !important;
-}
-body.email-notifications div.yz-checkbox-field div.option-infos label.option-title {
-
-}
 body.profile-edit .settings-main-content .settings-inner-content{
     margin-left: 49px !important;
 }
@@ -85,9 +26,6 @@ body.settings div.youzer-settings-actions{
 }
 body.info div.yz-infos-content div.yz-info-data{
     margin-left: 25px;
-}
-body.help-support .elementor-4406 .elementor-element.elementor-element-b115c75 .elementor-button{
-    padding: 0% 7% 0% 7% !important;
 }
 body.woocommerce-add-payment-method .woocommerce-MyAccount-content #payment .payment_methods
 {
@@ -433,9 +371,6 @@ body .youzer .editfield .field-visibility-settings-notoggle{
 #yz-account-privacy .youzer-section-content > .uk-option-item:first-child{
     display: none;
 }
-.help-support form.elementor-form {
-    padding-top: 25px;
-}
 .bp-user.discussions .youzer div.item-list-tabs,
 .bp-user.discussions .youzer #bbpress-forums div.bbp-search-form,
 .bp-user.discussions .youzer .bbp-header,
@@ -496,9 +431,6 @@ body .youzer-section-content > .uk-option-item .option-content{
 }
 body #youzer .youzer-section-content > .uk-option-item p.option-desc{
     display: none;
-}
-.youzer form.elementor-form{
-    padding-top: 0px;
 }
 div.yz-right-sidebar .yz-widget{
     margin-bottom: 0px;
@@ -910,11 +842,6 @@ body.buddypress.help-support .yz-main-column .yz-custom{
     height: 100%;
     background: #fff;
 }
-body.buddypress.help-support div.yz-custom-tab .elementor-section-wrap >section.elementor-element {
-    padding-left: 15px;
-    padding-right: 5%;
-    padding-top: 20px;
-}
 #bbpress-forums fieldset.bbp-form > div > p{
     display: none;
 }
@@ -982,12 +909,6 @@ body.bp-user:not(.my-account) ul.yz-profile-navmenu li:last-child{
     body.bp-user.discussions div.yz-tab.yz-custom{
 	min-height: 70px;
     }
-    body.buddypress.help-support div.yz-custom-tab .elementor-section-wrap >section.elementor-element {
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 20px;
-    }
-
     body.bp-user.discussions div.bbp-forum-discussion-form.active
     #bbpress-forums > div.bbp-topic-form{
 	padding-top: 60px;
@@ -1182,38 +1103,12 @@ body.bp-user:not(.my-account) ul.yz-profile-navmenu li:last-child{
 	padding-left: 12px;
 	background: #fff !important;
     }
-    div.bbp-the-content-wrapper {
-	//display: inline-block;
-	//vertical-align: middle;
-	//margin-bottom: 0px !important;
-    }
-    div.bbp-submit-wrapper{
-	//display: inline-block;
-    }
-    fieldset.bbp-form{
-	//background: #fff !important;
-	//padding-left: 10px !important;
-	//padding-top: 20px !important;
-	//padding-bottom: 20px !important;
-	//margin-left: -20px;
-    }
     body.topic div.bbp-submit-wrapper,
     #bbpress-forums div.bbp-the-content-wrapper{
 	margin-top: 0px !important;
     }
     body.account-privacy .youzer-section-content>.uk-option-item{
 	padding-bottom: 6px !important;
-    }
-    body.help-support .elementor-4406 .elementor-element.elementor-element-b115c75
-    .elementor-field-group, body.help-support .elementor-4406 .elementor-element
-    .elementor-element-b115c75 .elementor-field-group, body.help-support .elementor-4406 .elementor-element
-    .elementor-element-b115c75 .elementor-field-group,
-    body.help-support .elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated{
-	padding: 0px !important;
-    }
-    body.help-support .elementor-4406 .elementor-element.elementor-element-b115c75 .elementor-button{
-	padding: 0% 43.5% !important;
-	margin-bottom: 40px;
     }
     body #youzer .youzer-section-content>.uk-option-item label{
 	font-size: 13px !important;

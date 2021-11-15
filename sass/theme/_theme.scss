@@ -761,6 +761,9 @@ svg.icon{
     list-style: none;
     padding-left: 0;
     color: $acc3;
+    padding: .5rem;
+    border-radius: $border-radius;
+    background-color: $bg;
 }
 .woocommerce-checkout-review-order-table{
     thead{
@@ -780,6 +783,22 @@ svg.icon{
     .product-total{
 	text-align: right;
     }
+    .order-total{
+	font-size: rem(20px);
+	th{
+	    padding-left: 0;
+	}
+    }
+    .coupon-text{
+	font-size: rem(12px);
+	color: $icons;
+	text-align: end;
+	padding: .5rem 0;
+    }
+    .remove{
+	color: $icons;
+	margin-right: 1rem;
+    }
 }
 .wc_payment_methods{
     list-style: none;
@@ -789,9 +808,25 @@ svg.icon{
 	border-radius: 4px;
 	margin-bottom: 1rem;
 	padding: rem(5px 15px);
+	label{
+	    margin-bottom: 0;
+	    display: inline-flex;
+	    align-items: center;
+	    img{
+		margin-left: 1rem;
+	    }
+	}
     }
     .input-radio{
 	margin-right: .5rem;
+    }
+    .about_paypal{
+	display: none;
+    }
+    .payment_method_paypal{
+	label{
+
+	}
     }
 }
 #loginModal{
@@ -948,4 +983,7 @@ svg.icon{
 	    padding: rem(10px 15px)!important;
 	}
     }
+}
+.woocommerce-order{
+
 }

@@ -282,3 +282,67 @@ function logout_redirect() {
 }
 
 add_filter('wc_add_to_cart_message_html', '__return_false');
+
+// Concatenate remove link after item qty
+function filter_woocommerce_cart_item_name($item_qty, $cart_item, $cart_item_key) {
+    $remove_link = apply_filters('woocommerce_cart_item_remove_link', sprintf(
+		    '<a href="#" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s" data-cart_item_key="%s">&times;</a>', __('Remove this item', 'woocommerce'), esc_attr($cart_item['product_id']), esc_attr($cart_item['data']->get_sku()), esc_attr($cart_item_key)
+	    ), $cart_item_key);
+
+    // Return
+    return $remove_link . $item_qty;
+}
+
+add_filter('woocommerce_cart_item_name', 'filter_woocommerce_cart_item_name', 10, 3);
+
+// jQuery - Ajax script
+function action_wp_footer() {
+    // Only checkout page
+    if (!is_checkout())
+	return;
+    ?>
+    <script type="text/javascript">
+        jQuery(function ($) {
+    	$('form.checkout').on('click', '.cart_item a.remove', function (e) {
+    	    e.preventDefault();
+
+    	    var cart_item_key = $(this).attr("data-cart_item_key");
+
+    	    $.ajax({
+    		type: 'POST',
+    		url: wc_checkout_params.ajax_url,
+    		data: {
+    		    'action': 'woo_product_remove',
+    		    'cart_item_key': cart_item_key,
+    		},
+    		success: function (result) {
+    		    $('body').trigger('update_checkout');
+    		    //console.log( 'response: ' + result );
+    		},
+    		error: function (error) {
+    		    //console.log( error );
+    		}
+    	    });
+    	});
+        });
+    </script>
+    <?php
+}
+
+add_action('wp_footer', 'action_wp_footer', 10, 0);
+
+// Php Ajax
+function woo_product_remove() {
+    if (isset($_POST['cart_item_key'])) {
+	$cart_item_key = sanitize_key($_POST['cart_item_key']);
+
+	// Remove cart item
+	WC()->cart->remove_cart_item($cart_item_key);
+    }
+
+    // Alway at the end (to avoid server error 500)
+    die();
+}
+
+add_action('wp_ajax_woo_product_remove', 'woo_product_remove');
+add_action('wp_ajax_nopriv_woo_product_remove', 'woo_product_remove');
