@@ -43,6 +43,11 @@ svg.icon{
 .btn-outline-primary:not(:hover){
     color: $title;
 }
+.body-lg{
+    font-weight: 700;
+    color: $title;
+    font-size: rem(17px);
+}
 .caps{
     font-weight: 700;
     text-transform: uppercase;
@@ -789,6 +794,11 @@ svg.icon{
 	margin-right: .5rem;
     }
 }
+#loginModal{
+    .login{
+	display: block!important;
+    }
+}
 /*Login*/
 .input{
     @extend .form-control;
@@ -802,19 +812,19 @@ svg.icon{
 	border-radius: 50%!important;
     }
 }
-#login-page{
-    .nsl-container{
-	&:before{
-	    content: "or login with";
-	    color: $icons;
-	    font-size: rem(13px);
-	    display: block;
-	    margin-bottom: 1rem;
-	}
-	.nsl-container{
-	    padding-top: 0;
-	}
+.nsl-container{
+    &:before{
+	content: "or login with";
+	color: $icons;
+	font-size: rem(13px);
+	display: block;
+	margin-bottom: 1rem;
     }
+    .nsl-container{
+	padding-top: 0;
+    }
+}
+#login-page{
     .sing-up-text{
 	font-weight: 700;
 	color: $title;
