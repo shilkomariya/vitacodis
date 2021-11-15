@@ -34,7 +34,7 @@
     }
 }
 @include media-breakpoint-up(md) {
-    .btn-outline-primary{
+    .home .btn-outline-primary{
 	min-width: rem(295px);
     }
     .pagination{

@@ -68,7 +68,7 @@ body.woocommerce-checkout div#coupon-anchor p.form-row input{
     min-height: 0px !important;
 }
 body.email-notifications div.yz-checkbox-field div.option-infos label.option-title {
-    color: #4a4a4a !important;
+
 }
 body.profile-edit .settings-main-content .settings-inner-content{
     margin-left: 49px !important;
@@ -242,20 +242,36 @@ body #yz-profile-navmenu{
 .yz-account-page .settings-main-content .settings-inner-content{
     margin-left: 0px;
 }
-.yz-settings-sidebar .yz-account-menus ul li a{
-    color: #4a4a4a!important;
-    font-family: 'Open Sans',sans-serif;
-    font-size: 17px !important;
-    font-weight: 600;
+
+.bp-user.profile,
+.bp-user.settings{
+    #youzer{
+	.yz-page-head{
+	    padding-top: 2.66667rem!important;
+	}
+	.yz-page-main-content{
+	    padding-top: 0!important;
+	}
+    }
+    .yz-settings-sidebar .yz-account-menus {
+	ul li {
+	    margin-bottom: .5rem;
+	    a{
+		color: $title;
+		font-size: 1rem;
+		font-weight: 700;
+	    }
+	}
+	a:hover,
+	    .yz-active-menu{
+	    color: $acc3!important;
+	    padding-left: 0;
+	}
+    }
 }
 .youzer .youzer-settings-actions {
     line-height: 46px !important;
     padding: 0px !important;
-}
-.yz-settings-sidebar .yz-account-menus ul li a:hover,
-.yz-settings-sidebar .yz-account-menus ul li a.yz-active-menu{
-    color: #0D9FEC!important;
-    padding-left: 0px !important;
 }
 .yz-settings-sidebar .yz-account-menus ul li i,
 .yz-account-page .settings-inner-content .options-section-title,
@@ -273,7 +289,6 @@ body #yz-profile-navmenu{
     margin: 0px;
     padding: 0px;
     border: none;
-    padding-left: 20px;
     padding-top: 0px;
 }
 a.change-cover-link,
@@ -387,11 +402,6 @@ body .youzer .editfield .field-visibility-settings-notoggle{
 {
     display: none;
 }
-.bp-user.discussions #bbpress-forums .bbp-topics,
-.bp-user.news #bbpress-forums .bbp-topics{
-    background: #fff;
-    padding: 20px;
-}
 .bp-user.discussions #bbpress-forums li.bbp-body ul.topic,
 .bp-user.news #bbpress-forums li.bbp-body ul.topic{
     border: none;
@@ -461,7 +471,7 @@ body .youzer .youzer-inner-content .input-options label{
 #youzer .editfield legend .bp-required-field-label{
     display: none;
 }
-body #youzer .option-content input:not([type=radio]):not(.uk-upload-button):not(.wp-color-picker):not(.wp-picker-clear),
+body #youzer .option-content input:not([type=radio]):not(.uk-upload-button):not(.wp-color-picker):not(.wp-picker-clear):not(.cmn-toggle),
 body #youzer .youzer-inner-content input:not([type=radio]):not([type=checkbox]):not(.ed_button){
     display: block;
     width: 100%;
@@ -477,27 +487,14 @@ body #youzer .youzer-inner-content input:not([type=radio]):not([type=checkbox]):
     appearance: none; // Fix appearance for date inputs in Safari
     @include border-radius($input-border-radius, 0);
 }
-body .yz-save-options{
-    display: inline-block;
-    font-family: $btn-font-family;
-    font-weight: $btn-font-weight;
-    line-height: $btn-line-height;
-    color: $white;
-    text-align: center;
-    text-decoration: if($link-decoration == none, null, none);
-    white-space: $btn-white-space;
-    vertical-align: middle;
-    cursor: if($enable-button-pointers, pointer, null);
-    user-select: none;
-    background-color: $primary;
-    border: $btn-border-width solid $primary;
-    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
-    @include transition($btn-transition);
+#youzer .yz-save-options{
+    @extend .btn;
+    @extend .btn-primary;
 
-    &:hover {
-	color: $body-color;
-	text-decoration: if($link-hover-decoration == underline, none, null);
-    }
+    font-size:$btn-font-size !important;
+    font-weight: $btn-font-weight !important;
+    line-height: $btn-line-height !important;
+    padding: $btn-padding-y $btn-padding-x!important;
 }
 .youzer.yz-account-page .nice-select .current,
 .youzer.yz-account-page .nice-select .option{
@@ -613,43 +610,42 @@ div.bbp-topic-right .topic-head {
     margin-bottom: 4px;
 }
 div.bbp-topic-right .topic-head a{
-    font-size: 15px !important;
-    color: #4a4a4a;
-    font-family: "Gotham Pro";
-    font-weight: 500 !important;
+    font-weight: 700;
+    color: $title;
+    font-size: 1rem;
 }
 div.bbp-topic-right .topic-info{
-    font-size: 12px;
-    color: #8d8c8c;
-    font-weight: 500;
+    font-size: 13px;
+    color: #4E4B66;
+    font-weight: 400;
 }
 div.bbp-topic-right .topic-info a{
-    color: #8d8c8c;
+    color: #4E4B66;
 }
 #bbpress-forums div.bbp-topic-right .topic-info li {
-    list-style: disc;
-    float: left;
-    margin-left: 10px;
-    list-style-position: inside;
+    display: inline-block;
 }
-#bbpress-forums div.bbp-topic-right .topic-info li:first-child{
-    list-style: none;
-    margin-left: 0px;
+#bbpress-forums div.bbp-topic-right .topic-info li+li {
+    margin-left: 1.7em;
+}
+#bbpress-forums div.bbp-topic-right .topic-info li+li:before {
+    content: "\2022";
+    color: $acc2;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
 }
 div.yz-custom-tab{
     position: relative;
 }
-#bbpress-forums a.new-discussion,
-div.yz-custom-tab a.new-discussion {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #0D9FEC;
-    color: #fff;
-    font-weight: bold;
-    padding: 7px 15px;
-    font-size: 14px;
-    display: inline !important;
+a.new-discussion {
+    @extend .btn;
+    @extend .btn-outline-primary;
+    margin-bottom: 1rem;
+}
+.new-discussion-wrap{
+    margin-bottom: 1rem;
 }
 div.yz-custom-tab a.new-discussion{
     display: none;
@@ -658,8 +654,7 @@ div.yz-custom-tab a.new-discussion{
     display: none !important;
 }
 body.bp-user.my-account div.yz-custom-tab a.new-discussion{
-    display: block !important;
-    z-index: 9999;
+    display: inline-block !important;
 }
 .bp-user.discussions #bbpress-forums > *,
 .bp-user.news #bbpress-forums > *{
@@ -675,6 +670,7 @@ body.bp-user.discussions div.bbp-forum-discussion-form {
 .bp-user.discussions #bbpress-forums .bbp-topics,
 .bp-user.news #bbpress-forums .bbp-topics{
     display: block;
+    border: 0 none;
 }
 .bp-user.discussions #bbpress-forums,
 .bp-user.news #bbpress-forums{
@@ -809,11 +805,40 @@ div.bbp-topic-cont{
     font-size: 14px;
     line-height: 25px;
 }
-.bp-user.discussions .bbp-forum-discussion-form{
-    background: #fff;
-    border-bottom: 1px solid lightgray;
-    padding: 20px 24px;
-    padding-bottom: 0px;
+#bbpress-forums fieldset.bbp-form input[type=text]{
+    @extend .form-control;
+    min-height: rem(48px);
+    height: auto;
+}
+#bbpress-forums fieldset.bbp-form select{
+    @extend .form-select;
+}
+.bp-user.discussions {
+    #bbpress-forums fieldset.bbp-form{
+	padding: 0;
+	border: 0 none;
+	legend{
+	    padding: 0;
+	    font-size: rem(17px);
+	    line-height: 1.3;
+	    margin-bottom: 1.5rem;
+	    font-weight: 700;
+	    color: $title;
+	}
+	label{
+	    margin-bottom: $form-label-margin-bottom;
+	    @include font-size($form-label-font-size);
+	    font-style: $form-label-font-style;
+	    font-weight: $form-label-font-weight;
+	    color: $form-label-color;
+	}
+    }
+}
+form#new-post .button.submit{
+    color: #fff;
+    background-color: #f60;
+    border-radius: 0.26667rem;
+    min-width: rem(180px);
 }
 .bp-user.info .yz-main-column .yz-white-bg{
     min-height: 96.7%;
@@ -829,13 +854,6 @@ body.single-topic .bbp-reply-form .button.submit{
     font-size: 13px !important;
     padding: 9px 20px!important;
     font-weight: 600 !important;
-}
-form#new-post .button.submit{
-    background: #0D9FEC !important;
-    font-size: 14px !important;
-    padding: 7px 15px !important;
-    font-weight: bold !important;
-    letter-spacing: normal !important;
 }
 body.buddypress.news .yz-main-column,
 body.buddypress.discussions .yz-main-column,

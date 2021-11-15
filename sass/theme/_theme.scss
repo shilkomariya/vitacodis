@@ -865,6 +865,13 @@ svg.icon{
 }
 .bp-user:not(.info){
     #youzer{
+	.yz-sidebar-column{
+	    display: none!important;
+	}
+    }
+}
+.bp-user.mycourses{
+    #youzer{
 	.yz-right-sidebar-layout{
 	    grid-template-columns: 100% 100%;
 	}
