@@ -984,6 +984,26 @@ svg.icon{
 	}
     }
 }
+.woocommerce-order-received{
+    .content-section{
+	padding-top: 0!important;
+    }
+}
 .woocommerce-order{
-
+    max-width: rem(750px);
+    margin-left: auto;
+    margin-right: auto;
+    .h1{
+	color: $acc2;
+	font-size: vw(120px);
+    }
+    .header-icon{
+	font-size: rem(100px);
+    }
+    .order-content{
+	color: $title;
+    }
+    p{
+	color: $title;
+    }
 }
