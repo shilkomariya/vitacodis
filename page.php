@@ -20,7 +20,11 @@ while (have_posts()) {
     if (fw_ext_page_builder_is_builder_post(get_the_ID())) {
 	the_content();
     } else {
-	get_template_part('loop-templates/content', 'page');
+	if (bbp_is_single_topic()) {
+	    get_template_part('loop-templates/content', 'page-ocean');
+	} else {
+	    get_template_part('loop-templates/content', 'page');
+	}
     }
 }
 get_footer();

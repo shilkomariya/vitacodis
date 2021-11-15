@@ -52,16 +52,19 @@
     .wpcf7-not-valid-tip {
 	display: none;
     }
-
     // validation errors ourput bottom of form
     .wpcf7-validation-errors {
 	color: red;
 	border: 1px solid $gray-200;
     }
     .wpcf7-response-output{
-	text-align: center;
 	background: none;
-	font-size: 15px;
+	font-size: 1rem;
+	font-weight: 700;
+	color: $blue;
+	border: 0 none!important;
+	padding: 0!important;
+	margin: 1rem 0 0 0!important;
     }
     .wpcf7-spinner{
 	position: absolute;

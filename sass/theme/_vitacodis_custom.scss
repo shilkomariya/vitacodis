@@ -1,5 +1,9 @@
 #youzer{
     @extend .container;
+    .woocommerce-account &{
+	max-width: 100%;
+	padding: 0;
+    }
 }
 body.help-support div.elementor-field-type-textarea textarea.elementor-field-textual{
     min-height: 278px !important;
@@ -85,14 +89,6 @@ body.info div.yz-infos-content div.yz-info-data{
 body.help-support .elementor-4406 .elementor-element.elementor-element-b115c75 .elementor-button{
     padding: 0% 7% 0% 7% !important;
 }
-body.woocommerce-add-payment-method .woocommerce-MyAccount-content #place_order{
-    width: auto !important;
-    font-size: 15px;
-    line-height: unset !important;
-    margin-top: -12px;
-    padding: 8px 20px !important;
-    border-radius: calc( var(--ldx-grid-item-border-radius) / 2 );
-}
 body.woocommerce-add-payment-method .woocommerce-MyAccount-content #payment .payment_methods
 {
     margin-bottom: 0px !important;
@@ -110,10 +106,56 @@ body.woocommerce-add-payment-method .woocommerce-MyAccount-content #payment ul.p
     display: none !important;
 }
 body.woocommerce-add-payment-method .woocommerce-MyAccount-content #payment ul.payment_methods .woocommerce-PaymentMethod>label{
-    font-size: 20px !important;
-    color: #8d8c8c;
+    font-size: rem(20px);
+    color: $title;
     font-weight: bold;
-    max-width: 260px;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+.woocommerce-MyAccount-content #payment ul.payment_methods .woocommerce-PaymentMethod>input[type=radio]:first-child {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+.youzer .woocommerce-MyAccount-tabs {
+    display: none;
+}
+.youzer .woocommerce-MyAccount-content{
+    float: left;
+    width: calc(100% - 630px);
+    margin-top: 20px;
+    padding: 0px 30px;
+}
+.woocommerce-MyAccount-content #payment ul.payment_methods>li,
+.woocommerce-MyAccount-content #payment .payment_methods li .payment_box{
+    background: none !important;
+}
+.woocommerce-MyAccount-content #payment .payment_methods li .payment_box label{
+    margin-bottom: $form-label-margin-bottom;
+    @include font-size($form-label-font-size);
+    font-style: $form-label-font-style;
+    font-weight: $form-label-font-weight;
+    color: $form-label-color;
+}
+.woocommerce-MyAccount-content #add_payment_method .woocommerce-PaymentMethod > label{
+    padding: 0px !important;
+}
+.woocommerce-MyAccount-content #payment .payment_methods li .payment_box{
+    padding-top: 20px;
+}
+.woocommerce-MyAccount-content #payment .payment_methods li .payment_box p{
+    font-size: 14px;
+    line-height: 26px;
+}
+.woocommerce .youzer table tbody td a.button{
+    color: #fff;
+}
+#add_payment_method #payment ul.payment_methods li img{
+    max-width: 80px !important;
+    padding-left: 10px !important;
+    display: inline-block;
+}
+.wc-stripe-elements-field, .wc-stripe-iban-element-field{
+    padding: 10px;
 }
 body.woocommerce-add-payment-method label img.stripe-american-icon,
 body.woocommerce-add-payment-method label img.stripe-maestro-icon{
@@ -242,7 +284,7 @@ body #yz-profile-navmenu{
 .yz-account-page .settings-main-content .settings-inner-content{
     margin-left: 0px;
 }
-
+body.woocommerce-account,
 .bp-user.profile,
 .bp-user.settings{
     #youzer{
@@ -267,6 +309,11 @@ body #yz-profile-navmenu{
 	    color: $acc3!important;
 	    padding-left: 0;
 	}
+    }
+}
+.woocommerce-add-payment-method{
+    #login-page{
+	padding: 0!important;
     }
 }
 .youzer .youzer-settings-actions {
@@ -487,6 +534,13 @@ body #youzer .youzer-inner-content input:not([type=radio]):not([type=checkbox]):
     appearance: none; // Fix appearance for date inputs in Safari
     @include border-radius($input-border-radius, 0);
 }
+#youzer{
+    .wpcf7{
+	.btn{
+	    min-width: rem(180px);
+	}
+    }
+}
 #youzer .yz-save-options{
     @extend .btn;
     @extend .btn-primary;
@@ -565,30 +619,53 @@ body #youzer .youzer-inner-content input:not([type=radio]):not([type=checkbox]):
 .woocommerce .yz-hdr-v3 .yz-inner-content:before {
     opacity: 0.15 !important;
 }
-.single-topic .yz-page-main-content{
-    padding-bottom: 0px;
+.single-topic{
+    #youzer{
+	.topic-head{
+	    margin-bottom: 1rem;
+	    a{
+		font-size: rem(17px);
+		color: $title;
+		font-weight: 700;
+	    }
+	}
+	.bbp-reply-author-name{
+	    margin-bottom: .5rem;
+	    a{
+		color: $title;
+		font-size: 1rem;
+		font-weight: 700;
+	    }
+	}
+	.bbp-reply-date-val{
+	    font-size: rem(13px);
+	    margin-bottom: 1rem;
+	}
+	.bbp-reply-content-val{
+	    font-size: 1rem;
+	    line-height: 1.73;
+	    margin-bottom: 2rem;
+	}
+	.bbp-body{
+	    > div{
+		background: none;
+		padding: 2rem 0 1rem ;
+		border-top: 1px solid #D9DBE9;
+		max-width: rem(745px);
+		&:first-child{
+		    border: 0 none;
+		}
+	    }
+
+	}
+	@include media-breakpoint-up(md) {
+	    #new-post{
+		padding-left: 66px;
+	    }
+	}
+    }
 }
-.single-topic #main #content-wrap{
-    width: 100%;
-    padding: 0px;
-    max-width: none;
-    margin: 0px;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 20px;
-    background: #fff;
-    height: 96.7%;
-}
-.single-topic #main #content-wrap #primary{
-    width: 100%;
-    max-width: none;
-    padding: 0px;
-    margin: 0px;
-}
-.single-topic #main #content-wrap #right-sidebar{
-    display: none;
-}
+
 div.bbp-topic-avatar img{
     width: 50px;
     height: 50px;
@@ -739,39 +816,8 @@ body.single-topic #bbpress-forums .bbp-replies li.bbp-body > div{
 .bbp-reply-left .bbp-author-name{
     display: none;
 }
-.bbp-reply-right .bbp-reply-author-name{
-    font-size: 15px !important;
-    color: #4a4a4a;
-    font-family: "Gotham Pro";
-    font-weight: 500 !important;
-    margin-bottom: 5px;
-}
-.bbp-reply-right .bbp-reply-author-name a {
-    color: #4a4a4a;
-}
 .bbp-reply-right .bbp-reply-date-val a.bbp-author-link{
     display: none;
-}
-.bbp-reply-right ul li {
-    list-style: disc !important;
-    float: left !important;
-    margin-left: 10px !important;
-    list-style-position: inside !important;
-}
-.bbp-reply-right ul li:first-child{
-    list-style: none !important;
-    margin-left: 0px !important;
-}
-.bbp-reply-right .bbp-reply-date-val{
-    font-size: 12px;
-    color: #8d8c8c;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-.bbp-reply-right .bbp-reply-content-val{
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 25px;
 }
 .bbp-reply-right .bbp-reply-content-val .bbp-topic-revision-log{
     display: none;
@@ -813,6 +859,7 @@ div.bbp-topic-cont{
 #bbpress-forums fieldset.bbp-form select{
     @extend .form-select;
 }
+.single-topic,
 .bp-user.discussions {
     #bbpress-forums fieldset.bbp-form{
 	padding: 0;
@@ -836,9 +883,12 @@ div.bbp-topic-cont{
 }
 form#new-post .button.submit{
     color: #fff;
-    background-color: #f60;
+    background-color: $acc3;
     border-radius: 0.26667rem;
     min-width: rem(180px);
+    &:hover{
+	background-color: $acc2;
+    }
 }
 .bp-user.info .yz-main-column .yz-white-bg{
     min-height: 96.7%;
@@ -848,12 +898,6 @@ body.single-topic .bbp-reply-form{
 }
 div.bbp-submit-wrapper{
     float: none !important;
-}
-body.single-topic .bbp-reply-form .button.submit{
-    background: #0d9fec !important;
-    font-size: 13px !important;
-    padding: 9px 20px!important;
-    font-weight: 600 !important;
 }
 body.buddypress.news .yz-main-column,
 body.buddypress.discussions .yz-main-column,
@@ -1325,12 +1369,12 @@ body.bp-user:not(.my-account) ul.yz-profile-navmenu li:last-child{
     }
     nav#yz-profile-navmenu{
 	background: #fff;
-	padding: 10px;
-	max-width: 95%;
 	margin: 0 auto;
 	margin-top: 15px;
 	margin-bottom: 15px;
-	border-radius: 10px;
+    }
+    .yz-profile-navmenu .yz-navbar-item a{
+	padding: .6rem 0;
     }
     .yz-profile-navmenu .yz-navbar-item a i{
 	display: none !important;
