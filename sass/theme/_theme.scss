@@ -884,3 +884,58 @@ svg.icon{
 	}
     }
 }
+#youzer{
+    .yz-uploader-change-item{
+	padding: 0;
+	.avatar-nav-items{
+	    border: 0 none;
+	    margin-bottom: .5rem;
+	    li{
+		background: none;
+		border: 0 none;
+		&:first-child a{
+		    padding-left: 0;
+		}
+	    }
+	    .current .bp-avatar-nav-item{
+		color: $acc2;
+	    }
+	    .bp-avatar-nav-item{
+		font-size: 1rem;
+		color: $title;
+		font-weight: 700;
+	    }
+	}
+	#drag-drop-area {
+	    border: 2px dashed #D9DBE9;
+	    border-radius: 4px;
+	}
+	.drag-drop-inside{
+	    p{
+		color: $icons;
+		font-size: 1rem;
+		font-weight: 700;
+		margin: .7rem 0;
+	    }
+	    .button{
+		width: rem(163px)!important;
+		font-size: rem(13px)!important;
+		color: $title!important;
+		background-color: $icons!important;
+		border-color: $icons!important;
+		font-weight: 700!important;
+	    }
+	}
+    }
+    .bp-cover-image-status,
+    .bp-avatar-status{
+	p{
+	    background-color: $bg!important;
+	    color: $title!important;
+	    font-weight: 400!important;
+	    font-size: 1rem!important;
+	    border: 0 none!important;
+	    padding: rem(10px 15px)!important;
+	}
+    }
+}
