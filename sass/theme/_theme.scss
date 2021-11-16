@@ -36,9 +36,15 @@ svg.icon{
 .btn{
     text-transform: uppercase;
 }
-.btn-primary:hover{
-    border-color: $acc2;
-    background-color: $acc2;
+.btn-primary{
+    &:hover{
+	border-color: $acc2;
+	background-color: $acc2;
+    }
+    &:hover:focus,
+	&:hover:active{
+	box-shadow: 0 0 0 0.25rem rgba($acc2, .5);
+    }
 }
 .btn-outline-primary:not(:hover){
     color: $title;

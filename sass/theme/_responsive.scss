@@ -62,6 +62,11 @@
 	    margin-left: 1rem!important;
 	}
     }
+    #newsletter{
+	.mailpoet_form{
+	    justify-content: center;
+	}
+    }
     ul.heateor_sss_sharing_ul{
 	li+li{
 	    margin-left: 1rem!important;
@@ -73,7 +78,7 @@
 	}
     }
     #main-banner{
-	min-height: rem(750px);
+	min-height: 45rem;
     }
 }
 @include media-breakpoint-up(lg) {
