@@ -1,5 +1,6 @@
 /*Site-header*/
 .site-header{
+    transition: top .3s ease, opacity .3s ease;
     .navbar-collapse{
 	justify-content: flex-end;
     }
@@ -31,6 +32,23 @@
 	display: none;
 	.logged-in &{
 	    display: list-item;
+	}
+    }
+    &.nav-up{
+	position: fixed;
+	top: -100px;
+	opacity: 0;
+    }
+    &.nav-down:not(.nav-top){
+	position: fixed;
+	opacity: 1;
+	background-color: #fff;
+	top: 0;
+	left: 0;
+	right: 0;
+	.navbar{
+	    padding-top: .5rem;
+	    padding-bottom: .5rem;
 	}
     }
 }
