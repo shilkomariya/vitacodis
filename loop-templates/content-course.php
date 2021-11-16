@@ -8,7 +8,11 @@
 defined('ABSPATH') || exit;
 ?>
 <div class="card">
-    <?php echo get_the_post_thumbnail(get_the_ID(), 'thumbnail', array('class' => 'card-img-top')); ?>
+    <?php if (fw_get_db_post_option(get_the_ID(), 'popup_video') !== '') { ?>
+        <a class="card-img-top" data-fancybox href="<?php echo fw_get_db_post_option(get_the_ID(), 'popup_video'); ?>"><?php echo get_the_post_thumbnail(get_the_ID(), 'medium-crop', array('class' => '')); ?></a>
+    <?php } else { ?>
+	<?php echo get_the_post_thumbnail(get_the_ID(), 'thumbnail', array('class' => 'card-img-top')); ?>
+    <?php } ?>
     <div class="card-header pb-0">
 	<h5 class="card-title"><?php the_title(); ?></h5>
     </div>

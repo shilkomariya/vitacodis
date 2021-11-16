@@ -11,6 +11,7 @@
     .nav-link{
 	text-transform: uppercase;
 	border-bottom: 2px solid transparent;
+	font-family: $headings-font-family;
     }
     .active .nav-link,
     .nav-link:hover{

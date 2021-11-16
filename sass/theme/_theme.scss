@@ -293,6 +293,24 @@ svg.icon{
 	    left: rem(20px);
 	}
     }
+    .card-img-top[data-fancybox]{
+	&:after{
+	    opacity: 0;
+	    transition: opacity .3s ease;
+	    content: '';
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    display: block;
+	    width: rem(40px);
+	    height: rem(40px);
+	    background: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' rx='32' fill='%23FF6600'/%3E%3Cpath d='M42.6737 32.6048L27.1388 42.8782C27.0285 42.9511 26.9003 42.9929 26.7679 42.9992C26.6355 43.0055 26.5038 42.976 26.3869 42.9139C26.2701 42.8519 26.1724 42.7595 26.1042 42.6467C26.0361 42.5339 26.0001 42.4049 26 42.2734V21.7266C26.0001 21.5951 26.0361 21.4661 26.1042 21.3533C26.1724 21.2405 26.2701 21.1481 26.3869 21.0861C26.5038 21.024 26.6355 20.9945 26.7679 21.0008C26.9003 21.0071 27.0285 21.0489 27.1388 21.1218L42.6737 31.3952C42.7741 31.4616 42.8564 31.5515 42.9133 31.657C42.9702 31.7625 43 31.8803 43 32C43 32.1197 42.9702 32.2375 42.9133 32.343C42.8564 32.4485 42.7741 32.5384 42.6737 32.6048Z' fill='white'/%3E%3C/svg%3E%0A") 50% / contain no-repeat;
+	}
+	&:hover:after{
+	    opacity: 1;
+	}
+    }
 }
 .course-info{
     color: $title;
