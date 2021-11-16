@@ -667,6 +667,9 @@ svg.icon{
     background-color: #F8F7F8;
     padding: rem(11px 0);
     margin-bottom: 3rem;
+    position: sticky;
+    z-index: 222;
+    top: 0;
     li{
 	margin-right: rem(15px);
     }

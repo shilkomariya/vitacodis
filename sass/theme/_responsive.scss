@@ -149,6 +149,11 @@
 	    padding: rem(29px);
 	}
     }
+    .single-retreat{
+	.card-course{
+	    top: 5rem;
+	}
+    }
 }
 @include media-breakpoint-up(xl) {
     .h1, h1 {

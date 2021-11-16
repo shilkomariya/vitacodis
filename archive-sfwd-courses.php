@@ -20,7 +20,7 @@ get_header();
     <?php
     if (have_posts()) {
 	?>
-        <div class="row card-rows">
+        <div class="row card-rows mb-3">
 	    <?php
 	    while (have_posts()) {
 		the_post();

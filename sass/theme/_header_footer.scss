@@ -34,12 +34,7 @@
 	    display: list-item;
 	}
     }
-    &.nav-up{
-	position: fixed;
-	top: -100px;
-	opacity: 0;
-	z-index: 99999;
-    }
+    &.nav-up,
     &.nav-down:not(.nav-top){
 	z-index: 99999;
 	position: fixed;
@@ -52,6 +47,9 @@
 	    padding-top: .5rem;
 	    padding-bottom: .5rem;
 	}
+    }
+    &.nav-up{
+	top: -100px;
     }
 }
 .navbar-toggler{

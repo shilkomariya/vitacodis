@@ -52,26 +52,26 @@ while (have_posts()) {
 	    <div class="container">
 		<ul class="nav" id="retreatTab" role="tablist">
 		    <li class="nav-item" role="presentation">
-			<a href="#" class="nav-link active" id="Overview-tab" data-bs-toggle="tab" data-bs-target="#Overview" role="tab" aria-controls="Overview" aria-selected="true">Overview</a>
+			<a href="#overview-tab" class="nav-link active">Overview</a>
 		    </li>
 		    <?php if ($instructors) { ?>
 	    	    <li class="nav-item" role="presentation">
-	    		<a href="#" class="nav-link" id="instructors-tab" data-bs-toggle="tab" data-bs-target="#instructors" type="button" role="tab" aria-controls="instructors" aria-selected="false">Instructors</a>
+	    		<a href="#instructors-tab" class="nav-link">Instructors</a>
 	    	    </li>
 		    <?php } ?>
 		    <?php if ($program) { ?>
 	    	    <li class="nav-item" role="presentation">
-	    		<a href="#" class="nav-link" id="program-tab" data-bs-toggle="tab" data-bs-target="#program" type="button" role="tab" aria-controls="program" aria-selected="false">Program</a>
+	    		<a href="#program-tab" class="nav-link" >Program</a>
 	    	    </li>
 		    <?php } ?>
 		    <?php if ($location_tab) { ?>
 	    	    <li class="nav-item" role="presentation">
-	    		<a href="#" class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location" type="button" role="tab" aria-controls="program" aria-selected="false">Location</a>
+	    		<a href="#location-tab" class="nav-link" >Location</a>
 	    	    </li>
 		    <?php } ?>
 		    <?php if ($additional) { ?>
 	    	    <li class="nav-item" role="presentation">
-	    		<a href="#" class="nav-link" id="additional-tab" data-bs-toggle="tab" data-bs-target="#additional" type="button" role="tab" aria-controls="program" aria-selected="false"><?php echo fw_get_db_post_option(get_the_ID(), 'additional_heading') ?></a>
+	    		<a href="#additional-tab" class="nav-link"><?php echo fw_get_db_post_option(get_the_ID(), 'additional_heading') ?></a>
 	    	    </li>
 		    <?php } ?>
 		</ul>
@@ -81,47 +81,55 @@ while (have_posts()) {
 	    <div class="row">
 		<div class="col-lg-8">
 		    <div class="tab-content" id="retreatTabContent">
-			<div class="tab-pane fade show active" id="Overview" role="tabpanel" aria-labelledby="Overview-tab">
+			<div id="overview-tab" >
 			    <h2 class="h4 mb-2">Overview</h2>
 			    <?php echo do_shortcode(wpautop($post->post_content)); ?>
 			</div>
 			<?php if ($instructors) { ?>
-	    		<div class="tab-pane fade" id="instructors" role="tabpanel" aria-labelledby="instructors-tab">
-	    		    <h2 class="h4 mb-2">Instructors</h2>
-				<?php
-				foreach ($instructors as $value) {
-				    get_template_part('template-parts/instructor', null, array(
-					'instructor_id' => $value)
-				    );
-				}
-				?>
-	    		</div>
-			<?php } ?>
-			<?php if ($program) { ?>
-	    		<div class="tab-pane fade" id="program" role="tabpanel" aria-labelledby="program-tab">
-	    		    <h2 class="h4 mb-2">Program</h2>
-	    		    <div class="program-content">
-				    <?php echo $program; ?>
-	    		    </div>
-	    		</div>
-			<?php } ?>
-			<?php if ($location_tab) { ?>
-	    		<div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
-	    		    <h2 class="h4 mb-2">Location</h2>
-	    		    <div class="location-content">
+	    		<div class="pt-2">
+	    		    <div id="instructors-tab">
+	    			<h2 class="h4 mb-2">Instructors</h2>
 				    <?php
-				    get_template_part('template-parts/location-tab', null, array(
-					'location_id' => $location_tab)
-				    );
+				    foreach ($instructors as $value) {
+					get_template_part('template-parts/instructor', null, array(
+					    'instructor_id' => $value)
+					);
+				    }
 				    ?>
 	    		    </div>
 	    		</div>
 			<?php } ?>
+			<?php if ($program) { ?>
+	    		<div class="pt-2">
+	    		    <div id="program-tab">
+	    			<h2 class="h4 mb-2">Program</h2>
+	    			<div class="program-content">
+					<?php echo $program; ?>
+	    			</div>
+	    		    </div>
+	    		</div>
+			<?php } ?>
+			<?php if ($location_tab) { ?>
+	    		<div class="pt-2">
+	    		    <div id="location-tab">
+	    			<h2 class="h4 mb-2">Location</h2>
+	    			<div class="location-content">
+					<?php
+					get_template_part('template-parts/location-tab', null, array(
+					    'location_id' => $location_tab)
+					);
+					?>
+	    			</div>
+	    		    </div>
+	    		</div>
+			<?php } ?>
 			<?php if ($additional) { ?>
-	    		<div class="tab-pane fade" id="additional" role="tabpanel" aria-labelledby="additional-tab">
-	    		    <h2 class="h4 mb-2"><?php echo fw_get_db_post_option(get_the_ID(), 'additional_heading') ?></h2>
-	    		    <div class="additional-content">
-				    <?php echo $additional; ?>
+	    		<div class="pt-2">
+	    		    <div id="additional-tab">
+	    			<h2 class="h4 mb-2"><?php echo fw_get_db_post_option(get_the_ID(), 'additional_heading') ?></h2>
+	    			<div class="additional-content">
+					<?php echo $additional; ?>
+	    			</div>
 	    		    </div>
 	    		</div>
 			<?php } ?>
