@@ -9,8 +9,8 @@ defined('ABSPATH') || exit;
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <div class="post-header text-center">
-	<?php the_title('<h1 class="h2">', '</h1>'); ?>
-	<div class="post-meta h5 mb-2 mb-md-3"><?php echo get_the_author(); ?><span class="date"><?php echo get_the_date() ?></span></div>
+	<?php the_title('<h1 class="h3">', '</h1>'); ?>
+	<div class="post-meta h6 mb-2 mb-md-3"><?php echo get_the_author(); ?><span class="date"><?php echo get_the_date() ?></span></div>
 	<?php
 	if (has_post_thumbnail()) {
 	    the_post_thumbnail();

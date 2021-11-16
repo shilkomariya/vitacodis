@@ -87,7 +87,7 @@ svg.icon{
     }
 }
 #contact{
-    margin-top: rem(-70px);
+    margin-top: -15vw;
     .contact-wrp{
 	box-sizing: border-box;
 	background-color: #fff;
@@ -125,6 +125,14 @@ svg.icon{
 .blog{
     .wp-post-image{
 	border-radius: $border-radius;
+    }
+}
+.post-card{
+    .post-meta{
+	color: $title;
+	margin-bottom: .5em;
+	font-size: .8rem;
+	font-weight: 700;
     }
 }
 .cats-widget{
@@ -198,33 +206,31 @@ svg.icon{
 	padding: 0.8rem 2.13333rem!important;
     }
 }
-.single-post{
-    .post-header{
-	.h2{
-	    margin-left: auto;
-	    margin-right: auto;
-	    max-width: rem(800px);
+.post-meta{
+    .date{
+	margin-left: 1rem;
+	padding-left: 1rem;
+	position: relative;
+	display: inline-block;
+	&:before{
+	    content: '';
+	    display: block;
+	    position: absolute;
+	    left: 0;
+	    top: 50%;
+	    transform: translate(-50%, -50%);
+	    width: rem(4px);
+	    height: rem(4px);
+	    background-color: $acc2;
+	    border-radius: 50%;
 	}
     }
-    .post-meta{
-	.date{
-	    margin-left: 1rem;
-	    padding-left: 1rem;
-	    position: relative;
-	    display: inline-block;
-	    &:before{
-		content: '';
-		display: block;
-		position: absolute;
-		left: 0;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		width: rem(4px);
-		height: rem(4px);
-		background-color: $acc2;
-		border-radius: 50%;
-	    }
-	}
+}
+.single-post{
+    .post-header{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 63.5rem;
     }
     .entry-content{
 	max-width: rem(750px);
@@ -237,6 +243,11 @@ svg.icon{
     h1, h2, h3{
 	@include font-size(rem(24px));
 	margin-top: 2rem;
+    }
+}
+.retreat {
+    .h3 a{
+	color: $title;
     }
 }
 .retreat-data{

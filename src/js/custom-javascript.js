@@ -13,7 +13,10 @@
     });
 
     $(window).on("load resize", function () {
-	$('.post .text').samesizr({
+	$('.post .text .h5').samesizr({
+	    mobile: 768
+	});
+	$('.post .excerpt').samesizr({
 	    mobile: 768
 	});
     });

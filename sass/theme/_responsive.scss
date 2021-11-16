@@ -44,10 +44,8 @@
 	}
     }
     .mailpoet_form{
-	margin-left: auto;
-	margin-right: auto;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	.mailpoet_message,
 	.mailpoet_hp_email_label{
@@ -58,7 +56,10 @@
 	    flex: 0 0 auto;
 	}
 	.mailpoet_text{
-	    min-width: rem(500px);
+	    min-width: rem(400px);
+	}
+	.mailpoet_submit{
+	    margin-left: 1rem!important;
 	}
     }
     ul.heateor_sss_sharing_ul{
@@ -103,7 +104,7 @@
 	}
 	.social-top{
 	    position: absolute;
-	    left: -13%;
+	    left: -15%;
 	    top: 0;
 	    height: 100%;
 	    .heateor_sss_sharing_container{
@@ -113,14 +114,25 @@
 	    .heateor_sss_sharing_ul{
 		display: flex;
 		flex-direction: column;
-		li{
+		a{
 		    margin: 0 0 1rem 0!important;
 		}
 	    }
 	}
     }
+    .single-sfwd-courses{
+	padding-top: rem(90px);
+	.site-header{
+	    background-color: #fff;
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    left: 0;
+	}
+    }
     .course-header{
-	padding: rem(100px 0 50px)!important;
+	padding: 15vh 0 rem(50px)!important;
+	min-height: 100vh;
     }
     .retreat-tabs{
 	li{
@@ -152,6 +164,11 @@
     }
     .container{
 	max-width: rem(1170px);
+    }
+    .single-post{
+	.entry-content{
+	    max-width: 800px;
+	}
     }
 }
 @media(min-width: 1600px){

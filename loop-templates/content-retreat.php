@@ -14,7 +14,7 @@ defined('ABSPATH') || exit;
 	</div>
 	<div class="col-lg-6">
 	    <div class="text mb-1">
-		<h3 class="h3"><?php the_title() ?></h3>
+		<h3 class="h3"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
 		<div class="retreat-data row mb-1">
 		    <div class="item col-auto">
 			<svg class="icon"><use xlink:href="#retreat-location"></use></svg>
