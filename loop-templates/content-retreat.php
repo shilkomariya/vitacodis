@@ -27,7 +27,7 @@ defined('ABSPATH') || exit;
 		</div>
 		<?php the_excerpt(); ?>
 	    </div>
-	    <p class="read-more"><a href="<?php the_permalink() ?>" class="fw-bold">Read More</a></p>
+	    <p class="read-more"><a href="<?php the_permalink() ?>">Read More</a></p>
 	</div>
     </div>
 </article>

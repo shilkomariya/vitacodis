@@ -35,7 +35,7 @@ if (fw_get_db_post_option(get_the_ID(), 'instructor')) {
     $instructor = get_post($instructor_id);
 }
 ?>
-<div id="product-<?php the_ID(); ?>" class="single-consulting container py-3">
+<div id="product-<?php the_ID(); ?>" class="single-consulting py-3">
     <div class="row">
 	<div class="col-lg-8">
 	    <div class="instructor-info">
@@ -45,9 +45,9 @@ if (fw_get_db_post_option(get_the_ID(), 'instructor')) {
 			<?php echo get_the_post_thumbnail(get_the_ID(), 'woocommerce_thumbnail', array("class" => "mb-1")); ?>
 		    </div>
 		    <div class="col-md-8">
-			<div class="location"><?php echo fw_get_db_post_option($instructor_id, 'location') ?></div>
 			<h1 class="h3 name"><?php echo $instructor->post_title ?></h1>
 			<div class="description"><?php echo fw_get_db_post_option($instructor_id, 'description') ?></div>
+			<div class="location"><?php echo fw_get_db_post_option($instructor_id, 'location') ?></div>
 			<div class="h5"><?php echo fw_get_db_post_option($instructor_id, 'rate') ?></div>
 			<ul class="social nav">
 			    <?php if (fw_get_db_post_option($instructor_id, 'instagramm') != "") { ?><li><a target="_blank" href="<?php echo fw_get_db_post_option($instructor_id, 'instagramm') ?>"><svg class="icon"><use xlink:href="#i-instagramm"></use></svg></a></li><?php } ?>

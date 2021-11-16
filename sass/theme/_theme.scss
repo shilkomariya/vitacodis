@@ -515,8 +515,9 @@ svg.icon{
     .avatar{
 	border-radius: 50%;
     }
+    .location,
     .description{
-	margin-bottom: 1rem;
+	margin-bottom: .5rem;
 	color: $title;
 	font-weight: 700;
     }
@@ -546,6 +547,12 @@ svg.icon{
 	    font-size: rem(16px);
 	    margin-right: .5rem;
 	}
+    }
+    .content{
+	max-width: 800px;
+    }
+    .wp-post-image{
+	border-radius: $border-radius;
     }
 }
 /*Trustpilot*/
@@ -608,6 +615,11 @@ svg.icon{
 	    font-size: rem(16px);
 	    margin-right: .5rem;
 	}
+    }
+}
+.post-type-archive-retreat{
+    .post-13721{
+	display: none;
     }
 }
 .retreat-header{
@@ -724,6 +736,7 @@ svg.icon{
 	    border-radius: 4px;
 	    overflow: hidden;
 	    height: 100%;
+	    text-align: center;
 	}
 	.woocommerce-loop-product__title{
 	    font-size: 1rem;

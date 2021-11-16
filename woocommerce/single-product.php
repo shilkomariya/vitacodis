@@ -68,7 +68,7 @@ do_action('woocommerce_sidebar');
 <?php
 
 if (fw_get_db_post_option(get_the_ID(), 'instructor')) {
-    get_template_part('template-parts/courses-by-instructor');
+    //   get_template_part('template-parts/courses-by-instructor');
 }
 
 get_footer('shop');
