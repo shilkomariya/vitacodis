@@ -1,0 +1,37 @@
+.comment-form-cookies-consent{
+    display: none;
+}
+.ld-focus-comments__header {
+    display: none;
+}
+.learndash-wrapper .ld-focus-comments #commentform textarea#comment{
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 15px;
+}
+form#commentform{
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+}
+.learndash-wrapper .ld-focus-comments .comment-respond h3#reply-title{
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+}
+.comment .comment{
+    background-color: #e2e7ed !important;
+}
+.learndash-wrapper div.ld-focus-comment{
+    margin-top: 0 !important;
+    padding-top: 15px;
+}
+.learndash-wrapper .ld-focus-comment.depth-2{
+    margin-left: 0;
+    padding-left: 40px;
+    padding-right: 15px;
+}
+.learndash-wrapper .ld-focus-comment.depth-2:last-child{
+    padding-bottom: 15px;
+}
+.learndash-wrapper .ld-focus-comment.bypostauthor > .ld-comment-wrapper{
+    background-color: inherit !important;
+}
