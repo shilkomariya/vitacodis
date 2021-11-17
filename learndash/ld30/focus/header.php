@@ -17,13 +17,10 @@ if (!empty($_COOKIE['darkmode'])) {
 <html <?php language_attributes(); ?>>
     <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-	<?php if ($isDarkMode): ?>
-    	<link rel="preload" href="<?php echo get_stylesheet_directory_uri() ?>/assets/css/darkmode-enabled.css"
-    	      as="style">
-	      <?php endif; ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/assets/css/darkmode-enabled.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<?php
 	wp_head();
 	/**
@@ -31,7 +28,6 @@ if (!empty($_COOKIE['darkmode'])) {
 	 */
 	do_action('learndash-focus-head');
 	?>
-	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     </head>
     <?php if ($isDarkMode): ?>
         <body id="darkmode" <?php body_class(); ?>>

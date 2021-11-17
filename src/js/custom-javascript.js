@@ -120,4 +120,34 @@
 	lastScrollTop = st;
     }
 
+    $('span.ld-settings-mode').click(function () {
+	if ($.cookie("darkmode") && $.cookie("darkmode") == "Enabled") {
+	    $.cookie("darkmode", "null", {expires: 1, path: '/', });
+	    $('body').removeAttr('id');
+	} else {
+	    $.cookie("darkmode", "Enabled", {expires: 1, path: '/', });
+	    $('body').attr('id', 'darkmode');
+	}
+    });
+
+    function checkCookie() {
+	if ($.cookie("darkmode"))
+	{
+	    if ($.cookie("darkmode") == "Enabled") {
+		$('#checkbox').addClass("btnactive");
+		$('#checkbox').prop('checked', true);
+		$('#sw_darkmode').addClass("btnactive");
+		$('#sw_darkmode').prop('checked', true);
+	    } else {
+		$('#checkbox').removeClass("btnactive");
+		$('#checkbox').prop('checked', false);
+		$('#sw_darkmode').removeClass("btnactive");
+		$('#sw_darkmode').prop('checked', false);
+	    }
+	}
+    }
+
+    checkCookie();
+
+
 }(jQuery);
