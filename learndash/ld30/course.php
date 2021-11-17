@@ -168,7 +168,7 @@ $has_lesson_quizzes = learndash_30_has_lesson_quizzes($course_id, $lessons);
 		do_action('learndash-course-heading-before', $course_id, $user_id);
 		?>
 
-    	    <h2>
+    	    <h2 class>
 		    <?php
 		    printf(
 			    // translators: placeholder: Course.

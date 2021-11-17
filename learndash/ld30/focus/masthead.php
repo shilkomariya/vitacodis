@@ -54,18 +54,7 @@ if (!empty($header['logo'])) {
     }
 }
 ?>
-<?php
-$background = "white";
-$bordercolor = "1px solid #e2e7ed;";
-
-if (isset($_COOKIE['darkmode']) && $_COOKIE['darkmode'] == "Enbaled") {
-    $background = "#383636";
-    $bordercolor = "1px solid #383636;";
-}
-?>
-<div data-child="1" class="ld-focus-header"
-     style="background: <?php echo $background; ?>; border-bottom: <?php echo $bordercolor; ?>">
-
+<div data-child="1" class="ld-focus-header">
     <?php
     /**
      * Fires before the header mobile nav in the focus template.
@@ -75,9 +64,7 @@ if (isset($_COOKIE['darkmode']) && $_COOKIE['darkmode'] == "Enbaled") {
      */
     do_action('learndash-focus-header-mobile-nav-before', $course_id, $user_id);
     ?>
-
     <div class="ld-mobile-nav">
-
         <a href="#" class="ld-trigger-mobile-nav" aria-label="<?php esc_attr_e('Menu', 'learndash'); ?>">
             <span class="bar-1"></span>
             <span class="bar-2"></span>
@@ -140,29 +127,8 @@ if (isset($_COOKIE['darkmode']) && $_COOKIE['darkmode'] == "Enbaled") {
 		}
 	    } else {
 		?>
-		<style type="text/css">
-		    .course-heading {
-			margin: 0;
-			display: flex;
-			align-items: center;
-			height: 100%;
-		    }
-
-		    .learndash-wrapper .ld-focus .ld-focus-header .ld-brand-logo {
-			flex: 0 0 600px;
-			max-width: 600px;
-		    }
-		</style>
-		<h3 class="course-heading">
-		    <?php
-		    $headingcolor = "#4a4a4a";
-		    if (isset($_COOKIE['darkmode']) && $_COOKIE['darkmode'] == "Enbaled") {
-			$headingcolor = "#dedada";
-		    }
-		    ?>
-		    <a style="color: <?php echo $headingcolor; ?>;"
-		       href="<?php echo esc_url(get_the_permalink($course_id)); ?>" id="ld-focus-mode-course-heading">
-			<span class="ld-icon ld-icon-content"></span>
+		<h3 class="course-heading h5">
+		    <a href="<?php echo esc_url(get_the_permalink($course_id)); ?>" id="ld-focus-mode-course-heading">
 			<?php echo esc_html(get_the_title($course_id)); ?>
 		    </a>
 		</h3>
@@ -210,20 +176,21 @@ if (isset($_COOKIE['darkmode']) && $_COOKIE['darkmode'] == "Enbaled") {
      */
     do_action('learndash-focus-header-nav-before', $course_id, $user_id);
 
-    $can_complete = learndash_30_focus_mode_can_complete();
-
-    learndash_get_template_part(
-	    'modules/course-steps.php', array(
-	'course_id' => $course_id,
-	'course_step_post' => $post,
-	'user_id' => $user_id,
-	'course_settings' => isset($course_settings) ? $course_settings : array(),
-	'can_complete' => $can_complete,
-	'context' => 'focus',
-	    ), true
-    );
-
     /**
+      $can_complete = learndash_30_focus_mode_can_complete();
+
+      learndash_get_template_part(
+      'modules/course-steps.php', array(
+      'course_id' => $course_id,
+      'course_step_post' => $post,
+      'user_id' => $user_id,
+      'course_settings' => isset($course_settings) ? $course_settings : array(),
+      'can_complete' => $can_complete,
+      'context' => 'focus',
+      ), true
+      );
+
+      /**
      * Fires after the header nav in the focus template.
      *
      * @param int $course_id Course ID.
@@ -236,29 +203,6 @@ if (isset($_COOKIE['darkmode']) && $_COOKIE['darkmode'] == "Enbaled") {
         <span class="ld-settings-mode">
             <i class="fa fa-adjust" aria-hidden="true"></i>
         </span>
-	<?php /*
-	  <div class="wrap_panel" id="wrap-darkmode-fullscreen" style="display:none">
-
-	  <div class="wrap_swither">
-	  <div class="wrap_darkmode">
-	  <label class="switch">
-	  <input type="checkbox" id="sw_darkmode">
-	  <span class="slider round"></span>
-	  </label>
-	  <span class="ld-text">Dark Mode</span>
-
-	  </div><!-- end .wrap_darkmode -->
-	  <div class="wrap_fullscreen">
-	  <label class="switch full desktop">
-	  <input type="checkbox" id="sw_full_screen">
-	  <span class="slider round"></span>
-	  </label>
-	  <span class="ld-text desktop">Full Screen</span>
-	  </div><!-- end. wrap_fullscreen -->
-
-	  </div><!-- end .wrap_swither-->
-	  </div>
-	 */ ?>
     </div>
 
     <?php if (is_user_logged_in()) : ?>
@@ -271,24 +215,7 @@ if (isset($_COOKIE['darkmode']) && $_COOKIE['darkmode'] == "Enbaled") {
 	     * @param int $user_id User ID.
 	     */
 	    do_action('learndash-focus-header-user-menu-before', $course_id, $user_id);
-
-	    $user_data = get_userdata($user_id);
 	    ?>
-    	<span class="ld-text ld-user-welcome-text">
-		<?php
-		echo sprintf(
-			// translators: Focus mode welcome placeholder.
-			esc_html_x('Hello, %s!', 'Focus mode welcome placeholder', 'learndash'),
-			/**
-			 * Filters Focus mode user welcome name.
-			 *
-			 * @param string $user_nicename User nice name.
-			 * @param \WP_User|boolean $user_data User Object or false if no user found.
-			 */ wp_kses_post(apply_filters('ld_focus_mode_welcome_name', $user_data->user_nicename, $user_data))
-		);
-		?>
-    	</span>
-
     	<span class="ld-profile-avatar">
 		<?php
 		/**
@@ -301,7 +228,7 @@ if (isset($_COOKIE['darkmode']) && $_COOKIE['darkmode'] == "Enbaled") {
 		?>
     	    <i class="fa fa-user" aria-hidden="true"></i>
 		<?php
-		echo get_avatar($user_id);
+		//echo get_avatar($user_id);
 		/**
 		 * Fires after the user avatar in the focus template.
 		 *
