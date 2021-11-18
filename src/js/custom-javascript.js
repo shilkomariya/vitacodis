@@ -186,4 +186,78 @@
 	});
     });
 
+    jQuery(document).ready(function ($) {
+
+	// function to check if next is Course Discussion
+	function isDiscussion() {
+	    const checkNextLink = $('.check-next').find('a').attr('href');
+	    if (checkNextLink.indexOf("/modules/course-discussion") === -1) {
+		return false;
+	    } else {
+		return true;
+	    }
+	}
+
+	var nextmodule = $('.ld-is-current-lesson').next().find('.ld-table-list-items');
+	// if next lessons are present
+	if (nextmodule.length) {
+	    nextmodule = nextmodule.find('.ld-table-list-item:first-child').find('a').attr('href');
+	} else {
+	    // else no more lessons, lets navigate to Course Discussion
+	    nextmodule = $('.ld-is-current-lesson').next().find('.ld-lesson-item-preview-heading').attr('href');
+	}
+	setTimeout(function () {
+	    var checkText = $('.check-next').find('.ld-text').html();
+	    $('.check-next a > .ld-text').html('Next');
+	}, 300);
+	//setTimeout(function(){
+	$('.wpProQuiz_content h2').after('<h4 class="customquiztext h6">(each multiple choice question can have more than one correct answer)</h4>');
+	//},2000);
+	$('.check-next a').on('click', function () {
+
+	    var checkQuizLink = $('.ld-is-current-item').parent();
+	    var NextModuleLink = $(this).attr('href');
+	    var checkText = $('.check-next').find('.ld-text').html();
+
+	    // if next is quiz and next is not course discussion
+	    if (checkQuizLink.next().hasClass('quiz_row')) {
+
+		var QuizLink = checkQuizLink.next().find('a').attr('href');
+		;
+
+		$('#take_the_quiz').attr('href', QuizLink);
+		if (isDiscussion()) {
+		    nextmodule = $('.check-next').find('a').attr('href');
+		    $('.nextModulePopup .paragraph-two').text('The quiz is not mandatory, you can skip it and proceed to Course Discussion');
+		    $('#take_next_module').text('Discussion');
+
+		}
+		$('#take_next_module').attr('href', nextmodule);
+
+		$('.nextModulePopup').show();
+
+		return false;
+
+	    }
+
+	});
+	$('#nextModulePopupClose').on('click', function () {
+	    $('.nextModulePopup').hide();
+	});
+
+	$('.wpProQuiz_QuestionButton').attr('value', 'Check Answers');
+	$('.wpProQuiz_QuestionButton').css('float', 'left');
+	$('.wpProQuiz_QuestionButton').on('click', function () {
+	    setTimeout(function () {
+
+		var embed = '<div class="ld-content-actions"><div class="answers-info ld-content-action"><span class="correct-answers">Correct Answer</span><span class="incorrect">Incorrect Answer</span></div><div class="ld-content-action"><a class="ld-button ld-button-transparent" href="<?php echo get_the_permalink(); ?>"><span class="ld-icon ld-icon-arrow-left"></span><span class="ld-text">Retake</span></a></div><div class="ld-content-action"><a class="ld-button ld-button-transparent" href="' + nextmodule + '"><span class="ld-text">Next</span><span class="ld-icon ld-icon-arrow-right"></span></a></div></div>';
+		$('.wpProQuiz_listItem').find('.wpProQuiz_QuestionButton').hide();
+		$('.wpProQuiz_quiz').find('.wpProQuiz_QuestionButton').hide();
+		$('.wpProQuiz_quiz').append('' + embed);
+		$('.wpProQuiz_quiz').show();
+		$('.wpProQuiz_results').show();
+	    }, 5000);
+	});
+    });
+
 }(jQuery);

@@ -521,3 +521,25 @@ add_action('learndash-focus-content-end', function() {
 	comments_template();
     }
 });
+
+function getNextUrl($post_id, $course_id) {
+    $next_url = learndash_next_post_link('', true);
+    if (!$next_url) {
+	$lessons = learndash_course_get_lessons($course_id, array());
+	$find = false;
+	$next_lesson = array();
+	foreach ($lessons as $lesson) {
+	    if ($find === true) {
+		$next_lesson = $lesson;
+		break;
+	    }
+	    if ($lesson->ID === $post_id) {
+		$find = true;
+	    }
+	}
+	if ($next_lesson) {
+	    $next_url = get_post_permalink($next_lesson->ID);
+	}
+    }
+    return $next_url;
+}
