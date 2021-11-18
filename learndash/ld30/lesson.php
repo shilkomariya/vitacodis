@@ -213,7 +213,7 @@ add_filter('comments_array', 'learndash_remove_comments', 1, 2);
     endif;
 
     if (!comments_open($post->ID)) {
-	if ((get_the_title() != "Course Resources") && (get_the_title() != "Course Feedback")) {
+	if ((get_the_title() != "Course Resources") && (get_the_title() != "Course Feedback") && (get_the_title() != "Feedback Thank You")) {
 
 	    learndash_get_template_part(
 		    'modules/course-steps.php', array(
