@@ -514,3 +514,10 @@ function ld_topic_video_duration($id) {
 	echo '</span>';
     }
 }
+
+add_filter('learndash_focus_mode_can_view_comments', '__return_false');
+add_action('learndash-focus-content-end', function() {
+    if (is_user_logged_in()) {
+	comments_template();
+    }
+});

@@ -184,9 +184,24 @@
 	.ld-content-actions{
 	    .content-title{
 		flex-grow: 1;
-		.h5{
+		.h6{
 		    color: var(--ld-main-color);
 		}
+	    }
+	}
+	.ld-table-list {
+	    border-bottom: 0;
+	    .ld-table-list-items{
+		border: 0 none;
+		padding: 0;
+	    }
+	}
+	#comments{
+	    margin: 0;
+	    max-width: 100%;
+	    #wpdcom{
+		max-width: 100%;
+
 	    }
 	}
     }
