@@ -184,7 +184,6 @@ if (!empty($parent_lesson_id)) {
      */
     do_action('learndash-' . $context . '-course-steps-before', get_post_type(), $course_id, $user_id);
     $learndash_current_post_type = get_post_type();
-    var_dump($learndash_current_post_type);
     ?>
     <?php if ($learndash_current_post_type === "sfwd-topic") { ?>
         <div class="ld-content-action content-title">

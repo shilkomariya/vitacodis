@@ -1,15 +1,3 @@
-#darkmode{
-    background-color: #383636;
-    .learndash-wrapper .ld-focus{
-	--ld-focus-bg: #383636;
-	--ld-main-color: #dedada;
-	--ld-blue-color: #dedada;
-	--ld-border-color: #333;
-	--ld-main-light-color: #dedada;
-	--ld-active-hover: #968f8f;
-
-    }
-}
 .learndash-wrapper{
     background-color: var(--ld-focus-bg)!important;
     .ld-focus {
@@ -94,6 +82,9 @@
 	    }
 	    .ld-progress-bar-percentage {
 		background-color: $blue;
+	    }
+	    .ld-progress-steps{
+		color: var(--ld-main-color);
 	    }
 	}
 	.ld-status-complete {
@@ -201,7 +192,53 @@
 	    max-width: 100%;
 	    #wpdcom{
 		max-width: 100%;
-
+	    }
+	    .wpd-form-head{
+		display: none!important;
+	    }
+	    #wpdcom .wpd-comment-text{
+		color: var(--ld-main-color);
+	    }
+	}
+	.wpd-avatar{
+	    img.avatar{
+		border-radius: 50%!important;
+		border: 0 none!important;
+		background: none!important;
+	    }
+	}
+    }
+}
+#darkmode{
+    background-color: #383636;
+    .learndash-wrapper .ld-focus{
+	--ld-focus-bg: #383636;
+	--ld-main-color: #dedada;
+	--ld-blue-color: #dedada;
+	--ld-border-color: #333;
+	--ld-main-light-color: #dedada;
+	--ld-active-hover: #968f8f;
+	.wpd-comment.wpd-reply .wpd-comment-wrap {
+	    background-color: #474444;
+	}
+	#wpdcom{
+	    .ql-container {
+		background: #474444;
+		border-color: #333;
+	    }
+	    .ql-toolbar{
+		background: #474444;
+		border-color: #333;
+	    }
+	    .wpd-comment .wpd-reply-to a {
+		color: $blue;
+	    }
+	    .wpd-thread-head{
+		.wpd-filter,
+		.wpdiscuz-user-settings,
+		.wpd-thread-info{
+		    color: #dedada;
+		}
 	    }
 	}
     }
