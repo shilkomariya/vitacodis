@@ -40,6 +40,8 @@ $in_focus_mode = LearnDash_Settings_Section::get_section_setting('LearnDash_Sett
 add_filter('comments_array', 'learndash_remove_comments', 1, 2);
 ?>
 
+
+
 <div class="<?php echo esc_attr(learndash_the_wrapper_class()); ?>">
 
     <?php
@@ -212,20 +214,18 @@ add_filter('comments_array', 'learndash_remove_comments', 1, 2);
 	$can_complete = apply_filters('learndash-lesson-can-complete', true, get_the_ID(), $course_id, $user_id);
     endif;
 
-    if (!comments_open($post->ID)) {
-	if ((get_the_title() != "Course Resources") && (get_the_title() != "Course Feedback") && (get_the_title() != "Feedback Thank You")) {
+    if ((get_the_title() != "Course Resources") && (get_the_title() != "Course Feedback") && (get_the_title() != "Feedback Thank You")) {
 
-	    learndash_get_template_part(
-		    'modules/course-steps.php', array(
-		'course_id' => $course_id,
-		'course_step_post' => $post,
-		'user_id' => $user_id,
-		'course_settings' => isset($course_settings) ? $course_settings : array(),
-		'can_complete' => $can_complete,
-		'context' => 'lesson',
-		    ), true
-	    );
-	}
+	learndash_get_template_part(
+		'modules/course-steps.php', array(
+	    'course_id' => $course_id,
+	    'course_step_post' => $post,
+	    'user_id' => $user_id,
+	    'course_settings' => isset($course_settings) ? $course_settings : array(),
+	    'can_complete' => $can_complete,
+	    'context' => 'lesson',
+		), true
+	);
     }
     /**
      * Fires after the lesson

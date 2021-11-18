@@ -177,13 +177,9 @@
 		}
 	    });
 	}
-	$(window).on('resize orientationchange', function () {
-	    setTimeout(function () {
-		if (window.innerWidth < 481) {
-		    $('.ld-focus').removeClass('ld-focus-sidebar-collapsed');
-		}
-	    }, 100);
-	});
+	if (window.innerWidth < 576) {
+	    $('.ld-focus').removeClass('ld-focus-sidebar-collapsed');
+	}
     });
 
     jQuery(document).ready(function ($) {
