@@ -26,3 +26,12 @@ $vitacodis_includes = array(
 foreach ($vitacodis_includes as $file) {
     require_once get_template_directory() . '/inc' . $file;
 }
+
+
+/**
+ * Initialize all the core classes of the theme
+ */
+if (class_exists('App\\Init')) {
+    new App\Init;
+}
+/* ------------------------------------------------------------------------------------  */

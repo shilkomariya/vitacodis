@@ -8,6 +8,9 @@
 	--ld-main-light-color: #A0A3BD;
 	--ld-active-hover: #f4f4f4;
 
+	.h5{
+	    color: var(--ld-main-color);
+	}
 	.ld-focus-header {
 	    background-color: var(--ld-focus-bg);
 	    border-color: var(--ld-border-color);
@@ -89,6 +92,9 @@
 	}
 	.ld-status-complete {
 	    background-color: $blue;
+	}
+	.ld-status-unlocked{
+	    background: none;
 	}
 	.ld-focus-sidebar {
 	    background-color: var(--ld-focus-bg);
@@ -234,6 +240,25 @@
 		font-size: .85rem;
 	    }
 	}
+	#ff-compose{
+	    .ff-title{
+		@include font-size(rem(20px));
+		color: var(--ld-main-color);
+	    }
+	    .ff-form{
+		max-width: 100%;
+		color: var(--ld-main-color);
+	    }
+	    .btn{
+		img{
+		    display: none;
+		}
+	    }
+	    .ff-button-bar .ff-powered-img{
+		display: none!important;
+		opacity: 0;
+	    }
+	}
     }
 }
 #darkmode{
@@ -268,6 +293,11 @@
 		}
 	    }
 	}
+    }
+    .form-control{
+	background-color: #474444;
+	color: #dedada;
+	border-color: #333;
     }
 }
 @include media-breakpoint-up(md) {

@@ -14,6 +14,7 @@ if (!defined('FW')) {
 	    <rect height="19.6" width="213.3" x="156.2" y="209.5"></rect>
 	</symbol>
     </svg>
+    <h2 class="h5">Course Resources</h2>
     <?php
     $arr = $atts['resources'];
     foreach ($arr as $key => $value) {

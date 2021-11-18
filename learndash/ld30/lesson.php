@@ -213,16 +213,19 @@ add_filter('comments_array', 'learndash_remove_comments', 1, 2);
     endif;
 
     if (!comments_open($post->ID)) {
-	learndash_get_template_part(
-		'modules/course-steps.php', array(
-	    'course_id' => $course_id,
-	    'course_step_post' => $post,
-	    'user_id' => $user_id,
-	    'course_settings' => isset($course_settings) ? $course_settings : array(),
-	    'can_complete' => $can_complete,
-	    'context' => 'lesson',
-		), true
-	);
+	if ((get_the_title() != "Course Resources") && (get_the_title() != "Course Feedback")) {
+
+	    learndash_get_template_part(
+		    'modules/course-steps.php', array(
+		'course_id' => $course_id,
+		'course_step_post' => $post,
+		'user_id' => $user_id,
+		'course_settings' => isset($course_settings) ? $course_settings : array(),
+		'can_complete' => $can_complete,
+		'context' => 'lesson',
+		    ), true
+	    );
+	}
     }
     /**
      * Fires after the lesson
