@@ -173,7 +173,13 @@ foreach ($tabs as $tab) {
 
     	<div class="<?php echo esc_attr($tab_class); ?>" id="<?php echo esc_attr('ld-tab-' . $tab['id'] . '-' . get_the_ID()); ?>">
 		<?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Might output HTML?>
-		<?php echo wpautop($tab['content']); ?>
+		<?php
+		if (get_the_title() == 'Feedback Thank You'):
+		    echo wpautop($tab['content']);
+		else:
+		    echo $tab['content'];
+		endif;
+		?>
     	</div>
     	<input type="hidden" name="course_id" value="<?php echo $course_id; ?>">
     	<input type="hidden" name="post_id" value="<?php echo get_the_ID(); ?>">

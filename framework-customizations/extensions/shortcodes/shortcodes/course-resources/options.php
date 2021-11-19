@@ -15,6 +15,10 @@ $options = array(
 		'label' => __('Resource Upload', 'fw'),
 		'files_ext' => array('doc', 'pdf', 'zip')
 	    ),
+	    'link' => array(
+		'type' => 'text',
+		'label' => __('Resource Link', 'fw'),
+	    ),
 	    'heading' => array(
 		'type' => 'text',
 		'label' => __('Title', 'fw'),
@@ -22,13 +26,6 @@ $options = array(
 	    'description' => array(
 		'type' => 'text',
 		'label' => __('Description', 'fw'),
-	    ),
-	    'icon' => array(
-		'type' => 'select',
-		'label' => __('Icon', 'fw'),
-		'choices' => array(
-		    'pdf' => 'Pdf',
-		)
 	    ),
 	),
 	'limit' => 0, // limit the number of boxes that can be added

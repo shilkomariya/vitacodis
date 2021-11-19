@@ -169,7 +169,7 @@
 	    color: var(--ld-main-color);
 	}
 	.ld-focus-content{
-	    padding-top: 35px!important;
+	    padding-top: 65px!important;
 	    padding-bottom: 0!important;
 	}
 	.ld-content-actions{
@@ -221,6 +221,9 @@
 		padding: 0;
 	    }
 	}
+	#learndash_mark_complete_button{
+	    display: none;
+	}
 	#comments{
 	    margin: 0;
 	    max-width: 100%;
@@ -256,6 +259,9 @@
 	    }
 	    .info-wrp{
 		padding-left: .5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	    }
 	    .h6{
 		margin-bottom: 0;
@@ -340,6 +346,14 @@
 	#ff-compose label {
 	    font-family: $headings-font-family;
 	    font-weight: 600;
+	}
+    }
+    &.feedback-thank-you,
+    &.course-feedback,
+    &.course-resources,
+    &.course-discussion{
+	.ld-focus-content{
+	    padding-top: 35px!important;
 	}
     }
 }
