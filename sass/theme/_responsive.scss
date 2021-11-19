@@ -127,6 +127,9 @@
     }
     .single-sfwd-courses{
 	padding-top: rem(90px);
+	.course-header{
+	    min-height: calc(100vh - 6rem);
+	}
 	.site-header{
 	    background-color: #fff;
 	    position: absolute;

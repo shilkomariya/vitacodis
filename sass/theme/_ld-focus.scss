@@ -220,6 +220,12 @@
 		border: 0 none;
 		padding: 0;
 	    }
+	    .ld-table-list-item{
+		border-color: var(--ld-border-color);
+	    }
+	    .ld-topic-title{
+		color: var(--ld-main-color);
+	    }
 	}
 	#learndash_mark_complete_button{
 	    display: none;
