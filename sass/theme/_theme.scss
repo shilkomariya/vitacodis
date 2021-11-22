@@ -38,12 +38,18 @@ svg.icon{
 }
 .btn-primary{
     &:hover{
-	border-color: $acc2;
-	background-color: $acc2;
+	border-color: $acc3;
+	background-color: $acc3;
     }
 }
-.btn-outline-primary:not(:hover){
+.btn-outline-primary{
     color: $title;
+    border-color: $acc2;
+    &:hover{
+	color: $title;
+	border-color: $acc3;
+	background: none;
+    }
 }
 .body-lg{
     font-weight: 700;
