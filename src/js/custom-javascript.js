@@ -254,6 +254,17 @@
 		$('.wpProQuiz_results').show();
 	    }, 5000);
 	});
+
+	let searchParams = new URLSearchParams(window.location.search);
+	if (searchParams.has('video')) {
+	    const fancybox = new Fancybox([
+		{
+		    src: courseVideoUrl,
+		    type: "video",
+		},
+	    ]);
+	}
+
     });
 
 }(jQuery);

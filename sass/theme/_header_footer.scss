@@ -223,6 +223,31 @@
 	}
     }
 }
+@media(min-width: 1600px){
+    .site-footer{
+	font-size: .8rem;
+	.logo-link{
+	    width: rem(180px);
+	}
+	#footer-links{
+	    a{
+		font-size: rem(12px);
+	    }
+	}
+	.social{
+	    li+li{
+		margin-left: rem(15px);
+	    }
+	    a{
+		font-size: rem(30px);
+		line-height: 1;
+	    }
+	}
+    }
+    .copyright{
+	font-size: .8rem;
+    }
+}
 @include media-breakpoint-down(lg) {
     .site-footer{
 	.social{
