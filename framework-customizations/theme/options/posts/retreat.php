@@ -7,6 +7,11 @@ $options = array(
     'main' => array(
 	'type' => 'box',
 	'options' => array(
+	    'banner_image' => array(
+		'type' => 'upload',
+		'label' => __('Banner Image', 'fw'),
+		'desc' => __('Either upload a new, or choose an existing image from your media library', 'fw')
+	    ),
 	    'location' => array(
 		'type' => 'text',
 		'label' => __('Location', 'vitacodis'),

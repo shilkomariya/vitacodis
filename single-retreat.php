@@ -9,7 +9,9 @@ defined('ABSPATH') || exit;
 
 get_header();
 $bg = '';
-if (has_post_thumbnail()) {
+if (fw_get_db_post_option(get_the_ID(), 'banner_image')) {
+    $bg = ' style="background-image: url(' . fw_get_db_post_option(get_the_ID(), 'banner_image')['url'] . ');"';
+} elseif (has_post_thumbnail()) {
     $bg = ' style="background-image: url(' . get_the_post_thumbnail_url(get_the_ID(), 'full') . ');"';
 }
 $instructors = fw_get_db_post_option(get_the_ID(), 'instructors');

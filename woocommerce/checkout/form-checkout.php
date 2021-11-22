@@ -44,7 +44,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 	    <?php endif; ?>
 	    <?php do_action('woocommerce_checkout_before_order_review_heading'); ?>
 
-	    <?php if (!is_user_logged_in() || 'no' !== get_option('woocommerce_enable_checkout_login_reminder')) { ?>
+	    <?php if (!is_user_logged_in()) { ?>
     	    <div class="body-lg my-2">
 		    <?php wc_print_notice(apply_filters('woocommerce_checkout_login_message', esc_html__('Returning customer?', 'woocommerce')) . ' <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">' . esc_html__('Click here to login', 'woocommerce') . '</a>', 'notice'); ?>
     	    </div>
