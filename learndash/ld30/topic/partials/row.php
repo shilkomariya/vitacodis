@@ -104,9 +104,10 @@ do_action('learndash-topic-row-before', $topic->ID, $course_id, $user_id);
 	     */
 	    do_action('learndash-topic-row-title-after', $topic->ID, $course_id, $user_id);
 
-	    ld_topic_video_duration($topic->ID);
+	    if (fw_get_db_post_option($topic->ID, 'video_duration') != "") {
+		echo '<span class="video-duration">' . fw_get_db_post_option($topic->ID, 'video_duration') . '</span>';
+	    }
 	    ?>
-
     </a>
 </div> <!--/.ld-table-list-item-->
 <?php

@@ -476,45 +476,6 @@ if (!function_exists('course_get_started_link')) {
 
 }
 
-/**
- * Vimeo video duration in seconds
- *
- * @param $video_url
- * @return integer|null Duration in seconds or null on error
- */
-function vimeoVideoDuration($video_url) {
-
-    $video_id = (int) substr(parse_url($video_url, PHP_URL_PATH), 1);
-
-    $json_url = 'http://vimeo.com/api/v2/video/' . $video_id . '.xml';
-
-    $ch = curl_init($json_url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    $data = curl_exec($ch);
-    curl_close($ch);
-    $data = new SimpleXmlElement($data, LIBXML_NOCDATA);
-
-    if (!isset($data->video->duration)) {
-	return null;
-    }
-
-    $duration = $data->video->duration;
-
-    echo $duration; // in seconds
-}
-
-function ld_topic_video_duration($id) {
-    $url = get_post($id)->post_content;
-
-    if (strpos($url, 'https://vimeo')) {
-
-	echo '<span class="duration">';
-	//vimeoVideoDuration($url);
-	echo '</span>';
-    }
-}
-
 add_filter('learndash_focus_mode_can_view_comments', '__return_false');
 add_action('learndash-focus-content-end', function() {
     if (is_user_logged_in()) {

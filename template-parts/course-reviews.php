@@ -16,34 +16,23 @@
 </div>
 <?php
 foreach (fw_get_db_post_option(get_the_ID(), 'reviews') as $key => $value) {
-    if ($key == 3) {
-	?>
-	<p>
-	    <a class="collapse-link collapsed" data-bs-toggle="collapse" href="#collapseRevews" role="button" aria-expanded="false" aria-controls="collapseRevews">More reviews</a>
-	</p>
-	<div class="collapse" id="collapseRevews">
-	    <?php
-	}
-	?>
-        <div class="course-review mb-2">
-    	<h4 class="author"><?php echo $value['author'] ?></h4>
-    	<div class="stars <?php echo $value['stars'] ?>">
-    	    <svg class="icon"><use xlink:href="#star"></use></svg>
-    	    <svg class="icon"><use xlink:href="#star"></use></svg>
-    	    <svg class="icon"><use xlink:href="#star"></use></svg>
-    	    <svg class="icon"><use xlink:href="#star"></use></svg>
-    	    <svg class="icon"><use xlink:href="#star"></use></svg>
-    	</div>
-    	<div class="quote">
-		<?php echo $value['quote'] ?>
-    	</div>
+    ?>
+    <div class="course-review mb-2">
+        <h4 class="author"><?php echo $value['author'] ?></h4>
+        <div class="stars <?php echo $value['stars'] ?>">
+    	<svg class="icon"><use xlink:href="#star"></use></svg>
+    	<svg class="icon"><use xlink:href="#star"></use></svg>
+    	<svg class="icon"><use xlink:href="#star"></use></svg>
+    	<svg class="icon"><use xlink:href="#star"></use></svg>
+    	<svg class="icon"><use xlink:href="#star"></use></svg>
         </div>
-	<?php
-    }
-    if ($key > 2) {
-	?>
+        <div class="quote">
+	    <?php echo $value['quote'] ?>
+        </div>
     </div>
     <?php
 }
 ?>
-
+<p>
+    <a class="read-more" href="https://www.trustpilot.com/review/www.vitacodis.com" target="_blank">More reviews</a>
+</p>

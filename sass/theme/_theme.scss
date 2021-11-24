@@ -413,6 +413,7 @@ svg.icon{
 }
 .about-course{
     margin-bottom: 4rem;
+    max-width: 850px;
     h2, h3, h4{
 	@include font-size(rem(16px));
 	margin-top: 1rem;
@@ -531,6 +532,10 @@ svg.icon{
 		.ld-table-list-item-preview{
 		    align-items: center;
 		    color: $title;
+		    .video-duration{
+			text-align: right;
+			flex-grow: 1;
+		    }
 		}
 		.ld-status-incomplete{
 		    width: 1rem;
@@ -621,7 +626,7 @@ svg.icon{
     }
 }
 .collapse-link{
-    font-weight: 700;
+    font-weight: 600;
     &:not(.collapsed){
 	display: none;
     }
