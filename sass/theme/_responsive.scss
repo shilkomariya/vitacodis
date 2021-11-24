@@ -80,6 +80,9 @@
     #main-banner{
 	min-height: 45rem;
     }
+    .avatar-wrp{
+	max-width: rem(230px);
+    }
 }
 @include media-breakpoint-up(lg) {
     .card-rows > .col{
@@ -154,7 +157,7 @@
     }
     .single-retreat{
 	.card-course{
-	    top: 5rem;
+	    top: 8rem;
 	}
     }
 }

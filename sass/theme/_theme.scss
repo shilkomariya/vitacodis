@@ -97,6 +97,11 @@ svg.icon{
 	margin-right: 1rem;
     }
 }
+#contact-img{
+    .img-fluid{
+	width: 100%;
+    }
+}
 #contact{
     margin-top: -15vw;
     .contact-wrp{
@@ -719,7 +724,7 @@ svg.icon{
     margin-bottom: 3rem;
     position: sticky;
     z-index: 222;
-    top: 0;
+    top: rem(61px);
     li{
 	margin-right: rem(15px);
     }
@@ -789,7 +794,6 @@ svg.icon{
 	    border-radius: 4px;
 	    overflow: hidden;
 	    height: 100%;
-	    text-align: center;
 	}
 	.woocommerce-loop-product__title{
 	    font-size: 1rem;
@@ -805,7 +809,8 @@ svg.icon{
 	margin-bottom: .5rem;
     }
     .spec{
-	max-width: rem(630px);
+	//max-width: rem(630px);
+	max-width: 34rem;
     }
 }
 .card-consulting{
@@ -973,6 +978,9 @@ svg.icon{
 	font-weight: 700;
 	color: $acc3;
 	text-transform: uppercase;
+    }
+    .registration-form-mailpoet{
+	display: none;
     }
 }
 .mp-form-label{

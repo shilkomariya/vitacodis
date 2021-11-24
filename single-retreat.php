@@ -54,26 +54,26 @@ while (have_posts()) {
 	    <div class="container">
 		<ul class="nav" id="retreatTab" role="tablist">
 		    <li class="nav-item" role="presentation">
-			<a href="#overview-tab" class="nav-link active">Overview</a>
+			<a href="#overview-tab" class="scrollTo nav-link active">Overview</a>
 		    </li>
 		    <?php if ($instructors) { ?>
 	    	    <li class="nav-item" role="presentation">
-	    		<a href="#instructors-tab" class="nav-link">Instructors</a>
+	    		<a href="#instructors-tab" class="scrollTo nav-link">Instructors</a>
 	    	    </li>
 		    <?php } ?>
 		    <?php if ($program) { ?>
 	    	    <li class="nav-item" role="presentation">
-	    		<a href="#program-tab" class="nav-link" >Program</a>
+	    		<a href="#program-tab" class="scrollTo nav-link" >Program</a>
 	    	    </li>
 		    <?php } ?>
 		    <?php if ($location_tab) { ?>
 	    	    <li class="nav-item" role="presentation">
-	    		<a href="#location-tab" class="nav-link" >Location</a>
+	    		<a href="#location-tab" class="scrollTo nav-link" >Location</a>
 	    	    </li>
 		    <?php } ?>
 		    <?php if ($additional) { ?>
 	    	    <li class="nav-item" role="presentation">
-	    		<a href="#additional-tab" class="nav-link"><?php echo fw_get_db_post_option(get_the_ID(), 'additional_heading') ?></a>
+	    		<a href="#additional-tab" class="scrollTo nav-link"><?php echo fw_get_db_post_option(get_the_ID(), 'additional_heading') ?></a>
 	    	    </li>
 		    <?php } ?>
 		</ul>
