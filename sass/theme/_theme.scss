@@ -467,7 +467,33 @@ svg.icon{
 		    color: $title;
 		    font-weight: 400;
 		    font-size: 1rem;
-		    flex: 0 0 rem(75px);
+		    flex: 0 0 rem(120px);
+		    text-align: right;
+		    display: flex;
+		    align-items: center;
+		    justify-content: flex-end;
+		    .icon{
+			vertical-align: baseline;
+		    }
+		}
+		.ld-item-component{
+		    position: relative;
+		}
+		.ld-item-component + .ld-item-component{
+		    padding-left: 1rem;
+		    margin-left: 1rem;
+		    &:before{
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: rem(4px);
+			height: rem(4px);
+			background-color: $acc2;
+			border-radius: 50%;
+		    }
 		}
 		.ld-expand-button{
 		    margin: rem(0 15px 0 0)!important;
@@ -523,6 +549,9 @@ svg.icon{
 	    }
 	}
     }
+}
+.single-sfwd-courses #learndash-tooltips{
+    display: none!important;
 }
 .instructor-info{
     +.instructor-info{

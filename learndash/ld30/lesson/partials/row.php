@@ -205,13 +205,18 @@ endif;
 				);
 				?>
 			    </span>
+			    <?php if (!sfwd_lms_has_access($lesson['post']->ID)) { ?>
+	    		    <span class="ld-item-component">
+	    			<svg class="icon"><use xlink:href="#lock"></use></svg>
+	    		    </span>
+			    <?php } ?>
 			    <?php
 			endif;
 			if (!empty($attributes)) :
 			    foreach ($attributes as $attribute) :
 				if ($attribute["label"] == 'Sample module') {
 				    ?>
-				    <span class="btn btn-sm btn-info">Preview</span>
+				    <span class="btn btn-sm btn-primary">Preview</span>
 				    <?php
 				} else {
 				    ?>
@@ -235,7 +240,6 @@ endif;
 			 */
 			do_action('learndash-lesson-components-after', $lesson['post']->ID, $course_id, $user_id);
 			?>
-
     		</span> <!--/.ld-item-components-->
 		    <?php
 		    /**
