@@ -12,6 +12,7 @@ if (!defined('FW')) {
 	'posts_per_page' => -1,
 	'post_type' => 'sfwd-courses',
 	'post__in' => $courses,
+	'orderby' => 'rand',
     );
     $query = new WP_Query($args);
 

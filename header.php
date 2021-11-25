@@ -35,7 +35,7 @@ defined('ABSPATH') || exit;
 				array(
 				    'theme_location' => 'primary',
 				    'container' => 'false',
-				    'menu_class' => 'navbar-nav main',
+				    'menu_class' => 'navbar-nav',
 				    'fallback_cb' => '',
 				    'menu_id' => 'main-menu',
 				    'walker' => new vitacodis_WP_Bootstrap_Navwalker(),

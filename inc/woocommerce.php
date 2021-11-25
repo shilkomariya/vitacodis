@@ -316,7 +316,11 @@ function action_wp_footer() {
     		    'cart_item_key': cart_item_key,
     		},
     		success: function (result) {
-    		    $('body').trigger('update_checkout');
+    <?php if (WC()->cart->cart_contents_count == 1) { ?>
+			    window.location.href = "<?php echo esc_url(home_url('/')) ?>";
+    <?php } else { ?>
+			    $('body').trigger('update_checkout');
+    <?php } ?>
     		    //console.log( 'response: ' + result );
     		},
     		error: function (error) {
@@ -346,3 +350,22 @@ function woo_product_remove() {
 
 add_action('wp_ajax_woo_product_remove', 'woo_product_remove');
 add_action('wp_ajax_nopriv_woo_product_remove', 'woo_product_remove');
+
+
+add_action('template_redirect', 'empty_cart_redirection');
+
+function empty_cart_redirection() {
+    if (WC()->cart->is_empty() && is_cart()) {
+	wp_safe_redirect(esc_url(home_url('/')));
+	exit;
+    }
+}
+
+add_action('template_redirect', 'empty_cart_redirection');
+
+function empty_checkout_redirection() {
+    if (WC()->cart->is_empty() && is_checkout()) {
+	wp_safe_redirect(esc_url(home_url('/')));
+	exit;
+    }
+}

@@ -5,18 +5,11 @@ if (!defined('FW')) {
 ?>
 <div class="">
     <?php
-    if ($atts['post_in']) {
-	$args = array(
-	    'posts_per_page' => $atts['posts_per_page'],
-	    'post_type' => 'sfwd-courses',
-	    'post__in' => $atts['post_in']
-	);
-    } else {
-	$args = array(
-	    'posts_per_page' => $atts['posts_per_page'],
-	    'post_type' => 'sfwd-courses',
-	);
-    }
+    $args = array(
+	'orderby' => 'rand',
+	'posts_per_page' => 1,
+	'post_type' => 'sfwd-courses',
+    );
 
     $query = new WP_Query($args);
 
