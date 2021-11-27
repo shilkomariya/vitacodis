@@ -16,7 +16,13 @@ defined('ABSPATH') || exit;
 get_header();
 ?>
 <div class="container py-3 pb-lg-5" id="content" tabindex="-1">
-    <h2 class="mb-2 mb-md-3 fw-normal page-header text-center">Wellbeing Courses</h2>
+    <h2 class="mb-2 mb-md-3 fw-normal page-header text-center"><?php
+	if (isset($_GET['freecourses'])) {
+	    echo "Select <strong>Free</strong> Course";
+	} else {
+	    echo "Wellbeing Courses";
+	}
+	?></h2>
     <?php
     if (have_posts()) {
 	?>
