@@ -35,8 +35,16 @@ while (have_posts()) {
     	    <div class="col-auto"><svg class="icon"><use xlink:href="#learners"></use></svg><strong><?php course_learners_count() ?></strong></div>
     	</div>
 	    <?php course_instructor() ?>
-	    <?php course_price() ?>
-	    <?php if (sfwd_lms_has_access(get_the_ID())) { ?>
+	    <?php
+	    if (isset($_GET['freecourses'])) {
+		echo '<div class="course-price row"><h4>Free</h4></div>';
+	    } else {
+		course_price();
+	    }
+	    ?>
+	    <?php if (isset($_GET['freecourses'])) { ?>
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#singUpModal">Sign up</button>
+	    <?php } elseif (sfwd_lms_has_access(get_the_ID())) { ?>
 		<a class="btn btn-primary" href="<?php echo course_get_started_link(get_the_ID()); ?>" >Get Started</a>
 	    <?php } else { ?>
 		<a class="btn btn-primary" href="/checkout/?add-to-cart=<?php echo $woo_product; ?>" >Buy Now</a>
@@ -83,4 +91,21 @@ while (have_posts()) {
 get_template_part('template-parts/more-courses', null, array(
     'current_id' => get_the_ID())
 );
+if (isset($_GET['freecourses'])) {
+    ?>
+    <div class="modal fade show" id="singUpModal" tabindex="-1" aria-labelledby="singUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+    	<div class="modal-content">
+    	    <div class="modal-header">
+    		<h4 class="modal-title" id="singUpModalLabel">Sign Up and Start Learning <br> <span class="text-primary">for FREE</span></h4>
+    		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    	    </div>
+    	    <div class="modal-body">
+		    <?php echo do_shortcode('[wc_reg_form_vitacodis]') ?>
+    	    </div>
+    	</div>
+        </div>
+    </div>
+    <?php
+}
 get_footer();

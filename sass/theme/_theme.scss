@@ -560,15 +560,17 @@ svg.icon{
 	}
     }
 }
-.single-sfwd-courses #learndash-tooltips{
-    display: none!important;
+.single-sfwd-courses {
+    #learndash-tooltips{
+	display: none!important;
+    }
+    .avatar.wp-post-image{
+	border-radius: 50%;
+    }
 }
 .instructor-info{
     +.instructor-info{
 	margin-top: 3rem;
-    }
-    .avatar{
-	border-radius: 50%;
     }
     .location,
     .description{
@@ -938,6 +940,36 @@ svg.icon{
 #loginModal{
     .login{
 	display: block!important;
+    }
+}
+.modal{
+    .modal-title{
+	text-align: center;
+    }
+    .modal-header{
+	position: relative;
+	display: block;
+    }
+    .btn-close{
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	color: $title;
+	font-size: .8rem;
+    }
+}
+#singUpModal{
+    .registration-form-mailpoet{
+	display: none;
+    }
+    .woocommerce-privacy-policy-text{
+	display: none;
+    }
+    #nsl-custom-login-form-1{
+	display: none;
+    }
+    .btn-primary{
+	width: 100%;
     }
 }
 /*Login*/

@@ -345,10 +345,13 @@ $badge-padding-y: rem(8px);
 $badge-padding-x: rem(13px);
 // Modals
 
-$modal-header-padding: 1rem;
+$modal-header-padding: rem(30px 15px 0 15px);
+$modal-md: rem(442px);
+
 $modal-inner-padding: 1rem;
 
 $modal-header-border-width: 0;
+$modal-dialog-margin-y-sm-up: 5rem;
 // Alerts
 //
 // Define alert colors, border radius, and padding.
@@ -400,8 +403,7 @@ $modal-header-border-width: 0;
 
 // Close
 
-// scss-docs-start close-variables
-// scss-docs-end close-variables
+$btn-close-opacity: 1;
 
 
 // Offcanvas

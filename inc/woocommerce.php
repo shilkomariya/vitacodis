@@ -210,24 +210,24 @@ function vitacodis_add_to_cart_text() {
     return __('Book now', 'vitacodis');
 }
 
-add_filter('woocommerce_add_to_cart_redirect', 'bbloomer_redirect_checkout_add_cart');
+add_filter('woocommerce_add_to_cart_redirect', 'vitacodis_redirect_checkout_add_cart');
 
-function bbloomer_redirect_checkout_add_cart() {
+function vitacodis_redirect_checkout_add_cart() {
     return wc_get_checkout_url();
 }
 
-add_action('woocommerce_register_form_start', 'bbloomer_add_name_woo_account_registration');
+add_action('woocommerce_register_form_start', 'vitacodis_add_name_woo_account_registration');
 
-function bbloomer_add_name_woo_account_registration() {
+function vitacodis_add_name_woo_account_registration() {
     ?>
 
     <p class="form-row form-row-first">
-        <label for="reg_billing_first_name"><?php _e('First name', 'woocommerce'); ?> <span class="required">*</span></label>
+        <label class="form-label" for="reg_billing_first_name"><?php _e('First name', 'woocommerce'); ?> <span class="required">*</span></label>
         <input type="text" class="form-control" name="billing_first_name" id="reg_billing_first_name" value="<?php if (!empty($_POST['billing_first_name'])) esc_attr_e($_POST['billing_first_name']); ?>" />
     </p>
 
     <p class="form-row form-row-last">
-        <label for="reg_billing_last_name"><?php _e('Surname', 'woocommerce'); ?> <span class="required">*</span></label>
+        <label class="form-label" for="reg_billing_last_name"><?php _e('Surname', 'woocommerce'); ?> <span class="required">*</span></label>
         <input type="text" class="form-control" name="billing_last_name" id="reg_billing_last_name" value="<?php if (!empty($_POST['billing_last_name'])) esc_attr_e($_POST['billing_last_name']); ?>" />
     </p>
 
@@ -239,9 +239,9 @@ function bbloomer_add_name_woo_account_registration() {
 ///////////////////////////////
 // 2. VALIDATE FIELDS
 
-add_filter('woocommerce_registration_errors', 'bbloomer_validate_name_fields', 10, 3);
+add_filter('woocommerce_registration_errors', 'vitacodis_validate_name_fields', 10, 3);
 
-function bbloomer_validate_name_fields($errors, $username, $email) {
+function vitacodis_validate_name_fields($errors, $username, $email) {
     if (isset($_POST['billing_first_name']) && empty($_POST['billing_first_name'])) {
 	$errors->add('billing_first_name_error', __('<strong>Error</strong>: First name is required!', 'woocommerce'));
     }
@@ -254,9 +254,9 @@ function bbloomer_validate_name_fields($errors, $username, $email) {
 ///////////////////////////////
 // 3. SAVE FIELDS
 
-add_action('woocommerce_created_customer', 'bbloomer_save_name_fields');
+add_action('woocommerce_created_customer', 'vitacodis_save_name_fields');
 
-function bbloomer_save_name_fields($customer_id) {
+function vitacodis_save_name_fields($customer_id) {
     if (isset($_POST['billing_first_name'])) {
 	update_user_meta($customer_id, 'billing_first_name', sanitize_text_field($_POST['billing_first_name']));
 	update_user_meta($customer_id, 'first_name', sanitize_text_field($_POST['billing_first_name']));
@@ -368,4 +368,67 @@ function empty_checkout_redirection() {
 	wp_safe_redirect(esc_url(home_url('/')));
 	exit;
     }
+}
+
+/**
+ * @snippet       WooCommerce User Registration Shortcode
+ */
+add_shortcode('wc_reg_form_vitacodis', 'vitacodis_separate_registration_form');
+
+function vitacodis_separate_registration_form() {
+    if (is_admin())
+	return;
+    if (is_user_logged_in())
+	return;
+    ob_start();
+
+    // NOTE: THE FOLLOWING <FORM></FORM> IS COPIED FROM woocommerce\templates\myaccount\form-login.php
+    // IF WOOCOMMERCE RELEASES AN UPDATE TO THAT TEMPLATE, YOU MUST CHANGE THIS ACCORDINGLY
+
+    do_action('woocommerce_before_customer_login_form');
+    ?>
+    <form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action('woocommerce_register_form_tag'); ?> >
+
+	<?php do_action('woocommerce_register_form_start'); ?>
+
+	<?php if ('no' === get_option('woocommerce_registration_generate_username')) : ?>
+
+	    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+		<label class="form-label"  for="reg_username"><?php esc_html_e('Username', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username']) ) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                        ?>
+	    </p>
+
+	<?php endif; ?>
+
+        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+    	<label class="form-label" for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+    	<input type="email" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="email" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email']) ) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                        ?>
+        </p>
+
+	<?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
+
+	    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+		<label class="form-label" for="reg_password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+		<input type="password" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="password" id="reg_password" autocomplete="new-password" />
+	    </p>
+
+	<?php else : ?>
+
+	    <p><?php esc_html_e('A password will be sent to your email address.', 'woocommerce'); ?></p>
+
+	<?php endif; ?>
+
+	<?php do_action('woocommerce_register_form'); ?>
+
+        <p class="woocommerce-form-row form-row">
+	    <?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
+    	<button type="submit" class="woocommerce-form-register__submit btn btn-primary" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>"><?php esc_html_e('Sign up', 'woocommerce'); ?></button>
+        </p>
+
+	<?php do_action('woocommerce_register_form_end'); ?>
+
+    </form>
+
+    <?php
+    return ob_get_clean();
 }
