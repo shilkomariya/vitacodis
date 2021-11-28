@@ -245,8 +245,7 @@
 	$('.wpProQuiz_QuestionButton').css('float', 'left');
 	$('.wpProQuiz_QuestionButton').on('click', function () {
 	    setTimeout(function () {
-
-		var embed = '<div class="ld-content-actions"><div class="answers-info ld-content-action"><span class="correct-answers">Correct Answer</span><span class="incorrect">Incorrect Answer</span></div><div class="ld-content-action"><a class="ld-button ld-button-transparent" href="<?php echo get_the_permalink(); ?>"><span class="ld-icon ld-icon-arrow-left"></span><span class="ld-text">Retake</span></a></div><div class="ld-content-action"><a class="ld-button ld-button-transparent" href="' + nextmodule + '"><span class="ld-text">Next</span><span class="ld-icon ld-icon-arrow-right"></span></a></div></div>';
+		var embed = '<div class="ld-content-actions"><div class="answers-info ld-content-action"><span class="correct-answers">Correct Answer</span><span class="incorrect">Incorrect Answer</span></div><div class="ld-content-action"><a class="ld-button ld-button-transparent" href="' + window.location.href + '"><span class="ld-icon ld-icon-arrow-left"></span><span class="ld-text">Retake</span></a></div><div class="ld-content-action"><a class="ld-button ld-button-transparent" href="' + nextmodule + '"><span class="ld-text">Next</span><span class="ld-icon ld-icon-arrow-right"></span></a></div></div>';
 		$('.wpProQuiz_listItem').find('.wpProQuiz_QuestionButton').hide();
 		$('.wpProQuiz_quiz').find('.wpProQuiz_QuestionButton').hide();
 		$('.wpProQuiz_quiz').append('' + embed);
