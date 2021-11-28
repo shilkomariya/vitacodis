@@ -146,6 +146,11 @@ add_filter('comments_array', 'learndash_remove_comments', 1, 2);
 	 */
 	if (!empty($topics) || !empty($quizzes)) :
 
+	    $lesson_Id = $topics[0]->ID;
+	    if ($lesson_Id) {
+		wp_safe_redirect(get_the_permalink($lesson_Id));
+	    }
+
 	    /**
 	     * Fires before the course certificate link
 	     *
