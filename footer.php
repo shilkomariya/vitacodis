@@ -69,11 +69,5 @@ defined('ABSPATH') || exit;
 </footer>
 <?php get_template_part('template-parts/svg-sprite') ?>
 <?php wp_footer(); ?>
-<script>
-    var myModal = new bootstrap.Modal(document.getElementById('singUpModal'), {
-	keyboard: false
-    })
-    myModal.show();
-</script>
 </body>
 </html>

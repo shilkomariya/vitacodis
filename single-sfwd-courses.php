@@ -93,7 +93,7 @@ get_template_part('template-parts/more-courses', null, array(
 );
 if (isset($_GET['freecourses'])) {
     ?>
-    <div class="modal fade show" id="singUpModal" tabindex="-1" aria-labelledby="singUpModalLabel" aria-hidden="true">
+    <div class="modal fade" id="singUpModal" tabindex="-1" aria-labelledby="singUpModalLabel" aria-hidden="true">
         <div class="modal-dialog">
     	<div class="modal-content">
     	    <div class="modal-header">

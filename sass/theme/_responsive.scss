@@ -160,6 +160,13 @@
 	    top: 8rem;
 	}
     }
+    .modal{
+	.modal-header,
+	.modal-body{
+	    padding-left: rem(48px);
+	    padding-right: rem(48px);
+	}
+    }
 }
 @include media-breakpoint-up(xl) {
     .h1, h1 {
