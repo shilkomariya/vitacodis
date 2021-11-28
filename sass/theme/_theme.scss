@@ -1148,3 +1148,12 @@ svg.icon{
 	color: $title;
     }
 }
+#quick-question{
+    .wpcf7-form{
+	max-width: 27rem;
+	.form-label{
+	    margin-bottom: 1rem;
+	    color: $main-text;
+	}
+    }
+}
