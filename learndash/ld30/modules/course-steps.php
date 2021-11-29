@@ -224,7 +224,7 @@ if (!empty($parent_lesson_id)) {
     if ($parent_id && 'focus' !== $context) :
 	if ($learndash_maybe_show_next_step_link) :
 	    ?>
-	    <div class="ld-content-action <?php if ((!$learndash_next_step_id)) : ?>ld-empty<?php endif; ?>">
+	    <div class="ld-content-action <?php if ((!$learndash_next_step_id)) : ?>ld-empty<?php endif; ?> check-next">
 		<?php if ($learndash_next_step_id) : ?>
 	    	<a class="<?php echo esc_attr($button_class); ?>" href="<?php
 		    if (isset($_GET['freecourses'])) {
@@ -269,7 +269,7 @@ if (!empty($parent_lesson_id)) {
 	    elseif ($learndash_next_step_id) :
 		?>
 		<a class="<?php echo esc_attr($button_class); ?>" href="<?php echo esc_attr(learndash_get_step_permalink($learndash_next_step_id, $course_id)); ?>">
-		    <span class="ld-text">2222<?php echo learndash_get_label_course_step_next(get_post_type($learndash_next_step_id)); ?></span>
+		    <span class="ld-text"><?php echo learndash_get_label_course_step_next(get_post_type($learndash_next_step_id)); ?></span>
 		    <?php if (is_rtl()) { ?>
 	    	    <span class="ld-icon ld-icon-arrow-left"></span>
 		    <?php } else { ?>

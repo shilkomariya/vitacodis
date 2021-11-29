@@ -245,4 +245,26 @@ add_filter('comments_array', 'learndash_remove_comments', 1, 2);
     learndash_load_login_modal_html();
     ?>
 
+    <div class="modal fade" id="nextModulePopup" tabindex="-1" aria-labelledby="nextModulePopupLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	    <div class="modal-content">
+		<div class="modal-body">
+		    <span id="nextModulePopupClose"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.995 511.995" fill="#272727">
+			    <path d="M437.126,74.939c-99.826-99.826-262.307-99.826-362.133,0C26.637,123.314,0,187.617,0,256.005s26.637,132.691,74.993,181.047c49.923,49.923,115.495,74.874,181.066,74.874s131.144-24.951,181.066-74.874C536.951,337.226,536.951,174.784,437.126,74.939z M409.08,409.006c-84.375,84.375-221.667,84.375-306.042,0c-40.858-40.858-63.37-95.204-63.37-153.001s22.512-112.143,63.37-153.021c84.375-84.375,221.667-84.355,306.042,0C493.435,187.359,493.435,324.651,409.08,409.006z"/>
+			    <path d="M341.525,310.827l-56.151-56.071l56.151-56.071c7.735-7.735,7.735-20.29,0.02-28.046c-7.755-7.775-20.31-7.755-28.065-0.02l-56.19,56.111l-56.19-56.111c-7.755-7.735-20.31-7.755-28.065,0.02c-7.735,7.755-7.735,20.31,0.02,28.046l56.151,56.071l-56.151,56.071c-7.755,7.735-7.755,20.29-0.02,28.046c3.868,3.887,8.965,5.811,14.043,5.811s10.155-1.944,14.023-5.792l56.19-56.111l56.19,56.111c3.868,3.868,8.945,5.792,14.023,5.792c5.078,0,10.175-1.944,14.043-5.811C349.28,331.117,349.28,318.562,341.525,310.827z"/>
+			</svg>
+		    </span>
+		    <div class="nextModulePopupContent">
+			<p class="paragraph-one">This module includes the quiz with several multiple-choice questions that help to understand the lessons better.</p>
+			<p class="paragraph-two">The quiz is not mandatory, you can skip it and proceed to the next module of the course.</p>
+		    </div>
+		    <div class="nextModulePopupButtons">
+			<a href="#" id="take_the_quiz">Take the Quiz</a>
+			<a href="#" id="take_next_module">Next Module</a>
+		    </div>
+		</div>
+	    </div>
+	</div>
+    </div>
+
 </div> <!--/.learndash-wrapper-->

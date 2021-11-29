@@ -198,6 +198,9 @@
 	// if next lessons are present
 	if (nextmodule.length) {
 	    nextmodule = nextmodule.find('.ld-table-list-item:first-child').find('a').attr('href');
+	    var nextModulePopup = new bootstrap.Modal(document.getElementById('nextModulePopup'), {
+		keyboard: false
+	    });
 	} else {
 	    // else no more lessons, lets navigate to Course Discussion
 	    nextmodule = $('.ld-is-current-lesson').next().find('.ld-lesson-item-preview-heading').attr('href');
@@ -205,7 +208,7 @@
 	setTimeout(function () {
 	    var checkText = $('.check-next').find('.ld-text').html();
 	    $('.check-next a > .ld-text').html('Next');
-	}, 300);
+	}, 500);
 	//setTimeout(function(){
 	$('.wpProQuiz_content h2').after('<h4 class="customquiztext h6">(each multiple choice question can have more than one correct answer)</h4>');
 	//},2000);
@@ -230,7 +233,8 @@
 		}
 		$('#take_next_module').attr('href', nextmodule);
 
-		$('.nextModulePopup').show();
+
+		nextModulePopup.show();
 
 		return false;
 
@@ -238,7 +242,7 @@
 
 	});
 	$('#nextModulePopupClose').on('click', function () {
-	    $('.nextModulePopup').hide();
+	    nextModulePopup.hide();
 	});
 
 	$('.wpProQuiz_QuestionButton').attr('value', 'Check Answers');
