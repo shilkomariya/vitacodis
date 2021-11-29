@@ -200,6 +200,11 @@ if (!empty($parent_lesson_id)) {
     	<h2 class="h6 mb-0">Course Discussion</h3>
         </div>
     <?php } ?>
+    <?php if ($learndash_current_post_type === "sfwd-lessons" && get_the_title() === 'Course Resources') { ?>
+        <div class="ld-content-action content-title">
+    	<h2 class="h6 mb-0">Course Resources</h3>
+        </div>
+    <?php } ?>
     <div class="ld-content-action <?php if (!$learndash_previous_step_id) : ?>ld-empty<?php endif; ?>">
 	<?php if ($learndash_previous_step_id) : ?>
     	<a class="<?php echo esc_attr($button_class); ?>" href="<?php echo esc_url(learndash_get_step_permalink($learndash_previous_step_id, $course_id)); ?>">

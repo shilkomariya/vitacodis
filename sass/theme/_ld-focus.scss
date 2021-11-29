@@ -209,6 +209,8 @@
 		    margin-bottom: 10px;
 		    font-size: 18px;
 		    font-weight: 600;
+		    color: #272727;
+		    line-height: 1;
 		}
 		span.incorrect {
 		    background-color: var(--lqc-color-incorrect-light);
@@ -218,6 +220,8 @@
 		    margin-bottom: 10px;
 		    font-size: 18px;
 		    font-weight: 600;
+		    color: #272727;
+		    line-height: 1;
 		}
 	    }
 	}
@@ -440,6 +444,9 @@
 	    .wpProQuiz_incorrect{
 		display: none!important;
 	    }
+	    .wpProQuiz_sending{
+		display: none!important;
+	    }
 	}
 	.close-course{
 	    color: var(--ld-main-color);
@@ -500,26 +507,29 @@
     }
 }
 @include media-breakpoint-up(lg) {
-    .ld-focus {
-	.ld-focus-main{
-	    padding-top: 50px;
-	    margin-left: 315px;
-	    width: calc(100% - 315px);
-	    .ld-focus-content{
-		padding: 20px 4em 0 4em!important;
+    .learndash-wrapper{
+	.ld-focus {
+	    .ld-focus-main{
+		padding-top: 50px;
+		margin-left: 315px;
+		width: calc(100% - 315px);
+		.ld-focus-content{
+		    padding: 20px 4em 0 4em!important;
+		}
+		.ld-tabs{
+		    margin: 0;
+		}
 	    }
-	    .ld-tabs{
-		margin: 0;
+	    .ld-focus-sidebar{
+		width: 315px;
+		.ld-course-navigation{
+		    padding-top: 20px!important;
+		    padding-bottom: 30px;
+		}
 	    }
-	}
-	.ld-focus-sidebar{
-	    width: 315px;
-	    .ld-course-navigation{
-		padding-top: 20px!important;
+	    .wpProQuiz_content{
+		margin-top: 0;
 	    }
-	}
-	.wpProQuiz_content{
-	    margin-top: 0;
 	}
     }
 }
@@ -675,5 +685,60 @@
 		font-size: 15px!important;
 	    }
 	}
+    }
+}
+.course-resources{
+    .learndash-wrapper{
+	display: flex;
+	flex-direction: column-reverse;
+    }
+    .ld-content-actions{
+	margin-bottom: 1rem;
+    }
+}
+.wpProQuiz_content{
+    label{
+	font-family: $headings-font-family;
+	font-size: 16px;
+    }
+    input[type="checkbox"] {
+	display: inline-block;
+	background-color: #fff;
+	border: 1px solid #bbb;
+	line-height: 0;
+	width: 16px!important;
+	min-width: 16px;
+	height: 16px;
+	margin: 0 10px 0 0;
+	outline: 0;
+	text-align: center;
+	vertical-align: middle;
+	clear: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+	-webkit-transition: 0.05s border-color ease-in-out;
+	-moz-transition: 0.05s border-color ease-in-out;
+	-ms-transition: 0.05s border-color ease-in-out;
+	-o-transition: 0.05s border-color ease-in-out;
+	transition: 0.05s border-color ease-in-out
+    }
+    input[type=checkbox]:checked:before {
+	display: inline-block;
+	vertical-align: middle;
+	width: 15px !important;
+	line-height: 15px !important;
+	font-size: 10px;
+	margin: 0px 0px;
+	background: #0d9fec;
+	color: #FFF !important;
+	font-family: 'Font Awesome 5 Free';
+	content: '\f00c';
+	font-weight: 600
+    }
+    .is-selected input[type=checkbox]:disabled:before {
+	background: #74b9de;
     }
 }

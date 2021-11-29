@@ -219,7 +219,7 @@ add_filter('comments_array', 'learndash_remove_comments', 1, 2);
 	$can_complete = apply_filters('learndash-lesson-can-complete', true, get_the_ID(), $course_id, $user_id);
     endif;
 
-    if ((get_the_title() != "Course Resources") && (get_the_title() != "Course Feedback") && (get_the_title() != "Feedback Thank You")) {
+    if ((get_the_title() != "Course Feedback") && (get_the_title() != "Feedback Thank You")) {
 
 	learndash_get_template_part(
 		'modules/course-steps.php', array(

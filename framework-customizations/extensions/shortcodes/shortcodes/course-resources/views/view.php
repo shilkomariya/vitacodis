@@ -18,7 +18,6 @@ if (!defined('FW')) {
 	    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
 	</symbol>
     </svg>
-    <h2 class="h5">Course Resources</h2>
     <?php
     $arr = $atts['resources'];
     foreach ($arr as $key => $value) {
