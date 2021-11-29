@@ -81,9 +81,13 @@ if (!empty($header['logo'])) {
 
 	if (strpos($url, "introduction") !== false) {
 	    ?>
-    	<a href="<?php the_permalink($course_id); ?>"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-	<?php } else if (strpos($url, "lessons") !== false) {
-	    ?>
+    	<a href="<?php the_permalink($course_id); ?><?php
+	    if (isset($_GET['freecourses'])) {
+		echo '?freecourses=true';
+	    }
+	    ?>"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+	   <?php } else if (strpos($url, "lessons") !== false) {
+	       ?>
     	<a href="<?php the_permalink($course_id); ?>"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
 
 	<?php } else { ?>
@@ -128,8 +132,12 @@ if (!empty($header['logo'])) {
 	    } else {
 		?>
 		<h3 class="course-heading h5">
-		    <a href="<?php echo esc_url(get_the_permalink($course_id)); ?>" id="ld-focus-mode-course-heading">
-			<?php echo esc_html(get_the_title($course_id)); ?>
+		    <a href="<?php echo esc_url(get_the_permalink($course_id)); ?><?php
+		    if (isset($_GET['freecourses'])) {
+			echo '?freecourses=true';
+		    }
+		    ?>" id="ld-focus-mode-course-heading">
+		       <?php echo esc_html(get_the_title($course_id)); ?>
 		    </a>
 		</h3>
 		<?php

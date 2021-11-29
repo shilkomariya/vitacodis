@@ -149,7 +149,9 @@ endif;
 	    ?>
 	</div> <!--/.ld-item-details-->
 
-	<a class="ld-item-name ld-primary-color-hover" href="<?php echo esc_attr(learndash_get_step_permalink($lesson['post']->ID, $course_id)); ?>">
+	<a class="ld-item-name ld-primary-color-hover" href="<?php echo esc_attr(learndash_get_step_permalink($lesson['post']->ID, $course_id)); ?><?php if (isset($_GET['freecourses'])) {
+		echo '?freecourses=true';
+	    } ?>">
 	    <div class="ld-item-title">
 		<?php
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
@@ -205,7 +207,7 @@ endif;
 				);
 				?>
 			    </span>
-			    <?php if (!sfwd_lms_has_access($lesson['post']->ID)) { ?>
+	<?php if (!sfwd_lms_has_access($lesson['post']->ID)) { ?>
 	    		    <span class="ld-item-component">
 	    			<svg class="icon"><use xlink:href="#lock"></use></svg>
 	    		    </span>
@@ -222,7 +224,7 @@ endif;
 				    ?>
 				    <span class="<?php echo esc_attr('ld-status ' . $attribute['class']); ?>">
 					<span class="<?php echo esc_attr('ld-icon ' . $attribute['icon']); ?>"></span>
-					<?php echo esc_html($attribute['label']); ?>
+				    <?php echo esc_html($attribute['label']); ?>
 				    </span>
 				    <?php
 				}
@@ -253,7 +255,7 @@ endif;
 		     */
 		    do_action('learndash-lesson-preview-after', $lesson['post']->ID, $course_id, $user_id);
 		    ?>
-		<?php endif; ?>
+<?php endif; ?>
 
 	    </div> <!--/.ld-item-title-->
 	</a>
@@ -330,7 +332,7 @@ endif;
 	    do_action('learndash-lesson-row-topic-list-after', $lesson['post']->ID, $course_id, $user_id);
 	    ?>
         </div> <!--/.ld-item-list-item-expanded-->
-    <?php endif; ?>
+<?php endif; ?>
 </div> <!--/.ld-item-list-item-->
 <?php
 /**

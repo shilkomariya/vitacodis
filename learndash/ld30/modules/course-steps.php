@@ -226,7 +226,13 @@ if (!empty($parent_lesson_id)) {
 	    ?>
 	    <div class="ld-content-action <?php if ((!$learndash_next_step_id)) : ?>ld-empty<?php endif; ?>">
 		<?php if ($learndash_next_step_id) : ?>
-	    	<a class="<?php echo esc_attr($button_class); ?>" href="<?php echo esc_url(learndash_get_step_permalink($learndash_next_step_id, $course_id)); ?>">
+	    	<a class="<?php echo esc_attr($button_class); ?>" href="<?php
+		    if (isset($_GET['freecourses'])) {
+			echo get_the_permalink($course_id) . '?freecourses=true';
+		    } else {
+			echo esc_url(learndash_get_step_permalink($learndash_next_step_id, $course_id));
+		    }
+		    ?>">
 	    	    <span class="ld-text">Next</span>
 			<?php if (is_rtl()) { ?>
 			    <span class="ld-icon ld-icon-arrow-left"></span>
