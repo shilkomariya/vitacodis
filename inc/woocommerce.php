@@ -402,14 +402,14 @@ function vitacodis_separate_registration_form() {
 
 	    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 		<label class="form-label"  for="reg_username"><?php esc_html_e('Username', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username']) ) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                                                    ?>
+		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username']) ) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                                                     ?>
 	    </p>
 
 	<?php endif; ?>
 
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
     	<label class="form-label" for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-    	<input type="email" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="email" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email']) ) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                                                    ?>
+    	<input type="email" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="email" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email']) ) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                                                     ?>
         </p>
 
 	<?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
@@ -438,4 +438,25 @@ function vitacodis_separate_registration_form() {
 
     <?php
     return ob_get_clean();
+}
+
+// Shop random order. View settings drop down order by Woocommerce > Settings > Products > Display
+add_filter('woocommerce_get_catalog_ordering_args', 'custom_woocommerce_get_catalog_ordering_args');
+
+function custom_woocommerce_get_catalog_ordering_args($args) {
+    $orderby_value = isset($_GET['orderby']) ? woocommerce_clean($_GET['orderby']) : apply_filters('woocommerce_default_catalog_orderby', get_option('woocommerce_default_catalog_orderby'));
+    if ('random_list' == $orderby_value) {
+	$args['orderby'] = 'rand';
+	$args['order'] = '';
+	$args['meta_key'] = '';
+    }
+    return $args;
+}
+
+add_filter('woocommerce_default_catalog_orderby_options', 'custom_woocommerce_catalog_orderby');
+add_filter('woocommerce_catalog_orderby', 'custom_woocommerce_catalog_orderby');
+
+function custom_woocommerce_catalog_orderby($sortby) {
+    $sortby['random_list'] = 'Random';
+    return $sortby;
 }
