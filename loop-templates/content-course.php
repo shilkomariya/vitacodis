@@ -9,14 +9,16 @@ defined('ABSPATH') || exit;
 $video_class = "";
 if (isset($_GET['freecourses'])) {
     $link = get_the_permalink() . '?freecourses=true';
-    $thumb_link = get_the_permalink() . '?freecourses=true';
+    if (fw_get_db_post_option(get_the_ID(), 'popup_video') !== '') {
+	$thumb_link = get_the_permalink() . '?freecourses=true&video=show';
+	$video_class = " play-video";
+    }
 } else {
     $link = get_the_permalink();
-    $thumb_link = get_the_permalink();
-}
-if (fw_get_db_post_option(get_the_ID(), 'popup_video') !== '') {
-    $thumb_link .= "&video=show";
-    $video_class = " play-video";
+    if (fw_get_db_post_option(get_the_ID(), 'popup_video') !== '') {
+	$thumb_link = get_the_permalink() . '?video=show';
+	$video_class = " play-video";
+    }
 }
 ?>
 <div class="card">

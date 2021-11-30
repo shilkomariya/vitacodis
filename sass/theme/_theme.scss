@@ -156,6 +156,9 @@ svg.icon{
 	    display: none;
 	}
     }
+    .wp-post-image{
+	border-radius: 4px;
+    }
 }
 .cats-widget{
     list-style: none;
@@ -259,6 +262,9 @@ svg.icon{
 	margin-left: auto;
 	margin-right: auto;
     }
+    .wp-post-image{
+	border-radius: 4px;
+    }
 }
 
 .entry-content{
@@ -270,6 +276,9 @@ svg.icon{
 .retreat {
     .h3 a{
 	color: $title;
+    }
+    .wp-post-image{
+	border-radius: 4px;
     }
 }
 .retreat-data{
@@ -296,6 +305,10 @@ svg.icon{
 }
 .card{
     filter: drop-shadow(0px 30px 60px rgba(0, 0, 0, 0.1));
+    .card-img-top .wp-post-image,
+    .card-img-top.wp-post-image{
+	border-radius: 4px 4px 0 0;
+    }
     .card-header{
 	display: flex;
 	flex-direction: column;
