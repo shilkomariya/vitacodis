@@ -20,7 +20,8 @@ $vitacodis_includes = array(
     '/class-wp-bootstrap-navwalker.php', // Load custom WordPress nav walker.
     '/editor.php', // Load Editor functions.
     '/widgets.php',
-    '/woocommerce.php'
+    '/woocommerce.php',
+    '/ajax.php'
 );
 
 foreach ($vitacodis_includes as $file) {
