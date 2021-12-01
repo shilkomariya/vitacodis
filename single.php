@@ -17,7 +17,7 @@ get_header();
     }
     ?>
 </div>
-<div class="py-3 py-lg-5 bg-gray">
+<div class="py-3 py-lg-5 bg-gray more-articles">
     <div class="container">
 	<div class="text-center"><h2 class="mb-2 mb-md-3">More <span class="fw-normal">Articles</span></h2></div>
 	<div class="row cards-row">

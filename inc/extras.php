@@ -420,8 +420,9 @@ if (!function_exists('course_learners_count')) {
 
     function course_learners_count() {
 	$members_arr = learndash_get_users_for_course(get_the_ID(), [], false);
+
 	if (( $members_arr instanceof \WP_User_Query ) && ( property_exists($members_arr, 'total_users') ) && (!empty($members_arr->total_users) )) {
-	    echo $members_arr->total_users . ' learners';
+	    echo ($members_arr->total_users + fw_get_db_post_option(get_the_ID(), 'learners')) . ' learners';
 	} else {
 	    echo '0 learners';
 	}

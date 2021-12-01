@@ -148,6 +148,9 @@ svg.icon{
     .wp-post-image{
 	border-radius: $border-radius;
     }
+}
+.more-articles,
+.blog{
     .post-card{
 	.h5{
 	    margin-bottom: .4rem;
@@ -167,6 +170,7 @@ svg.icon{
     .wp-post-image{
 	border-radius: 4px;
     }
+    .more-articles &,
     .home &{
 	background-color: #fff;
 	padding-bottom: .5rem;
@@ -445,6 +449,11 @@ svg.icon{
     }
 }
 /*Course*/
+.single-course{
+    .ld-alert-certificate{
+	display: none;
+    }
+}
 .ld-section-heading{
     h2{
 	@include font-size(rem(20px));

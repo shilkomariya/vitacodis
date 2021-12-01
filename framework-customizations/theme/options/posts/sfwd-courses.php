@@ -34,6 +34,11 @@ $options = array(
 		'type' => 'text',
 		'label' => __('Duration', 'vitacodis'),
 	    ),
+	    'learners' => array(
+		'type' => 'text',
+		'value' => '87',
+		'label' => __('Learners add to counter', 'vitacodis'),
+	    ),
 	    'features' => array(
 		'type' => 'addable-option',
 		'label' => __('Features', 'vitacodis'),

@@ -18,8 +18,9 @@ if ($args['instructor_id']) {
 		<?php echo get_the_post_thumbnail($id, 'instructor-avatar', array("class" => "avatar mb-1")); ?>
     	</div>
     	<div class="col-lg-9">
-    	    <h5 class="name"><?php echo $instructor->post_title ?> (<?php echo fw_get_db_post_option($id, 'location') ?>)</h5>
+    	    <h5 class="name"><?php echo $instructor->post_title ?></h5>
     	    <div class="description"><?php echo fw_get_db_post_option($id, 'description') ?></div>
+    	    <div class="location"><?php echo fw_get_db_post_option($id, 'location') ?></div>
     	    <ul class="social nav">
 		    <?php if (fw_get_db_post_option($id, 'instagramm') != "") { ?><li><a target="_blank" href="<?php echo fw_get_db_post_option($id, 'instagramm') ?>"><svg class="icon"><use xlink:href="#i-instagramm"></use></svg></a></li><?php } ?>
 		    <?php if (fw_get_db_post_option($id, 'facebook') != "") { ?><li><a target="_blank" href="<?php echo fw_get_db_post_option($id, 'facebook') ?>"><svg class="icon"><use xlink:href="#i-facebook"></use></svg></a></li><?php } ?>
