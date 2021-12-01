@@ -148,6 +148,11 @@ svg.icon{
     .wp-post-image{
 	border-radius: $border-radius;
     }
+    .post-card{
+	.h5{
+	    margin-bottom: .4rem;
+	}
+    }
 }
 .post-card{
     .post-meta{
