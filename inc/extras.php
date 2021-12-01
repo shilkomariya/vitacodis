@@ -379,14 +379,30 @@ if (!function_exists('course_price')) {
 	$product = wc_get_product($woo_product);
 	$currency = get_woocommerce_currency_symbol();
 	if ($product->get_sale_price() != '') {
-	    $price = '<h4 class="col-auto">' . $currency . $product->get_sale_price() . '<span class="col-auto">' . $currency . $product->get_regular_price() . "</span></h4>";
+	    $price = '<h4>' . $currency . $product->get_sale_price() . '<span>' . $currency . $product->get_regular_price() . "</span></h4>";
 	} else {
 	    $price = "<h4>" . $currency . $product->get_price() . "</h4>";
 	}
-	echo '<div class="course-price row">' . $price . '</div>';
+	echo '<div class="course-price">' . $price . '</div>';
     }
 
 }
+if (!function_exists('course_price_free')) {
+
+    function course_price_free() {
+	$woo_product = fw_get_db_post_option(get_the_ID(), 'woo_product')[0];
+	$product = wc_get_product($woo_product);
+	$currency = get_woocommerce_currency_symbol();
+	if ($product->get_sale_price() != '') {
+	    $price = '<h4>Free <span>' . $currency . $product->get_sale_price() . "</span></h4>";
+	} else {
+	    $price = "<h4>Free <span>" . $currency . $product->get_price() . "</span></h4>";
+	}
+	echo '<div class="course-price">' . $price . '</div>';
+    }
+
+}
+
 if (!function_exists('course_instructor')) {
 
     function course_instructor() {

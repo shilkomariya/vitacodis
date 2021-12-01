@@ -34,7 +34,7 @@ if (isset($_GET['freecourses'])) {
     <div class="card-body">
 	<?php
 	if (isset($_GET['freecourses'])) {
-	    echo "<h4>Free</h4>";
+	    course_price_free();
 	} else {
 	    course_price();
 	}

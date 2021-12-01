@@ -37,7 +37,7 @@ while (have_posts()) {
 	    <?php course_instructor() ?>
 	    <?php
 	    if (isset($_GET['freecourses'])) {
-		echo '<div class="course-price row"><h4>Free</h4></div>';
+		course_price_free();
 	    } elseif (!sfwd_lms_has_access(get_the_ID())) {
 		course_price();
 	    }
