@@ -48,7 +48,7 @@ if (fw_get_db_post_option(get_the_ID(), 'instructor')) {
 			<h1 class="h3 name"><?php echo $instructor->post_title ?></h1>
 			<div class="description"><?php echo fw_get_db_post_option($instructor_id, 'description') ?></div>
 			<div class="location"><?php echo fw_get_db_post_option($instructor_id, 'location') ?></div>
-			<div class="h5"><?php echo fw_get_db_post_option($instructor_id, 'rate') ?></div>
+			<div class="h5">€ <?php echo fw_get_db_post_option($instructor_id, 'rate') ?>/hour</div>
 			<ul class="social nav">
 			    <?php if (fw_get_db_post_option($instructor_id, 'instagramm') != "") { ?><li><a target="_blank" href="<?php echo fw_get_db_post_option($instructor_id, 'instagramm') ?>"><svg class="icon"><use xlink:href="#i-instagramm"></use></svg></a></li><?php } ?>
 			    <?php if (fw_get_db_post_option($instructor_id, 'facebook') != "") { ?><li><a target="_blank" href="<?php echo fw_get_db_post_option($instructor_id, 'facebook') ?>"><svg class="icon"><use xlink:href="#i-facebook"></use></svg></a></li><?php } ?>

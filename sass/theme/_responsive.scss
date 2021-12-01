@@ -193,6 +193,10 @@
 	    max-width: 800px;
 	}
     }
+    .btn:not(.btn-sm){
+	font-size: 20px;
+	padding: 12px 24px;
+    }
 }
 @media(min-width: 1600px){
     html{

@@ -225,10 +225,11 @@ $input-font-weight: 300;
 // For each of Bootstrap's buttons, define text, background, and border color.
 
 // scss-docs-start btn-variables
-$btn-font-weight: 700;
-$btn-font-size: rem(13px);
-$btn-padding-x: rem(32px);
-$btn-line-height: 1.7;
+$btn-font-weight: 600;
+$btn-font-size: rem(20px);
+$btn-padding-x: rem(24px);
+$btn-padding-y: rem(12px);
+$btn-line-height: 1;
 
 $btn-font-size-sm: rem(11px);
 

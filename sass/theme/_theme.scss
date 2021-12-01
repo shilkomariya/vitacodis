@@ -36,6 +36,9 @@ svg.icon{
 .btn{
     text-transform: uppercase;
 }
+.btn-sm{
+    line-height: 1.7;
+}
 .btn-primary{
     &:hover{
 	border-color: $acc3;
