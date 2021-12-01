@@ -240,6 +240,39 @@ if (!empty($parent_lesson_id)) {
 			    <span class="ld-icon ld-icon-arrow-right"></span>
 			<?php } ?>
 	    	</a>
+		    <?php
+		else:
+		    ?>
+
+	    	<a id="nextModulePopupLink" class="<?php echo esc_attr($button_class); ?>" href="#" data-bs-toggle="modal" data-bs-target="#nextModulePopup">
+	    	    <span class="ld-text">Next</span>
+			<?php if (is_rtl()) { ?>
+			    <span class="ld-icon ld-icon-arrow-left"></span>
+			<?php } else { ?>
+			    <span class="ld-icon ld-icon-arrow-right"></span>
+			<?php } ?>
+	    	</a>
+	    	<div class="modal fade" id="nextModulePopup" tabindex="-1" aria-labelledby="nextModulePopupLabel" aria-hidden="true">
+	    	    <div class="modal-dialog modal-dialog-centered">
+	    		<div class="modal-content">
+	    		    <div class="modal-body">
+	    			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	    			<div class="nextModulePopupContent">
+	    			    <p class="paragraph-one">This module includes the quiz with several multiple-choice questions that help to understand the lessons better.</p>
+	    			    <p class="paragraph-two">The quiz is not mandatory, you can skip it and proceed to the next module of the course.</p>
+	    			</div>
+	    			<div class="nextModulePopupButtons row">
+	    			    <div class="col-auto">
+	    				<a href="#" class="btn btn-sm btn-primary" id="take_the_quiz">Take the Quiz</a>
+	    			    </div>
+	    			    <div class="col-auto">
+	    				<a href="#" class="btn btn-sm btn-primary" id="take_next_module">Next Module</a>
+	    			    </div>
+	    			</div>
+	    		    </div>
+	    		</div>
+	    	    </div>
+	    	</div>
 		<?php endif; ?>
 	    </div>
 	<?php else : ?>

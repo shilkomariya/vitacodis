@@ -742,3 +742,16 @@
 	background: #74b9de;
     }
 }
+#nextModulePopup{
+    .modal-body{
+	text-align: center;
+	padding: 2rem!important;
+    }
+    .nextModulePopupButtons{
+	margin-top: 1.5rem;
+	justify-content: space-between;
+    }
+    .modal-dialog {
+	max-width: 32rem;
+    }
+}
