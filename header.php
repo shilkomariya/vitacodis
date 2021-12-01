@@ -27,7 +27,7 @@ if (is_page(38)) {
 	<header class="site-header">
 	    <nav class="navbar navbar-expand-md navbar-light">
 		<div class="container">
-		    <a href="<?php echo site_url(); ?>" class="logo-link" rel="home"><img src="<?php echo get_template_directory_uri() ?>/img/main-logo.jpg" srcset="<?php echo get_template_directory_uri() ?>/img/main-logo-x2.jpg 2x" alt="<?php bloginfo('name'); ?>"></a>
+		    <a href="<?php echo site_url(); ?>" class="logo-link" rel="home"><img src="<?php echo get_template_directory_uri() ?>/img/main-logo.png" srcset="<?php echo get_template_directory_uri() ?>/img/main-logo-x2.png 2x" alt="<?php bloginfo('name'); ?>"></a>
 		    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
 			<span class="toggle-icon"><i></i><i></i><i></i><i></i></span>
 			<span class="btn-text"><?php _e('Menu', 'vitacodis'); ?></span>

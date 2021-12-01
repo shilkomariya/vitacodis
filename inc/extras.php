@@ -379,7 +379,7 @@ if (!function_exists('course_price')) {
 	$product = wc_get_product($woo_product);
 	$currency = get_woocommerce_currency_symbol();
 	if ($product->get_sale_price() != '') {
-	    $price = '<h4 class="col-auto">' . $currency . $product->get_sale_price() . '</h4><small class="col-auto">' . $currency . $product->get_regular_price() . "</small>";
+	    $price = '<h4 class="col-auto">' . $currency . $product->get_sale_price() . '<span class="col-auto">' . $currency . $product->get_regular_price() . "</span></h4>";
 	} else {
 	    $price = "<h4>" . $currency . $product->get_price() . "</h4>";
 	}

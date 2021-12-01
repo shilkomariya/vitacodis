@@ -224,9 +224,8 @@
 		$('#take_the_quiz').attr('href', QuizLink);
 
 		if (nextmodule.indexOf("/modules/course-discussion") !== -1) {
-		    $('.nextModulePopup .paragraph-two').text('The quiz is not mandatory, you can skip it and proceed to Course Discussion');
+		    $('#nextModulePopup .paragraph-two').text('The quiz is not mandatory, you can skip it and proceed to Course Discussion');
 		    $('#take_next_module').text('Discussion');
-
 		}
 		$('#take_next_module').attr('href', nextmodule);
 
