@@ -8,6 +8,9 @@
  */
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
+if (is_page(38)) {
+    wp_safe_redirect(home_url('/members/me/'));
+}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

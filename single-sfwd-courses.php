@@ -76,7 +76,9 @@ while (have_posts()) {
 				<li><svg class="icon"><use xlink:href="#check"></use></svg> <?php echo $value ?></li>
 			    <?php } ?>
     		    </ul>
-			<?php if (sfwd_lms_has_access(get_the_ID())) { ?>
+			<?php if (isset($_GET['freecourses'])) { ?>
+			    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#singUpModal">Sign up</button>
+			<?php } elseif (sfwd_lms_has_access(get_the_ID())) { ?>
 			    <a class="btn btn-primary" href="<?php echo course_get_started_link(get_the_ID()); ?>" >Get Started</a>
 			<?php } else { ?>
 			    <a class="btn btn-primary" href="/checkout/?add-to-cart=<?php echo $woo_product; ?>" >Buy Now</a>
