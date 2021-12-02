@@ -1023,12 +1023,29 @@ svg.icon{
     @extend .btn;
     @extend .btn-primary;
 }
-.nsl-container-buttons{
-    .nsl-button{
-	border-radius: 50%!important;
-    }
-}
 .nsl-container{
+    .nsl-container-buttons{
+	.nsl-button{
+	    border-radius: 50%!important;
+	}
+	svg{
+	    width: 18px;
+	    height: 18px;
+	}
+	.nsl-button-svg-container{
+	    padding: 11px;
+	}
+	.nsl-button-linkedin{
+	    .nsl-button-svg-container{
+		padding: 12px;
+	    }
+	    svg{
+		width: 16px;
+		height: 16px;
+		transform: translate(1px, -2px);
+	    }
+	}
+    }
     &:before{
 	content: "or login with";
 	color: $icons;
@@ -1057,6 +1074,9 @@ svg.icon{
     .registration-form-mailpoet{
 	display: none;
     }
+}
+.woocommerce-password-strength{
+    display: none!important;
 }
 .mp-form-label{
     label{
