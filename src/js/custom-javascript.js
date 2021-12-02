@@ -120,7 +120,7 @@
 	lastScrollTop = st;
     }
 
-    $('span.ld-settings-mode').click(function () {
+    $('#swither-panel-darkmode-fullscreen .ld-settings-mode').click(function () {
 	if ($.cookie("darkmode") && $.cookie("darkmode") == "Enabled") {
 	    $.cookie("darkmode", "null", {expires: 1, path: '/', });
 	    $('body').removeAttr('id');
@@ -146,6 +146,7 @@
 	    }
 	}
     }
+
 
     checkCookie();
 

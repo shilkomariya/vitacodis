@@ -1,6 +1,14 @@
+*:fullscreen
+*:-ms-fullscreen,
+*:-webkit-full-screen,
+*:-moz-full-screen {
+    overflow: auto !important;
+}
+::backdrop{
+    background-color: var(--ld-focus-bg)!important;
+}
 .learndash-wrapper{
     background-color: var(--ld-focus-bg)!important;
-
     .ld-focus {
 	--ld-focus-bg: #fff;
 	--ld-main-color: #4e4b66;
@@ -64,6 +72,9 @@
 		.day{
 		    display: none;
 		}
+	    }
+	    #swither-fullscreen{
+		margin-right: 1rem;
 	    }
 	    .ld-user-menu {
 		flex: 0 0 auto;
@@ -586,6 +597,9 @@
 		width: 50%!important;
 		padding: 0;
 	    }
+	}
+	.wrap_icon_fullscreen-mode{
+	    display: none;
 	}
 	/* Course Fedd Back    */
 	.ff-form{

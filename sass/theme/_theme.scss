@@ -404,7 +404,7 @@ svg.icon{
     h4{
 	margin-bottom: 0;
 	span{
-	    color: $icons;
+	    opacity: .7;
 	    text-decoration: line-through;
 	    margin-left: 1rem;
 	}
@@ -1079,6 +1079,11 @@ svg.icon{
     p{
 	font-size: rem(13px);
     }
+}
+.woocommerce-message{
+    display: inline-block;
+    background-color: $bg;
+    padding: .5rem 1rem;
 }
 .message-text{
     font-weight: 700;
