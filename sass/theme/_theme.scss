@@ -1023,7 +1023,14 @@ svg.icon{
     @extend .btn;
     @extend .btn-primary;
 }
+.woocommerce-form-register,
+.woocommerce-form-login{
+    max-width: rem(391px);
+}
 .nsl-container{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
     .nsl-container-buttons{
 	.nsl-button{
 	    border-radius: 50%!important;
@@ -1046,15 +1053,23 @@ svg.icon{
 	    }
 	}
     }
-    &:before{
+    h2{
 	content: "or login with";
 	color: $icons;
 	font-size: rem(13px);
+	font-weight: 400;
 	display: block;
-	margin-bottom: 1rem;
+	margin-bottom: 0;
+	flex-grow: 1;
+	text-align: center;
     }
     .nsl-container{
 	padding-top: 0;
+    }
+}
+.login-btn-wrp{
+    .social-login{
+	flex-grow: 1;
     }
 }
 #login-page{
@@ -1064,6 +1079,9 @@ svg.icon{
     }
     .woocommerce-privacy-policy-text{
 	font-size: rem(13px);
+	a{
+	    color: $main-text;
+	}
     }
     .back-to-link{
 	font-size: rem(13px);

@@ -32,8 +32,8 @@ do_action('woocommerce_before_customer_login_form');
 	    <form class="woocommerce-form woocommerce-form-login login" method="post">
 		<?php do_action('woocommerce_login_form_start'); ?>
 		<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-		    <label for="username"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-		    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="username" autocomplete="username" value="<?php echo (!empty($_POST['username']) ) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                   ?>
+		    <label for="username"><?php esc_html_e('Email Address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+		    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="username" autocomplete="username" value="<?php echo (!empty($_POST['username']) ) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                                  ?>
 		</p>
 		<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 		    <label for="password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
@@ -51,9 +51,16 @@ do_action('woocommerce_before_customer_login_form');
 			<a href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Forgot password?', 'woocommerce'); ?></a>
 		    </p>
 		</div>
-		<div class="login-btn-wrp">
-		    <?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
-		    <button type="submit" class="woocommerce-form-login__submit btn btn-primary" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>"><?php esc_html_e('Log in', 'woocommerce'); ?></button>
+		<div class="login-btn-wrp row">
+		    <div class="col-12">
+			<?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
+		    </div>
+		    <div class="col-auto">
+			<button type="submit" class="woocommerce-form-login__submit btn btn-primary" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>"><?php esc_html_e('Log in', 'woocommerce'); ?></button>
+		    </div>
+		    <div class="col-auto social-login">
+			<?php echo do_shortcode('[nextend_social_login login="1" link="1" unlink="1" style="icon" heading="or login with"]') ?>
+		    </div>
 		</div>
 		<?php do_action('woocommerce_login_form_end'); ?>
 	    </form>
@@ -80,14 +87,14 @@ do_action('woocommerce_before_customer_login_form');
 
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 			    <label for="reg_username"><?php esc_html_e('Username', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-			    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username']) ) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                   ?>
+			    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username']) ) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                                  ?>
 			</p>
 
 		    <?php endif; ?>
 
     		<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
     		    <label for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-    		    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="email" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email']) ) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                   ?>
+    		    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="email" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email']) ) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                                  ?>
     		</p>
 
 		    <?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
@@ -103,12 +110,19 @@ do_action('woocommerce_before_customer_login_form');
 
 		    <?php endif; ?>
 
-		    <?php do_action('woocommerce_register_form'); ?>
 
-    		<p class="woocommerce-form-row form-row">
-			<?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
-    		    <button type="submit" class="woocommerce-form-register__submit btn btn-primary" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>"><?php esc_html_e('Sign up', 'woocommerce'); ?></button>
-    		</p>
+    		<div class="login-btn-wrp row mb-1">
+    		    <div class="col-12">
+			    <?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
+    		    </div>
+    		    <div class="col-auto">
+    			<button type="submit" class="woocommerce-form-register__submit btn btn-primary" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>"><?php esc_html_e('Sign up', 'woocommerce'); ?></button>
+    		    </div>
+    		    <div class="col-auto social-login">
+			    <?php echo do_shortcode('[nextend_social_login login="1" link="1" unlink="1" style="icon" heading="or sign up with"]') ?>
+    		    </div>
+    		</div>
+		    <?php do_action('woocommerce_register_form'); ?>
 
 		    <?php do_action('woocommerce_register_form_end'); ?>
 
