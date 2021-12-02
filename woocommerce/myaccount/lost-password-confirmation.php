@@ -1,8 +1,8 @@
 <?php
 /**
- * Lost password form
+ * Lost password confirmation text.
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/form-lost-password.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/lost-password-confirmation.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -10,15 +10,16 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
- * @version 3.5.2
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 3.9.0
  */
 defined('ABSPATH') || exit;
 
-do_action('woocommerce_before_lost_password_form');
+//wc_print_notice( esc_html__( 'Password reset email has been sent.', 'woocommerce' ) );
 ?>
 
+<?php do_action('woocommerce_before_lost_password_confirmation_message'); ?>
 <div class="login-wrp">
     <div class="row justify-content-between flex-md-row-reverse gx-2 justify-content-between">
 	<div class="col-12 col-lg-6 col-md-6">
@@ -29,7 +30,7 @@ do_action('woocommerce_before_lost_password_form');
 	<div class="col-12 col-lg-5 col-md-6 align-self-center">
 	    <form method="post" class="woocommerce-ResetPassword lost_reset_password">
 		<h3 class="h3">Forgot your password?</h3>
-		<p><?php echo apply_filters('woocommerce_lost_password_message', esc_html__('Please enter your username or email address. You will receive a link to create a new password via email.', 'woocommerce')); ?></p><?php // @codingStandardsIgnoreLine           ?>
+		<p><?php echo apply_filters('woocommerce_lost_password_message', esc_html__('Please enter your username or email address. You will receive a link to create a new password via email.', 'woocommerce')); ?></p><?php // @codingStandardsIgnoreLine                 ?>
 
 		<p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
 		    <label for="user_login"><?php esc_html_e('Email Address', 'woocommerce'); ?></label>
@@ -50,11 +51,11 @@ do_action('woocommerce_before_lost_password_form');
 		</div>
 
 		<?php wp_nonce_field('lost_password', 'woocommerce-lost-password-nonce'); ?>
-
+		<p class="message-text"><?php echo esc_html(apply_filters('woocommerce_lost_password_confirmation_message', esc_html__('A password reset mail has been sent to the email address on file for your account but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.', 'woocommerce'))); ?></p>
 	    </form>
-	    <?php
-	    do_action('woocommerce_after_lost_password_form');
-	    ?>
+	    <?php do_action('woocommerce_after_lost_password_confirmation_message'); ?>
 	</div>
     </div>
 </div>
+
+

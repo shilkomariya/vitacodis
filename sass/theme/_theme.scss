@@ -893,9 +893,11 @@ svg.icon{
     label{
 	@extend .form-label;
     }
+    /*
     h3{
 	@include font-size(rem(24px));
     }
+    */
 }
 .shop_table{
     @extend .table;
@@ -1071,6 +1073,17 @@ svg.icon{
     .social-login{
 	flex-grow: 1;
     }
+}
+.woocommerce-ResetPassword{
+    max-width: rem(391px);
+    p{
+	font-size: rem(13px);
+    }
+}
+.message-text{
+    font-weight: 700;
+    color: $acc2;
+    line-height: 1.75;
 }
 #login-page{
     .sing-up-text{

@@ -22,22 +22,22 @@ do_action('woocommerce_before_reset_password_form');
     <div class="row justify-content-between flex-md-row-reverse gx-2 justify-content-between">
 	<div class="col-12 col-lg-6 col-md-6">
 	    <div class="img-box round-image ms-auto">
-		<?php echo wp_get_attachment_image(13758, 'large', false, array("class" => 'img-fluid')); ?>
+		<?php echo wp_get_attachment_image(14096, 'large', false, array("class" => 'img-fluid')); ?>
 	    </div>
 	</div>
-	<div class="col-12 col-lg-5 col-md-6 align-self-center">
+	<div class="col-12 col-md-6 align-self-center">
 
+	    <h3><?php echo apply_filters('woocommerce_reset_password_message', esc_html__('Enter a new password below.', 'woocommerce')); ?></h3><?php // @codingStandardsIgnoreLine           ?>
 	    <form method="post" class="woocommerce-ResetPassword lost_reset_password">
 
-		<p><?php echo apply_filters('woocommerce_reset_password_message', esc_html__('Enter a new password below.', 'woocommerce')); ?></p><?php // @codingStandardsIgnoreLine  ?>
 
 		<p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
 		    <label for="password_1"><?php esc_html_e('New password', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-		    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_1" id="password_1" autocomplete="new-password" />
+		    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="password_1" id="password_1" autocomplete="new-password" />
 		</p>
-		<p class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+		<p class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last mb-2">
 		    <label for="password_2"><?php esc_html_e('Re-enter new password', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-		    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_2" id="password_2" autocomplete="new-password" />
+		    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="password_2" id="password_2" autocomplete="new-password" />
 		</p>
 
 		<input type="hidden" name="reset_key" value="<?php echo esc_attr($args['key']); ?>" />
@@ -49,8 +49,9 @@ do_action('woocommerce_before_reset_password_form');
 
 		<p class="woocommerce-form-row form-row">
 		    <input type="hidden" name="wc_reset_password" value="true" />
-		    <button type="submit" class="btn btn-primary" value="<?php esc_attr_e('Save', 'woocommerce'); ?>"><?php esc_html_e('Save', 'woocommerce'); ?></button>
+		    <button type="submit" class="btn btn-primary" value="<?php esc_attr_e('Save', 'woocommerce'); ?>" style="min-width: 153px"><?php esc_html_e('Save', 'woocommerce'); ?></button>
 		</p>
+		<p class="message-text">Choosing a strong password is critical to securing your account. Make sure the password is at least 10 characters long, use a mix of letters (upper and lower case), numbers, special characters and do not use dictionary words and any of your personally identifiable information.</p>
 
 		<?php wp_nonce_field('reset_password', 'woocommerce-reset-password-nonce'); ?>
 
