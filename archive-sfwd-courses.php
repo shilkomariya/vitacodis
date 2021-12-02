@@ -23,24 +23,28 @@ get_header();
 	    echo "Wellbeing Courses";
 	}
 	?></h2>
-    <?php
-    if (have_posts()) {
-	?>
-        <div class="row card-rows mb-3">
-	    <?php
-	    while (have_posts()) {
-		the_post();
+    <div class="row card-rows">
+	<?php
+	$args = array(
+	    'posts_per_page' => -1,
+	    'post_type' => 'sfwd-courses',
+	    'post_type' => 'sfwd-courses',
+	    'orderby' => 'rand',
+	);
+
+	$query = new WP_Query($args);
+
+	if ($query->have_posts()) {
+	    while ($query->have_posts()) {
+		$query->the_post();
 		echo '<div class="col">';
 		get_template_part('loop-templates/content', 'course');
 		echo '</div>';
 	    }
-	    ?>
-        </div><!-- .row -->
-	<?php
-    } else {
-	get_template_part('loop-templates/content', 'none');
-    }
-    ?>
+	}
+	wp_reset_postdata();
+	?>
+    </div>
 </div>
 <?php
 get_footer();
