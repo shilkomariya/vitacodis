@@ -42,9 +42,18 @@
 	    $(this).find('.collapse p:first-child').prependTo(this);
 	});
     }
+    function showHomePopup() {
+	if ($('.home-popup').length == 0)
+	    return;
+	$(".home-popup").delay(20000).fadeIn('slow');
+    }
+    $('.home-popup .btn-close').click(function () {
+	$(".home-popup").fadeOut(0);
+    });
 
     jQuery(document).ready(function ($) {
 	collapsedContent();
+	showHomePopup();
     });
 
 

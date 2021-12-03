@@ -69,6 +69,11 @@ defined('ABSPATH') || exit;
 </footer>
 <?php get_template_part('template-parts/svg-sprite') ?>
 <?php get_template_part('template-parts/cookies') ?>
+<?php
+if (is_front_page()) {
+    get_template_part('template-parts/home-popup');
+}
+?>
 <?php wp_footer(); ?>
 </body>
 </html>
