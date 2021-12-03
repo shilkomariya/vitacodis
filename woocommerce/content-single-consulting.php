@@ -69,16 +69,16 @@ if (fw_get_db_post_option(get_the_ID(), 'instructor')) {
 			    <?php if (fw_get_db_post_option($instructor_id, 'youtube') != "") { ?><li><a target="_blank" href="<?php echo fw_get_db_post_option($instructor_id, 'youtube') ?>"><svg class="icon"><use xlink:href="#i-youtube"></use></svg></a></li><?php } ?>
 			    <?php if (fw_get_db_post_option($instructor_id, 'site') != "") { ?><li><a target="_blank" href="<?php echo fw_get_db_post_option($instructor_id, 'site') ?>"><svg class="icon"><use xlink:href="#site"></use></svg></a></li><?php } ?>
 			</ul>
-		    </div>
-		</div>
-		<ul class="spec">
-		    <?php foreach (fw_get_db_post_option($instructor_id, 'specification') as $value) { ?>
-    		    <li><svg class="icon"><use xlink:href="#check"></use></svg> <?php echo $value ?></li>
-		    <?php } ?>
-		</ul>
+			<ul class="spec">
+			    <?php foreach (fw_get_db_post_option($instructor_id, 'specification') as $value) { ?>
+    			    <li><svg class="icon"><use xlink:href="#check"></use></svg> <?php echo $value ?></li>
+			    <?php } ?>
+			</ul>
 
-		<div class="content">
-		    <?php echo do_shortcode(wpautop($instructor->post_content)); ?>
+			<div class="content">
+			    <?php echo do_shortcode(wpautop($instructor->post_content)); ?>
+			</div>
+		    </div>
 		</div>
 	    </div>
 	</div>
