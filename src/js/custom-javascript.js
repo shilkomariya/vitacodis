@@ -62,10 +62,32 @@
 	$('.field_wellbeing-interests .yz-info-data a').each(function (index, element) {
 	    $(element).contents().unwrap().wrap('<span>');
 	});
-	console.log('yz-infos-content');
 
     }
 
+    window.addEventListener('DOMContentLoaded', () => {
+	if ($('#retreatTabContent').length == 0)
+	    return;
+
+	const observer = new IntersectionObserver(entries => {
+	    entries.forEach(entry => {
+		const id = entry.target.getAttribute('id');
+		if (entry.intersectionRatio > 0) {
+		    //document.querySelector('ul li a[href="#${id}"]').parentElement.classList.add('active');
+		    $('#retreatTab a[href="#' + id + '"]').addClass('active');
+		} else {
+		    $('#retreatTab a[href="#' + id + '"]').removeClass('active');
+		    //document.querySelector('ul li a[href="#${id}"]').parentElement.classList.remove('active');
+		}
+	    });
+	});
+
+	// Track all sections that have an `id` applied
+	document.querySelectorAll('#retreatTabContent div[id]').forEach((section) => {
+	    observer.observe(section);
+	});
+
+    });
 
     jQuery(document).ready(function ($) {
 	collapsedContent();

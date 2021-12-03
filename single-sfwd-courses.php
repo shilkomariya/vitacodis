@@ -24,7 +24,7 @@ if (fw_get_db_post_option(get_the_ID(), 'popup_video')) {
 while (have_posts()) {
     the_post();
     ?>
-    <div class="course-header py-5"<?php echo $bg ?>>
+    <div class="course-header py-5 <?php echo fw_get_db_post_option(get_the_ID(), 'banner_style') ?>"<?php echo $bg ?>>
         <div class="container">
     	<h1 class="h2"><?php the_title() ?></h1>
     	<div class="course-info row h5">

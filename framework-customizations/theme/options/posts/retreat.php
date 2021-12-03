@@ -12,6 +12,19 @@ $options = array(
 		'label' => __('Banner Image', 'fw'),
 		'desc' => __('Either upload a new, or choose an existing image from your media library', 'fw')
 	    ),
+	    'banner_style' => array(
+		'type' => 'switch',
+		'label' => __('Banner Style', 'fw'),
+		'value' => 'light-style',
+		'left-choice' => array(
+		    'value' => 'dark-style',
+		    'label' => __('Dark', '{domain}'),
+		),
+		'right-choice' => array(
+		    'value' => 'light-style',
+		    'label' => __('Light', '{domain}'),
+		),
+	    ),
 	    'location' => array(
 		'type' => 'text',
 		'label' => __('Location', 'vitacodis'),

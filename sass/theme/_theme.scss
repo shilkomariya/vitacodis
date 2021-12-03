@@ -459,6 +459,20 @@ svg.icon{
 	    font-size: rem(32px);
 	}
     }
+    &.dark-style{
+	color: $white;
+	.course-price{
+	    h4{
+		color: $white;
+	    }
+	}
+	.course-info{
+	    color: $white;
+	}
+	.h2{
+	    color: $white;
+	}
+    }
 }
 /*Course*/
 .single-course{
@@ -661,7 +675,7 @@ svg.icon{
 	}
     }
     .content{
-	max-width: 800px;
+	max-width: 850px;
     }
     .wp-post-image{
 	border-radius: $border-radius;
@@ -741,17 +755,6 @@ svg.icon{
     min-height: vw(735px);
     font-size: rem(20px);
     position: relative;
-    &:after{
-	content: '';
-	position: absolute;
-	z-index: 1;
-	display: block;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: 0;
-	background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 65%);
-    }
     .container{
 	position: relative;
 	z-index: 2;
@@ -774,6 +777,12 @@ svg.icon{
 	    margin-right: .5rem;
 	}
     }
+    &.dark-style{
+	color: $white;
+	.h2{
+	    color: $white;
+	}
+    }
 }
 .retreat-tabs{
     background-color: #F8F7F8;
@@ -793,6 +802,13 @@ svg.icon{
 	}
     }
 }
+#instructors-tab{
+    .instructor-info{
+	.avatar{
+	    border-radius: 50%;
+	}
+    }
+}
 .program-content{
     h2, h3, h4{
 	@include font-size(rem(17px));
@@ -806,9 +822,20 @@ svg.icon{
 	padding-left: 0;
 	margin-bottom: 2rem;
 	li{
-	    padding-left: rem(32px);
+	    padding:10px 0 10px rem(50px);
 	    margin-bottom: 1rem;
-	    background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 1.77778C4.56356 1.77778 1.77778 4.56356 1.77778 8C1.77778 11.4364 4.56356 14.2222 8 14.2222C11.4364 14.2222 14.2222 11.4364 14.2222 8C14.2222 6.91929 13.9467 5.90293 13.4621 5.01732L7.62074 11.0563L4.99072 8.3373L6.26854 7.1013L7.62074 8.49926L12.3792 3.57977C11.2549 2.4658 9.70779 1.77778 8 1.77778ZM0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8Z' fill='%230093E1'/%3E%3C/svg%3E%0A") 0 .2rem / 1.1rem no-repeat;
+	    background-size: 48px;
+	    background-position: center left;
+	    background-repeat: no-repeat;
+	    &:first-child{
+		background-image: url(../img/retreat-icon-morning.png);
+	    }
+	    &:nth-child(2){
+		background-image: url(../img/retreat-icon-noon.png);
+	    }
+	    &:nth-child(3){
+		background-image: url(../img/retreat-icon-evening.png);
+	    }
 	}
     }
     a{

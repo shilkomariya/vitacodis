@@ -28,7 +28,7 @@ while (have_posts()) {
 	the_content();
     else:
 	?>
-	<div class="retreat-header py-5"<?php echo $bg ?>>
+	<div class="retreat-header py-5 <?php echo fw_get_db_post_option(get_the_ID(), 'banner_style') ?>"<?php echo $bg ?>>
 	    <div class="container">
 		<h1 class="h2"><?php echo str_replace(' | ', '<br>', get_the_title()); ?></h1>
 		<div class="data mb-1">
