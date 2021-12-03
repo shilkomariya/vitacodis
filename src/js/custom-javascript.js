@@ -123,6 +123,15 @@
 	    }
 	}
     });
+    var owlBig = $('.location-images-big');
+    owlBig.owlCarousel({
+	lazyLoad: true,
+	margin: 0,
+	nav: true,
+	dots: false,
+	loop: false,
+	items: 1
+    });
 
     $('#ShowSignUp').click(function () {
 	$('.login-wrp').hide('slow');
@@ -328,7 +337,6 @@
 	    }
 	}
     });
-
 
     $(document).on('click', '#cookieIagree', function () {
 	console.log();

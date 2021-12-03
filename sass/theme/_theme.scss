@@ -848,7 +848,10 @@ svg.icon{
 }
 .location-info{
     font-size: rem(13px);
-    color: $title;
+    a{
+	color: $title;
+	font-weight: 700;
+    }
     .col-auto{
 	display: flex;
 	align-items: center;
@@ -858,6 +861,27 @@ svg.icon{
 	font-size: 1rem;
 	color: $icons;
 	margin-right: .5rem;
+    }
+}
+.location-images-big{
+    position: relative;
+    .owl-nav{
+	button[class*='owl-']{
+	    position: absolute;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    font-size: 4rem!important;
+	    color: #fff!important;
+	    line-height: 1!important;
+	    padding: .5rem!important;
+	    background: none!important;
+	}
+	.owl-prev{
+	    left: 3%;
+	}
+	.owl-next{
+	    right: 3%;
+	}
     }
 }
 /*products*/

@@ -111,4 +111,5 @@ add_filter('use_widgets_block_editor', '__return_false');
 
 add_image_size('medium-crop', 547, 344, array('center', 'center'));
 add_image_size('large-crop', 720, 470, array('center', 'center'));
+add_image_size('gallery-crop', 950, 500, array('center', 'center'));
 add_image_size('instructor-avatar', 177, 177, array('center', 'center'));

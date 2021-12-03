@@ -11,9 +11,16 @@ if ($args['location_id']) {
     $id = $args['location_id'];
     $location = get_post($id);
     ?>
-    <a href="<?php echo get_the_post_thumbnail_url($id, 'full'); ?>" data-fancybox="gallery" class="mb-1 d-block">
-	<?php echo get_the_post_thumbnail($id, array(950, 950), array('class' => '')); ?>
-    </a>
+    <div class="location-images-big owl-carousel owl-theme mb-1">
+	<?php
+	$arr = fw_get_db_post_option($id, 'images');
+	foreach ($arr as $key => $value) {
+	    ?>
+	    <a href="<?php echo wp_get_attachment_image_url($value["attachment_id"], 'full'); ?>" data-fancybox="gallery">
+		<img class="owl-lazy" data-src="<?php echo wp_get_attachment_image_url($value["attachment_id"], 'gallery-crop'); ?>" alt="">
+	    </a>
+	<?php } ?>
+    </div>
     <div class="location-images owl-carousel owl-theme mb-2">
 	<?php
 	$arr = fw_get_db_post_option($id, 'images');
