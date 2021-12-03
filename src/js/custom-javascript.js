@@ -89,11 +89,18 @@
 
     });
 
+    function cf7MessagesMove() {
+	if ($('#cfBtnWrp').length == 0)
+	    return;
+	$(".wpcf7-response-output").addClass('col-md-auto').appendTo('#cfBtnWrp');
+    }
+
     jQuery(document).ready(function ($) {
 	collapsedContent();
 	showHomePopup();
 	showStripeBadge();
 	wellbeingInterestsLinksRemove();
+	cf7MessagesMove();
     });
 
 

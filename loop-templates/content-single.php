@@ -22,8 +22,7 @@ defined('ABSPATH') || exit;
 	<?php
 	echo wpautop($post->post_content);
 	?>
-	<div class="my-3 social-bottom"><?php echo do_shortcode('[Sassy_Social_Share]'); ?></div>
-	<div class="mb-2">
+	<div class="my-2">
 	    <h4>Do not miss another post</h4>
 	    <?php echo do_shortcode('[mailpoet_form id="1"]') ?>
 	</div>
