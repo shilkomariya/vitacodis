@@ -56,11 +56,22 @@
 
 	$('#woocommerce_add_payment_method').parent().addClass('row btn-w-secure').wrapInner('<div class="col-auto">').append('<div class="col-auto"><img src="https://vitacodis.com/wp-content/themes/vitacodis/img/stripe-secure.png" alt="secure"></div>');
     }
+    function wellbeingInterestsLinksRemove() {
+	if ($('.yz-infos-content .field_wellbeing-interests').length == 0)
+	    return;
+	$('.field_wellbeing-interests .yz-info-data a').each(function (index, element) {
+	    $(element).contents().unwrap().wrap('<span>');
+	});
+	console.log('yz-infos-content');
+
+    }
+
 
     jQuery(document).ready(function ($) {
 	collapsedContent();
 	showHomePopup();
 	showStripeBadge();
+	wellbeingInterestsLinksRemove();
     });
 
 

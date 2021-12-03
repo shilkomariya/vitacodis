@@ -165,14 +165,14 @@ body #yz-profile-navmenu{
     margin-bottom: 40px;
 }
 .yz-account-page .yz-settings-sidebar{
-    width: 250px !important;
+    width: 300px !important;
 }
 .yz-account-page #message{
     margin-top: 10px;
     margin-left: 45px !important;
 }
 .yz-account-page .settings-main-content{
-    width: calc(100% - 250px);
+    width: calc(100% - 300px);
     margin-bottom: 0px;
 }
 .yz-account-page .settings-main-content .settings-inner-content{
@@ -384,6 +384,7 @@ body .youzer-section-content > .uk-option-item .option-content{
 }
 .bp-user.account-privacy #youzer .youzer-section-content > .uk-option-item label{
     color: #4a4a4a;
+    font-weight: 400;
 }
 body #youzer .youzer-section-content > .uk-option-item p.option-desc{
     display: none;
@@ -836,10 +837,13 @@ nav#yz-profile-navmenu .yz-open-nav,
 ul.yz-profile-navmenu li.mobileonly{
     display: none !important;
 }
-.yz-infos-content .field_wellbeing-interests .yz-info-data a{
-    display: inline-block;
-    width: 50%;
-    margin-bottom: 1rem;
+.yz-infos-content .field_wellbeing-interests .yz-info-data{
+    a, span{
+
+	display: inline-block;
+	width: 50%;
+	margin-bottom: 1rem;
+    }
 }
 .yz-infos-content .field_wellbeing-interests .yz-info-data p{
     font-size: 0px !important;
@@ -1308,4 +1312,52 @@ div.bbp-topic-form form div > p{
 }
 div.bbp-topic-form form div > p:first-child{
     display: block;
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+    .yz-page-main-content{
+	padding: 0!important;
+    }
+    body.woocommerce-add-payment-method .yz-account-page aside.yz-settings-sidebar,
+    .youzer .yz-settings-sidebar {
+	width: 25%!important;
+	float: left!important;
+    }
+    .youzer .woocommerce-MyAccount-content,
+    .yz-account-page .non-avatar-pages .settings-main-content {
+	width: 75%;
+    }
+    body.woocommerce-add-payment-method .youzer .woocommerce-MyAccount-content{
+	padding: 0!important;
+    }
+}
+.account-privacy-header{
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    max-width: rem(510px);
+    .account-delete{
+	font-weight: 700;
+	color: $icons;
+    }
+}
+#yz-account-privacy{
+    margin-bottom: 3rem!important;
+    .youzer-settings-actions,
+    .youzer-section-content>.uk-option-item{
+	padding-left: 0!important;
+	padding-right: 0;
+    }
+}
+.yz-accont-delete-form{
+    background: #F8F7F8;
+    border-radius: 4px;
+    padding: 2rem;
+    max-width: rem(493px);
+    p{
+	color: $title;
+	margin-bottom: 1rem;
+	line-height: 1.75;
+	max-width: 26rem;
+    }
 }
