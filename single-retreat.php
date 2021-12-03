@@ -30,7 +30,7 @@ while (have_posts()) {
 	?>
 	<div class="retreat-header py-5"<?php echo $bg ?>>
 	    <div class="container">
-		<?php the_title('<h1 class="h2">', '</h1>'); ?>
+		<h1 class="h2"><?php echo str_replace(' | ', '<br>', get_the_title()); ?></h1>
 		<div class="data mb-1">
 		    <div class="item">
 			<div class="icon-wrp">
@@ -153,7 +153,7 @@ while (have_posts()) {
 		    <div class="card card-course sticky-top">
 			<?php echo get_the_post_thumbnail(get_the_ID(), 'medium-crop', array('class' => 'card-img-top')); ?>
 			<div class="card-body">
-			    <h4><?php the_title() ?></h4>
+			    <h4><?php echo str_replace(' | ', '<br>', get_the_title()); ?></h4>
 			    <ul class="features">
 				<?php foreach (fw_get_db_post_option(get_the_ID(), 'features') as $value) { ?>
 	    			<li><svg class="icon"><use xlink:href="#check"></use></svg> <?php echo $value ?></li>

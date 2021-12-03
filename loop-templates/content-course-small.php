@@ -30,7 +30,7 @@ switch ($status) {
     </div>
     <div class="card-body">
 	<?php course_instructor() ?>
-	<div class="course-info row">
+	<div class="course-info row mb-0">
 	    <?php if (fw_get_db_post_option(get_the_ID(), 'duration') != "") { ?>
     	    <div class="col-auto"><svg class="icon"><use xlink:href="#duration"></use></svg><strong><?php echo fw_get_db_post_option(get_the_ID(), 'duration'); ?></strong></div>
 	    <?php } ?>

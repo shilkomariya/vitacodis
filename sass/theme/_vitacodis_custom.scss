@@ -133,6 +133,7 @@ body.achievements div.certificate-list a {
 body.discussions #bbpress-forums a.new-discussion, form#new-post .button.submit{
     border-radius: calc( var(--ldx-grid-item-border-radius) / 2 );
 }
+
 .youzer .yz-page-head{
 
 }
@@ -155,8 +156,18 @@ body div.yz-tools-full-btns i:before{
     }
     .yz-page-main-content{
 	max-width: 100%;
-	padding-top: rem(40px) !important;
+	padding-top: rem(20px) !important;
 	margin-bottom: rem(60px) !important;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    textarea{
+	max-width: rem(430px);
+    }
+    #message p{
+	font-size: rem(13px);
     }
 }
 .yz-profile-sidebar.yz-right-sidebar .yz-custom_widgets{
@@ -480,7 +491,6 @@ body #youzer .youzer-inner-content input:not([type=radio]):not([type=checkbox]):
     font-size:$btn-font-size !important;
     font-weight: $btn-font-weight !important;
     line-height: $btn-line-height !important;
-    padding: $btn-padding-y $btn-padding-x!important;
 }
 .youzer.yz-account-page .nice-select .current,
 .youzer.yz-account-page .nice-select .option{
@@ -604,16 +614,14 @@ div.bbp-topic-avatar img{
     border-radius: 30px;
 }
 div.topic-item{
-    margin-bottom: 20px;
-}
-div.bbp-topic-avatar {
-    display: inline-block;
-    width: 60px;
-    vertical-align: top;
-}
-div.bbp-topic-right {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    div.bbp-topic-avatar {
+	flex:  0 0 70px;
+	width: 70px;
+    }
+    div.bbp-topic-right {
+	flex-grow: 1;
+    }
 }
 div.bbp-topic-right .topic-head {
     margin-bottom: 4px;
@@ -647,6 +655,27 @@ div.bbp-topic-right .topic-info a{
 }
 div.yz-custom-tab{
     position: relative;
+}
+@media(min-width:992px){
+    .discussions{
+	.yz-custom-tab{
+	    display: flex;
+	    flex-wrap: wrap;
+	    .bbp-forum-discussion-form{
+		flex: 0 0 100%;
+		order: 0;
+	    }
+	    > #bbpress-forums{
+		flex: 0 0 56%;
+		order: 1;
+	    }
+	    .new-discussion-wrap{
+		flex: 0 0 40%;
+		order: 2;
+		padding-left: 10%;
+	    }
+	}
+    }
 }
 a.new-discussion {
     @extend .btn;
@@ -803,6 +832,8 @@ div.bbp-topic-cont{
 	    margin-bottom: 1.5rem;
 	    font-weight: 700;
 	    color: $title;
+	    display: block;
+	    width: 100%;
 	}
 	label{
 	    margin-bottom: $form-label-margin-bottom;
@@ -810,17 +841,25 @@ div.bbp-topic-cont{
 	    font-style: $form-label-font-style;
 	    font-weight: $form-label-font-weight;
 	    color: $form-label-color;
+	    .small{
+		color: $icons;
+		font-weight: 400;
+	    }
 	}
     }
 }
 form#new-post .button.submit{
+    margin-top: 1rem;
     color: #fff;
-    background-color: $acc3;
+    background-color: $acc2;
     border-radius: 0.26667rem;
     min-width: rem(180px);
     &:hover{
-	background-color: $acc2;
+	background-color: $acc3;
     }
+}
+.bbp-template-notice{
+    display: none;
 }
 .bp-user.info .yz-main-column .yz-white-bg{
     min-height: 96.7%;
@@ -1318,4 +1357,10 @@ body.bp-user:not(.my-account) ul.yz-profile-navmenu li:last-child{
     .yz-account-page .yz-page-main-content {
 	max-width: none;
     }
+}
+div.bbp-topic-form form div > p{
+    display: none;
+}
+div.bbp-topic-form form div > p:first-child{
+    display: block;
 }

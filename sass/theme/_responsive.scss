@@ -207,8 +207,8 @@
 	}
     }
     .btn:not(.btn-sm){
-	font-size: 20px;
-	padding: 12px 24px;
+	font-size: 20px!important;
+	padding: 12px 24px!important;
     }
 }
 @media(min-width: 1600px){
