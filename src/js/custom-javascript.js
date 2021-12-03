@@ -362,4 +362,10 @@
 	});
     });
 
+    document.addEventListener('wpcf7mailsent', function (event) {
+	if ('7775' == event.detail.contactFormId) {
+	    $('.contact-wrp').addClass('complite');
+	}
+    }, false);
+
 }(jQuery);

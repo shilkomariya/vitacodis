@@ -115,6 +115,26 @@ svg.icon{
 	border: rem(20px) solid transparent;
 	border-image: 16 repeating-linear-gradient(-45deg, #E64E48 0, #E64E48 2.5em, transparent 0, transparent 5em, #2C5AA1 0, #2C5AA1 7.5em, transparent 0, transparent 10em);
     }
+    .complite{
+	position: relative;
+	> *{
+	    opacity: 0;
+	}
+	&:after{
+	    content: 'Thank you for your interest in Vitacodis. One of our team members will be in touch with you soon.';
+	    position: absolute;
+	    opacity: 1;
+	    top: 50%;
+	    left: 10%;
+	    right: 10%;
+	    max-width: rem(600px);
+	    font-size: rem(32px);
+	    text-align: center;
+	    margin-left: auto;
+	    margin-right: auto;
+	    transform: translateY(-50%);
+	}
+    }
 }
 .styled{
     padding-left: 0;
@@ -263,7 +283,14 @@ svg.icon{
     font-weight: 700;
     position: static!important;
     transform: none!important;
-    text-align: left!important;
+    .single-post &{
+	text-align: left!important;
+    }
+}
+.mailpoet_form_successfully_send{
+    .mailpoet_paragraph{
+	visibility: visible!important;
+    }
 }
 .post-meta{
     .date{

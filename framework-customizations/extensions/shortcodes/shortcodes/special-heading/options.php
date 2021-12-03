@@ -33,6 +33,7 @@ $options = array(
 	'choices' => array(
 	    '' => '---',
 	    'text-white' => 'White',
+	    'text-primary' => 'Primary',
 	)
     ),
     'heading_weight' => array(
