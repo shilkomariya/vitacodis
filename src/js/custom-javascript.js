@@ -50,10 +50,17 @@
     $('.home-popup .btn-close').click(function () {
 	$(".home-popup").fadeOut(0);
     });
+    function showStripeBadge() {
+	if ($('#youzer .woocommerce-MyAccount-content').length == 0)
+	    return;
+
+	$('#woocommerce_add_payment_method').parent().addClass('row btn-w-secure').wrapInner('<div class="col-auto">').append('<div class="col-auto"><img src="https://vitacodis.com/wp-content/themes/vitacodis/img/stripe-secure.png" alt="secure"></div>');
+    }
 
     jQuery(document).ready(function ($) {
 	collapsedContent();
 	showHomePopup();
+	showStripeBadge();
     });
 
 

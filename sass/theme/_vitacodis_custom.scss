@@ -62,10 +62,7 @@ body.woocommerce-add-payment-method .woocommerce-MyAccount-content #payment ul.p
     width: calc(100% - 630px);
     margin-top: 20px;
     padding: 0px 30px;
-}
-.woocommerce-MyAccount-content #payment ul.payment_methods>li,
-.woocommerce-MyAccount-content #payment .payment_methods li .payment_box{
-    background: none !important;
+    max-width: rem(33.7rem);
 }
 .woocommerce-MyAccount-content #payment .payment_methods li .payment_box label{
     margin-bottom: $form-label-margin-bottom;
@@ -73,58 +70,6 @@ body.woocommerce-add-payment-method .woocommerce-MyAccount-content #payment ul.p
     font-style: $form-label-font-style;
     font-weight: $form-label-font-weight;
     color: $form-label-color;
-}
-.woocommerce-MyAccount-content #add_payment_method .woocommerce-PaymentMethod > label{
-    padding: 0px !important;
-}
-.woocommerce-MyAccount-content #payment .payment_methods li .payment_box{
-    padding-top: 20px;
-}
-.woocommerce-MyAccount-content #payment .payment_methods li .payment_box p{
-    font-size: 14px;
-    line-height: 26px;
-}
-.woocommerce .youzer table tbody td a.button{
-    color: #fff;
-}
-#add_payment_method #payment ul.payment_methods li img{
-    max-width: 80px !important;
-    padding-left: 10px !important;
-    display: inline-block;
-}
-.wc-stripe-elements-field, .wc-stripe-iban-element-field{
-    padding: 10px;
-}
-body.woocommerce-add-payment-method label img.stripe-american-icon,
-body.woocommerce-add-payment-method label img.stripe-maestro-icon{
-    max-height: 30px !important;
-}
-body.woocommerce-add-payment-method label img.stripe-mastercard-icon{
-    height: 30px !important;
-}
-body.woocommerce-add-payment-method label img.stripe-visa-icon{
-    height: 30px !important;
-}
-body.woocommerce-add-payment-method ul.payment_methods li label img{
-    width: auto !important;
-    margin-top: 15px !important;
-    margin-right: 17px !important;
-    max-width: none !important;
-}
-body.woocommerce-add-payment-method .woocommerce-MyAccount-content #payment .payment_methods
-li .payment_box{
-    padding-top: 0px !important;
-}
-body.woocommerce-add-payment-method #add_payment_method #payment ul.payment_methods li img{
-    max-width: none !important;
-    padding-left: 0px !important;
-    float: right;
-}
-body.woocommerce-add-payment-method .youzer .woocommerce-MyAccount-content{
-    margin-top: 30px !important;
-}
-body.woocommerce-add-payment-method div#content div.woocommerce{
-    background: #eaeaea !important;
 }
 body.achievements div.certificate-list a {
     margin-bottom: 1rem;
