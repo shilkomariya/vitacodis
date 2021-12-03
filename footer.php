@@ -30,7 +30,7 @@ defined('ABSPATH') || exit;
 	    </div>
 	    <div class="col-auto">
 		<?php if (fw_get_db_settings_option('address') != "") { ?>
-    		<div class="address"><a href="<?php the_permalink(21) ?>"><?php echo fw_get_db_settings_option('address') ?></a></div>
+    		<div class="address"><a href="https://goo.gl/maps/TTwCzrKH8j2jiW3w8" target="_blank"><?php echo fw_get_db_settings_option('address') ?></a></div>
 		<?php } ?>
 		<?php if (fw_get_db_settings_option('phone') != "") { ?>
     		<div class="phone"><a href="tel:<?php echo preg_replace("/[^0-9]/", '', fw_get_db_settings_option('phone')) ?>">Tel: <?php echo fw_get_db_settings_option('phone') ?></a></div>
