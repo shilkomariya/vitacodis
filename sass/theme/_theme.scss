@@ -292,6 +292,24 @@ svg.icon{
 	visibility: visible!important;
     }
 }
+.single-mailpoet_page{
+    .mailpoet_paragraph{
+	margin-bottom: 1rem;
+    }
+}
+.mailpoet_paragraph label{
+    @extend .form-label;
+}
+.mailpoet_text{
+    @extend .form-control;
+}
+.mailpoet_select{
+    @extend .form-select;
+}
+.mailpoet_submit{
+    @extend .btn;
+    @extend .btn-primary;
+}
 .post-meta{
     .date{
 	margin-left: 1rem;
