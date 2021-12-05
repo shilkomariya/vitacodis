@@ -346,7 +346,6 @@
     });
 
     $(document).on('click', '#cookieIagree', function () {
-	console.log();
 	$.ajax({
 	    url: '/wp-admin/admin-ajax.php',
 	    type: 'POST',

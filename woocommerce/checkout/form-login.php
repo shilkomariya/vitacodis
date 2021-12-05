@@ -27,7 +27,7 @@ if (is_user_logged_in() || 'no' === get_option('woocommerce_enable_checkout_logi
 		<h5 class="modal-title" id="loginModalLabel">Login</h5>
 		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 	    </div>
-	    <div class="modal-body">
+	    <div class="modal-body pb-1">
 		<?php
 		woocommerce_login_form(
 			array(
@@ -39,5 +39,4 @@ if (is_user_logged_in() || 'no' === get_option('woocommerce_enable_checkout_logi
 	</div>
     </div>
 </div>
-<?php
 

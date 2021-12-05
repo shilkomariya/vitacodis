@@ -46,7 +46,12 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 
 	    <?php if (!is_user_logged_in()) { ?>
     	    <div class="body-lg my-2">
-		    <?php wc_print_notice(apply_filters('woocommerce_checkout_login_message', esc_html__('Returning customer?', 'woocommerce')) . ' <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">' . esc_html__('Click here to login', 'woocommerce') . '</a>', 'notice'); ?>
+    		<div class="mb-1">
+			<?php wc_print_notice(apply_filters('woocommerce_checkout_login_message', esc_html__('Returning customer?', 'woocommerce')), 'notice'); ?>
+    		</div>
+    		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+    		    Please login
+    		</button>
     	    </div>
 	    <?php } ?>
 	</div>

@@ -1041,6 +1041,12 @@ svg.icon{
     input[type="checkbox"]+span{
 	font-weight: 400;
     }
+    input[type="checkbox"]{
+	width: 1rem !important;
+	height: 1rem;
+	transform: translateY(30%);
+	margin-right: 1rem;
+    }
 }
 .woocommerce-checkout-review-order-table{
     thead{
