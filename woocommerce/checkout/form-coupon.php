@@ -20,24 +20,13 @@ if (!wc_coupons_enabled()) { // @codingStandardsIgnoreLine.
     return;
 }
 ?>
-<div class="modal fade" id="couponModal" tabindex="-1" aria-labelledby="couponModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-	<div class="modal-content">
-	    <div class="modal-header">
-		<h5 class="modal-title" id="couponModalLabel">Have a coupon?</h5>
-		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-	    </div>
-	    <div class="modal-body">
-		<form class="checkout_coupon woocommerce-form-coupon d-block" method="post">
-		    <p><?php esc_html_e('If you have a coupon code, please apply it below.', 'woocommerce'); ?></p>
-		    <p class="form-row form-row-first">
-			<input type="text" name="coupon_code" class="form-control" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" id="coupon_code" value="" />
-		    </p>
-		    <p class="form-row form-row-last">
-			<button type="submit" class="btn btn-primary" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_html_e('Apply coupon', 'woocommerce'); ?></button>
-		    </p>
-		</form>
-	    </div>
+<form class="checkout_coupon woocommerce-form-coupon" method="post">
+    <div class="row gx-1">
+	<div class="col-auto">
+	    <input type="text" name="coupon_code" class="form-control form-control-sm" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" id="coupon_code" value="" />
+	</div>
+	<div class="col-auto">
+	    <button type="submit" class="btn btn-sm btn-primary" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_html_e('Apply coupon', 'woocommerce'); ?></button>
 	</div>
     </div>
-</div>
+</form>

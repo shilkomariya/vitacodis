@@ -164,8 +164,8 @@ $grid-gutter-width: rem(30px);
 
 // scss-docs-start border-radius-variables
 $border-radius: rem(4px);
+$border-radius-sm: rem(4px);
 $btn-border-radius-lg: rem(6px);
-$btn-border-radius-sm: rem(2px);
 
 $btn-box-shadow: 0;
 $btn-focus-width: 0;
@@ -255,6 +255,12 @@ $input-group-addon-bg: #fff;
 $input-group-addon-padding-x: rem(10px);
 
 $form-check-input-border-radius: 0;
+
+$form-check-input-width: 1.6em;
+$form-check-input-checked-bg-color: #fff;
+$form-check-input-checked-border-color: $primary;
+$form-check-input-checked-color: $primary;
+$form-check-radio-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2.5' fill='#{$form-check-input-checked-color}'/></svg>");
 
 // Form validation
 

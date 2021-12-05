@@ -1036,6 +1036,12 @@ svg.icon{
     border-radius: $border-radius;
     background-color: $bg;
 }
+.checkout{
+    input[type="checkbox"]+label,
+    input[type="checkbox"]+span{
+	font-weight: 400;
+    }
+}
 .woocommerce-checkout-review-order-table{
     thead{
 	display: none!important;
@@ -1046,11 +1052,6 @@ svg.icon{
     .cart-subtotal{
 	display: none;
     }
-    .order-total{
-	th{
-	    text-align: right;
-	}
-    }
     .product-total{
 	text-align: right;
     }
@@ -1059,16 +1060,76 @@ svg.icon{
 	th{
 	    padding-left: 0;
 	}
-    }
-    .coupon-text{
-	font-size: rem(12px);
-	color: $icons;
-	text-align: end;
-	padding: .5rem 0;
+	td,th{
+	    border-bottom: 0 none;
+	}
     }
     .remove{
 	color: $icons;
 	margin-right: 1rem;
+    }
+    .cart-discount td{
+	text-align: right;
+    }
+    tfoot{
+	th{
+	    padding-left: rem(26px);
+	}
+    }
+    .order-total th{
+	padding-left: rem(26px);
+    }
+    .cart-discount{
+	display: inline-block;
+	font-size: 1rem;
+	background-color: $bg;
+	padding: .9rem 1rem;
+	margin-left: rem(-26px);
+	a{
+	    display: none;
+	}
+    }
+}
+.woocommerce-form-coupon{
+    .form-control-sm{
+	padding: rem(5px 15px);
+	min-height: rem(32px);
+    }
+    .btn{
+	text-transform: none;
+	background-color: $icons;
+	border-color: $icons;
+	font-size: rem(13px);
+	padding: rem(4px 15px);
+	border-radius: 4px;
+    }
+}
+.woocommerce-checkout-payment{
+    .form-check{
+	display: flex;
+	align-items: center;
+	margin-bottom: 0;
+	.input-radio{
+	    flex:  0 0 rem(24px);
+	}
+	> label{
+	    font-size: rem(17px);
+	    flex-grow: 1;
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	    flex-wrap: wrap;
+	}
+    }
+    .payment_method_paypal{
+	label img{
+	    max-width: rem(74px);
+	}
+    }
+    .payment_method_stripe{
+	label img{
+	    max-width: rem(215px);
+	}
     }
 }
 .wc_payment_methods{
@@ -1078,14 +1139,11 @@ svg.icon{
 	border: 1px solid #D9DBE9;
 	border-radius: 4px;
 	margin-bottom: 1rem;
-	padding: rem(5px 15px);
+	padding: rem(10px 15px);
 	label{
 	    margin-bottom: 0;
 	    display: inline-flex;
 	    align-items: center;
-	    img{
-		margin-left: 1rem;
-	    }
 	}
     }
     .input-radio{
@@ -1094,9 +1152,12 @@ svg.icon{
     .about_paypal{
 	display: none;
     }
-    .payment_method_paypal{
-	label{
-
+    #stripe-payment-data{
+	> p{
+	    display: none;
+	}
+	#wc-stripe-cc-form{
+	    margin-top: 2rem;
 	}
     }
 }

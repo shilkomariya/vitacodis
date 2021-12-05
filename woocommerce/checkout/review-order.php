@@ -50,13 +50,6 @@ defined('ABSPATH') || exit;
 	    <td><?php wc_cart_totals_subtotal_html(); ?></td>
 	</tr>
 
-	<?php foreach (WC()->cart->get_coupons() as $code => $coupon) : ?>
-    	<tr class="cart-discount coupon-<?php echo esc_attr(sanitize_title($code)); ?>">
-    	    <th><?php wc_cart_totals_coupon_label($coupon); ?></th>
-    	    <td><?php wc_cart_totals_coupon_html($coupon); ?></td>
-    	</tr>
-	<?php endforeach; ?>
-
 	<?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) : ?>
 
 	    <?php do_action('woocommerce_review_order_before_shipping'); ?>
@@ -90,13 +83,23 @@ defined('ABSPATH') || exit;
 	    <?php endif; ?>
 	<?php endif; ?>
 	<?php do_action('woocommerce_review_order_before_order_total'); ?>
-	<tr>
-	    <th class="coupon-text" colspan="2"><?php wc_print_notice(apply_filters('woocommerce_checkout_coupon_message', esc_html__('Have a coupon?', 'woocommerce') . ' <a href="#" data-bs-toggle="modal" data-bs-target="#couponModal">' . esc_html__('Click here to enter your code', 'woocommerce') . '</a>'), 'notice'); ?></th>
-	</tr>
+
 	<tr class="order-total">
 	    <th>
-		<?php esc_html_e('Total', 'woocommerce'); ?></th>
-	    <td class="text-end"><?php wc_cart_totals_order_total_html(); ?></td>
+		<?php
+		if (WC()->cart->get_coupons()) {
+		    foreach (WC()->cart->get_coupons() as $code => $coupon) :
+			?>
+			<div class="cart-discount coupon-<?php echo esc_attr(sanitize_title($code)); ?>">
+			    <?php wc_cart_totals_coupon_label($coupon); ?> applied (<?php wc_cart_totals_coupon_html($coupon); ?>)
+			</div>
+		    <?php endforeach; ?>
+		    <?php
+		}else {
+		    woocommerce_checkout_coupon_form();
+		}
+		?></th>
+	    <td class="text-end"><span class="me-3"><?php esc_html_e('Total', 'woocommerce'); ?></span> <?php wc_cart_totals_order_total_html(); ?></td>
 	</tr>
 	<?php do_action('woocommerce_review_order_after_order_total'); ?>
     </tfoot>
