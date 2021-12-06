@@ -11,9 +11,6 @@
 	<path fill="currentColor" d="M17.2,16.6l2.2,6.7L12,17.9L17.2,16.6z M24,9.2h-9.2L12,0.5L9.2,9.2L0,9.2l7.4,5.4l-2.8,8.7l7.4-5.4l4.6-3.3L24,9.2L24,9.2z"></path>
     </symbol>
 </svg>
-<div class="mb-3">
-    <img class="tustpilot-logo" src="<?php echo get_template_directory_uri() ?>/img/trustpilot.jpg" alt="trustpilot">
-</div>
 <?php
 foreach (fw_get_db_post_option(get_the_ID(), 'reviews') as $key => $value) {
     ?>
@@ -33,6 +30,9 @@ foreach (fw_get_db_post_option(get_the_ID(), 'reviews') as $key => $value) {
     <?php
 }
 ?>
+<div class="mb-1">
+    <img class="tustpilot-logo" src="<?php echo get_template_directory_uri() ?>/img/trustpilot.jpg" alt="trustpilot">
+</div>
 <p>
-    <a class="read-more" href="https://www.trustpilot.com/review/www.vitacodis.com" target="_blank">More reviews</a>
+    <a class="read-more" href="https://www.trustpilot.com/review/www.vitacodis.com" target="_blank">Reviews from Trustpilot</a>
 </p>

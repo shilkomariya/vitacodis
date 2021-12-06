@@ -397,6 +397,7 @@ svg.icon{
 	}
     }
     .btn{
+	font-size: rem(12px);
 	width: 100%;
     }
     .card-title{
@@ -459,11 +460,12 @@ svg.icon{
     h4{
 	margin-bottom: 0;
 	span{
-	    opacity: .8;
-	    margin-left: 1rem;
+	    color: #6E798F;;
+	    margin-left: .5rem;
 	    position: relative;
 	    display: inline-block;
 	    padding: 0 2px;
+	    font-size: .9em;
 	    &:before{
 		content: '';
 		display: block;

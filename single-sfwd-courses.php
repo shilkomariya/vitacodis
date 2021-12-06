@@ -61,7 +61,7 @@ while (have_posts()) {
 		    'instructor_id' => $instructor)
 		);
 		?>
-    	    <div class="ld-section-heading mt-3 mb-2"><h2>Featured Reviews from Trustpilot</h2></div>
+    	    <div class="ld-section-heading mt-3 mb-2"><h2>Featured Reviews</h2></div>
 		<?php
 		get_template_part('template-parts/course-reviews');
 		?>

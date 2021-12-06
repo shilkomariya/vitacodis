@@ -84,7 +84,10 @@
 		    height: auto;
 		}
 		.fa {
-		    color: $blue;
+		    .logged-in &{
+			color: $blue;
+		    }
+
 		}
 		.ld-user-menu-items {
 		    &:before {
@@ -449,7 +452,7 @@
 		}
 	    }
 	    .wpProQuiz_quiz .wpProQuiz_button{
-		font-weight: 700!important;
+		font-weight: 600!important;
 		line-height: 1.7!important;
 		padding: 0.8rem 2.13333rem!important;
 		font-size: .86667rem!important;
@@ -484,8 +487,9 @@
 	--ld-border-color: #333;
 	--ld-main-light-color: #dedada;
 	--ld-active-hover: #968f8f;
+	--lqc-color-lightgrey: #988f90;
 	.wpd-comment.wpd-reply .wpd-comment-wrap {
-	    background-color: #474444;
+	    background-color: #474444!important;
 	}
 	#wpdcom{
 	    .ql-container {
@@ -521,6 +525,9 @@
 	    display: inline-block;
 	}
     }
+    .wpProQuiz_questionListItem label {
+	color: #fff;
+    }
 }
 @include media-breakpoint-up(md) {
     .learndash-wrapper .ld-focus {
@@ -530,6 +537,13 @@
 	.close-course{
 	    display: none;
 	}
+    }
+}
+@media(min-width: 1400px){
+    .learndash-wrapper .ld-focus .wpProQuiz_content .wpProQuiz_quiz .wpProQuiz_button{
+	font-size: 20px!important;
+	padding: 12px 24px!important;
+	line-height: 1!important;
     }
 }
 @include media-breakpoint-up(lg) {
@@ -550,7 +564,7 @@
 		width: 315px;
 		.ld-course-navigation{
 		    padding-top: 20px!important;
-		    padding-bottom: 30px;
+		    padding-bottom: 50px;
 		}
 	    }
 	    .wpProQuiz_content{

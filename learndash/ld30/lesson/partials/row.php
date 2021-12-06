@@ -149,9 +149,11 @@ endif;
 	    ?>
 	</div> <!--/.ld-item-details-->
 
-	<a class="ld-item-name ld-primary-color-hover" href="<?php echo esc_attr(learndash_get_step_permalink($lesson['post']->ID, $course_id)); ?><?php if (isset($_GET['freecourses'])) {
-		echo '?freecourses=true';
-	    } ?>">
+	<a class="ld-item-name ld-primary-color-hover" href="<?php echo esc_attr(learndash_get_step_permalink($lesson['post']->ID, $course_id)); ?><?php
+	if (isset($_GET['freecourses'])) {
+	    echo '?freecourses=true';
+	}
+	?>">
 	    <div class="ld-item-title">
 		<?php
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
@@ -218,7 +220,7 @@ endif;
 			    foreach ($attributes as $attribute) :
 				if ($attribute["label"] == 'Sample module') {
 				    ?>
-				    <span class="btn btn-sm btn-primary">Preview</span>
+				    <span class="btn btn-primary">Preview</span>
 				    <?php
 				} else {
 				    ?>
