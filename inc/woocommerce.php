@@ -370,7 +370,7 @@ function empty_cart_redirection() {
     }
 }
 
-add_action('template_redirect', 'empty_cart_redirection');
+add_action('template_redirect', 'empty_checkout_redirection');
 
 function empty_checkout_redirection() {
     if (WC()->cart->is_empty() && is_checkout()) {
@@ -406,14 +406,14 @@ function vitacodis_separate_registration_form() {
 
 	    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 		<label class="form-label"  for="reg_username"><?php esc_html_e('Username', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username']) ) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                                                                ?>
+		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username']) ) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                                                                 ?>
 	    </p>
 
 	<?php endif; ?>
 
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
     	<label class="form-label" for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-    	<input type="email" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="email" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email']) ) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                                                                ?>
+    	<input type="email" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="email" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email']) ) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine                                                                                 ?>
         </p>
 
 	<?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
