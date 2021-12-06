@@ -35,7 +35,7 @@ $firstname = get_user_meta($user->ID, 'billing_first_name', true);
 <p>We have received a request to reset the password for the Vitacodis account associated with <?php echo $email ?>. No changes have been made to your account yet. Please click the link below to change your password now.</p>
 <?php /* translators: %s: Customer username */ ?>
 <p>
-    <a class="link" href="<?php echo esc_url(add_query_arg(array('key' => $reset_key, 'id' => $user_id), wc_get_endpoint_url('lost-password', '', wc_get_page_permalink('myaccount')))); ?>"><?php // phpcs:ignore      ?>
+    <a class="link" href="<?php echo esc_url(add_query_arg(array('key' => $reset_key, 'id' => $user_id), wc_get_endpoint_url('lost-password', '', wc_get_page_permalink('myaccount')))); ?>"><?php // phpcs:ignore       ?>
 	<?php esc_html_e('Reset Password', 'woocommerce'); ?>
     </a>
 </p>
