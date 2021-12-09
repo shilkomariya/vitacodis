@@ -81,6 +81,10 @@ $options = array(
 			'type' => 'wp-editor',
 			'label' => __('Quote', 'fw'),
 		    ),
+		    'date' => array(
+			'type' => 'text',
+			'label' => __('Date', 'fw'),
+		    ),
 		    'stars' => array(
 			'type' => 'select',
 			'label' => __('Stars', 'fw'),

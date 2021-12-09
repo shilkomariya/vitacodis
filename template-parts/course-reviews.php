@@ -15,7 +15,10 @@
 foreach (fw_get_db_post_option(get_the_ID(), 'reviews') as $key => $value) {
     ?>
     <div class="course-review mb-2">
-        <h4 class="author"><?php echo $value['author'] ?></h4>
+        <div class="row align-items-center gx-1">
+    	<div class="col-auto"><h4 class="author"><?php echo $value['author'] ?></h4></div>
+    	<div class="col-auto"><?php echo $value['date'] ?></div>
+        </div>
         <div class="stars <?php echo $value['stars'] ?>">
     	<svg class="icon"><use xlink:href="#star"></use></svg>
     	<svg class="icon"><use xlink:href="#star"></use></svg>
@@ -23,9 +26,7 @@ foreach (fw_get_db_post_option(get_the_ID(), 'reviews') as $key => $value) {
     	<svg class="icon"><use xlink:href="#star"></use></svg>
     	<svg class="icon"><use xlink:href="#star"></use></svg>
         </div>
-        <div class="quote">
-	    <?php echo $value['quote'] ?>
-        </div>
+        <div class="quote"><?php echo $value['quote'] ?></div>
     </div>
     <?php
 }
