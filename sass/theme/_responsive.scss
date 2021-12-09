@@ -32,6 +32,11 @@
 	    }
 	}
     }
+    .woocommerce-checkout-review-order-table{
+	.woocommerce-form-coupon{
+	    padding-left: rem(26px);
+	}
+    }
 }
 @include media-breakpoint-up(md) {
     .home .btn-outline-primary{
@@ -288,5 +293,11 @@
     .home-popup{
 	left: 3%;
 	padding: 1rem;
+    }
+    .woocommerce-form-coupon{
+	margin-bottom: 1rem;
+	#coupon_code{
+	    width: 155px;
+	}
     }
 }

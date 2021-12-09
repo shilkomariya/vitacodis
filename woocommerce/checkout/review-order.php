@@ -85,21 +85,26 @@ defined('ABSPATH') || exit;
 	<?php do_action('woocommerce_review_order_before_order_total'); ?>
 
 	<tr class="order-total">
-	    <th>
-		<?php
-		if (WC()->cart->get_coupons()) {
-		    foreach (WC()->cart->get_coupons() as $code => $coupon) :
+	    <td colspan="2">
+		<div class="row gx-1">
+		    <div class="col-auto">
+			<?php
+			if (WC()->cart->get_coupons()) {
+			    foreach (WC()->cart->get_coupons() as $code => $coupon) :
+				?>
+				<div class="cart-discount coupon-<?php echo esc_attr(sanitize_title($code)); ?>">
+				    <?php wc_cart_totals_coupon_label($coupon); ?> applied (<?php wc_cart_totals_coupon_html($coupon); ?>)
+				</div>
+			    <?php endforeach; ?>
+			    <?php
+			}else {
+			    woocommerce_checkout_coupon_form();
+			}
 			?>
-			<div class="cart-discount coupon-<?php echo esc_attr(sanitize_title($code)); ?>">
-			    <?php wc_cart_totals_coupon_label($coupon); ?> applied (<?php wc_cart_totals_coupon_html($coupon); ?>)
-			</div>
-		    <?php endforeach; ?>
-		    <?php
-		}else {
-		    woocommerce_checkout_coupon_form();
-		}
-		?></th>
-	    <td class="text-end"><span class="me-3"><?php esc_html_e('Total', 'woocommerce'); ?></span> <?php wc_cart_totals_order_total_html(); ?></td>
+		    </div>
+		    <div class="col-sm-auto total-text"><span class="me-3"><?php esc_html_e('Total', 'woocommerce'); ?></span> <?php wc_cart_totals_order_total_html(); ?></div>
+		</div>
+	    </td>
 	</tr>
 	<?php do_action('woocommerce_review_order_after_order_total'); ?>
     </tfoot>

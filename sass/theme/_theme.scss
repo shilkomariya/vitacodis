@@ -1056,6 +1056,42 @@ svg.icon{
     border-radius: $border-radius;
     background-color: $bg;
 }
+.woocommerce-invalid{
+    .form-control{
+	border-color: red;
+    }
+}
+.woocommerce-invalid{
+    .woocommerce-input-wrapper{
+	position: relative;
+	display: block;
+	&:before{
+	    content: 'This field is required';
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    color: red;
+	}
+	&:hover:before{
+	    display: none;
+	}
+    }
+    &.woocommerce-invalid-required-field{
+	.woocommerce-input-wrapper{
+	    &:before{
+		content: 'This field is required';
+	    }
+	}
+    }
+    &.woocommerce-invalid-email{
+	.woocommerce-input-wrapper{
+	    &:before{
+		content: 'Invalid Email address';
+	    }
+	}
+    }
+}
 .checkout{
     input[type="checkbox"]+label,
     input[type="checkbox"]+span{
@@ -1068,7 +1104,10 @@ svg.icon{
 	margin-right: 1rem;
     }
 }
+
 .woocommerce-checkout-review-order-table{
+    border-top: 1px solid $table-group-separator-color;
+    margin-top: rem(45px);
     thead{
 	display: none!important;
     }
@@ -1082,12 +1121,15 @@ svg.icon{
 	text-align: right;
     }
     .order-total{
-	font-size: rem(20px);
-	th{
-	    padding-left: 0;
-	}
-	td,th{
+	td{
 	    border-bottom: 0 none;
+	}
+	.row{
+	    justify-content: space-between;
+	}
+	.total-text{
+	    font-size: rem(20px);
+	    text-align: right;
 	}
     }
     .remove{
@@ -1126,7 +1168,7 @@ svg.icon{
 	background-color: $icons;
 	border-color: $icons;
 	font-size: rem(13px);
-	padding: rem(4px 15px);
+	padding: rem(3.5px 15px);
 	border-radius: 4px;
     }
 }
