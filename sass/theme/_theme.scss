@@ -1485,6 +1485,30 @@ svg.icon{
     p{
 	color: $title;
     }
+    table.order_details{
+	border-top: 1px solid $table-group-separator-color;
+	.product-name{
+	    a{
+		color: $title;
+	    }
+	}
+	.product-quantity{
+	    display: none;
+	}
+	tfoot{
+	    font-size: rem(20px);
+	    th{
+		border-bottom: 0;
+		padding-right: 0;
+	    }
+	}
+	.product-total{
+	    text-align: right;
+	}
+    }
+    .order-again{
+	display: none;
+    }
 }
 #quick-question{
     .wpcf7-form{
